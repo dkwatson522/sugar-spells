@@ -1,0 +1,366 @@
+<%- include ('../views/partials/header') %>
+<%- include ('../views/partials/navbar') %>
+<div class="bg-gray-50" x-data="{ openPanel: 1 }">
+  <div class="max-w-screen-xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <img class="w-full" src="./images/FAQ.png" alt="">
+      <h2 class="text-center text-xl leading-9 font-semibold text-gray-500 sm:leading-10">
+        Most Frequently Asked Questions
+      </h2>
+      <div class="mt-6 border-t-2 border-gray-200 pt-6">
+        <dl>
+          <div>
+            <dt class="text-lg leading-7">
+              <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 1 ? null : 1)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
+                x-bind:aria-expanded="openPanel === 1">
+                <span class="font-medium text-gray-900">
+                  IS YOUR BUTTERCREAM REALLY SWEET? BECAUSE, I DON'T LIKE OVERLY SWEET FROSTING.
+                </span>
+                <span class="ml-6 h-7 flex items-center">
+                  <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </button>
+            </dt>
+            <dd class="mt-2 pr-12" x-show="openPanel === 1" style="display: none;">
+              <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                Neither do I! I use a Swiss meringue buttercream as the base for all of my frosting (asides from chocolate ganache). It’s not the typical American Buttercream which is just powdered sugar and butter. My buttercream is smooth, silky and pairs well with so many flavorings.
+              </p>
+            </dd>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 2 ? null : 2)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 2">
+                  <span class="font-medium text-gray-900">
+                    WHAT IS A SIGNATURE CAKE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 2, 'rotate-0': !(openPanel === 2) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 2" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  Signature cakes have a set cake/sponge, buttercream flavor and some type of textural or drizzle addition in between the layers. They were designed to deliver a palate pleasing experience with every bite. You can read more about the
+                  mouth-watering options of my signature cakes on the Flavors page.
+
+                  Please keep in mind this is just the taste options, not the outer decorative part of the cake. That is always customized.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 3 ? null : 3)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 3">
+                  <span class="font-medium text-gray-900">
+                    CAN I CHANGE THE FLAVORS OF A SIGNATURE CAKE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 3, 'rotate-0': !(openPanel === 3) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 3" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  At that point you would be building your own cake (BYOC) and that’s totally fine! You can use the Signature Cake flavors as inspiration to try new combinations.
+                </p>
+              </dd>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 4 ? null : 4)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 4">
+                  <span class="font-medium text-gray-900">
+                    HOW DO I ORDER A CUSTOM CAKE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 4, 'rotate-0': !(openPanel === 4) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 4" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  This one is an easy one!
+
+                  You will use the form on the Order Inquiry page to submit all the information needed to quote you properly and any pictures as inspiration. Think invitation, theme, colors and etc. No copycat cakes here please.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 5 ? null : 5)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 5">
+                  <span class="font-medium text-gray-900">
+                    HOW MUCH TIME IN ADVANCE DO I HAVE TO ORDER A CUSTOM CAKE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 5, 'rotate-0': !(openPanel === 5) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 5" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  I suggest 2-3 weeks minimum. While I will always try to work with you, the earlier the better. I work alone and often times book up pretty fast due to the sheer amount I can handle on my own per week and maintain the quality I pride
+                  Sugar Spell on.
+
+                  I am currently not taking orders for more than 1 year to date out.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 6 ? null : 6)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 6">
+                  <span class="font-medium text-gray-900">
+                    DO YOU OFFER DELIVERY?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 6, 'rotate-0': !(openPanel === 6) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 6" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  We sure do! As a matter of fact any cake over 2 tiers, requires delivery (you’ll thank me for that).
+
+                  We offer curbside delivery, which does not include set up and you would meet us at the door for your cake and/or treats.
+                  We also offer full delivery which covers set up and placement of our cake and/ or treats.
+
+                  Order size and distance affects delivery pricing**
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 7 ? null : 7)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 7">
+                  <span class="font-medium text-gray-900">
+                    CAN I SCHEDULE A TASTING FOR A BIRTHDAY / CELEBRATION CAKE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 7, 'rotate-0': !(openPanel === 7) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 7" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  Sadly right now we only offer tastings for wedding cakes. The good news is we will be offering monthly taste boxes that you can order and have delivered right to your door.
+
+                  Follow me on Instagram to stay up to date!
+                  You can also sign up for my newsletter if Instagram isn’t your jam. We will notify you of new flavors and treats as they come along.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 8 ? null : 8)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 8">
+                  <span class="font-medium text-gray-900">
+                    WHY IS THERE A MAXIMUM OF 2 DOZEN (24) CAKEPOPS?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 8, 'rotate-0': !(openPanel === 8) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 8" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  Ahh, this is a bit embarrassing but what the heck! Simply put my poor hands can’t handle the hand-rolling needed to complete them. Those little suckers take a lot of effort, you’d be surprised. I will try to accommodate large orders
+                  based on the situation.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 9 ? null : 9)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 9">
+                  <span class="font-medium text-gray-900">
+                    WHERE CAN I FIND CAKES THAT YOU HAVE DESIGNED BEFORE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 9, 'rotate-0': !(openPanel === 9) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 9" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  Instagram for the win! I post my most recent cakes there. My Gallery page is a quick jump to my up-to-date feed.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 10 ? null : 10)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 10">
+                  <span class="font-medium text-gray-900">
+                    HOW MUCH WILL MY CAKE BE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 10, 'rotate-0': !(openPanel === 10) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 10" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  Our cakes start at $150. All of our cakes are custom and as such it depends on key factors. The amount of people it needs to accommodate (size), flavor choices / extras, and of course the complexity of the final design.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 11 ? null : 11)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 2">
+                  <span class="font-medium text-gray-900">
+                    DO YOU DESIGN DESSERT TABLES?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 11, 'rotate-0': !(openPanel === 11) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 11" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  We can provide all the desserts for your event, but that’s where the magic ends with us and starts with a party planner. One of my favorite event planners is Therese from Helping Hans. You can check her out on her website or
+                  Instagram page.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 12 ? null : 12)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 12">
+                  <span class="font-medium text-gray-900">
+                    CAN I LEAVE MY CAKE OUTDOORS?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 12, 'rotate-0': !(openPanel === 12) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 12" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  As long as your party is being held in a temperature controlled space, you can leave the cake on display for a few hours. If the room is hot, or filled with sunlight, you should not leave the cake out. Even though I ganache 90% of
+                  my cakes which makes them a bit more resilient to heat, the buttercream will melt, and your cake can become unstable if left out too long.
+
+                  For best results, remove the cake from refrigeration at least 2 hours before serving. Let it sit out in a cool/temperate room during that time. You must let the butter in the cake warm up so it will taste moist and amazing! As long
+                  as the cake has time to come to room temperature prior to serving, your guests will be able to enjoy the dessert at optimal flavor and texture!
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 13 ? null : 13)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 13">
+                  <span class="font-medium text-gray-900">
+                    HOW DO I TAKE CARE OF AND CUT MY CAKE?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 13, 'rotate-0': !(openPanel === 13) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 13" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  Funny you should ask, I have a whole page dedicated to it!
+                  Check it out <a href="/cake-care" class="underline text-blue-300">here</a>.
+                </p>
+              </dd>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-gray-200 pt-6">
+            <div>
+              <dt class="text-lg leading-7">
+                <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 14 ? null : 14)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900"
+                  x-bind:aria-expanded="openPanel === 14">
+                  <span class="font-medium text-gray-900">
+                    I DON'T SEE THE ANSWER TO MY QUESTION. HOW CAN I REACH YOU?
+                  </span>
+                  <span class="ml-6 h-7 flex items-center">
+                    <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 14, 'rotate-0': !(openPanel === 14) }"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 pr-12" x-show="openPanel === 14" style="display: none;">
+                <p class="whitespace-pre-line text-base leading-6 text-gray-500">
+                  Sure! I can’t wait to hear from you. Send me a quick message <a href="/contact" class="underline text-blue-300">here</a>.
+                </p>
+              </dd>
+            </div>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="clear: both; display: block; height: 0px;"></div>
+
+
+
+<%- include ('../views/partials/footer') %>
