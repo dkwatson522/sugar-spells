@@ -1,0 +1,110 @@
+<%- include ('../views/partials/header') %>
+<%- include ('../views/partials/navbar') %>
+
+
+
+<div class="w-full flex flex-row flex-wrap justify-around bg-blue-100 p-2">
+  <div class="max-w-sm rounded-md overflow-hidden shadow-lg bg-white">
+    <!-- <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains"> -->
+    <div class="text-center px-6 py-4">
+      <div class="font-bold text-4xl mb-2">
+        <% if(!currentUser) { %>
+          <h3>
+            Signature Cake Spells
+            <i class="fas fa-magic"></i>
+          </h3>
+        <% } else { %>
+          <h3>
+            Signature Cake Spells
+            <i class="fas fa-magic"></i>
+          </h3>
+          <div class="text-xl text-blue-400 hover:text-blue-200">
+            <a href="/add-flavors#signature">
+              <i class="fas fa-plus-circle"></i>
+              <span>Add Signature Flavor</span>
+            </a>
+          </div>
+        <% } %>
+      </div>
+      <div class="w-full flex flex-col justify-around">
+
+        <% flavors.forEach((flavor) => { %>
+          <% if (flavor.signature.name) { %>
+          <div class="w-full">
+            <div class="text-xl font-bold text-gray-100 bg-purple-400 mb-2">
+              <h5><%= flavor.signature.name %></h5>
+            </div>
+            <p class="text-gray-700 text-base mb-2">
+              <%= flavor.signature.description %>
+            </p>
+          </div>
+          <% } %>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-sm rounded-md overflow-hidden shadow-lg bg-white">
+    <div class="text-center px-6 py-4">
+      <div class="font-bold text-4xl mb-2">
+        <% if(!currentUser) { %>
+          <h3>
+            Build Your Own Magic
+            <i class="fas fa-fill-drip"></i>
+          </h3>
+        <% } else { %>
+          <h3>
+            Build Your Own Magic
+            <i class="fas fa-fill-drip"></i>
+          </h3>
+          <div class="text-xl text-blue-400 hover:text-blue-200">
+            <a href="/add-flavors#build" >
+              <i class="fas fa-plus-circle"></i>
+              <span>Add Build Your Own Ingredient</span>
+            </a>
+          </div>
+        <% } %>
+      </div>
+      <div class="w-full flex flex-col justify-end">
+        <div class="w-full">
+          <div class="text-xl font-bold text-gray-100 bg-pink-400 my-2">
+            <h5>
+              Cake / Sponge
+            </h5>
+          </div>
+          <ul>
+            <% flavors.forEach((flavor) => { %>
+              <li><%= flavor.buildYourOwn.base.ingredient %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="w-full">
+          <div class="text-xl font-bold text-gray-100 bg-pink-400 my-2">
+            <h4>
+              Buttercream / Filling
+            </h4>
+          </div>
+          <ul>
+            <% flavors.forEach((flavor) => { %>
+              <li><%= flavor.buildYourOwn.filling.ingredient %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="w-full">
+          <div class="text-xl font-bold text-gray-100 bg-pink-400 my-2">
+            <h4>
+              Sprinkle in a little fairy dust (extras)
+            </h4>
+          </div>
+          <ul>
+            <% flavors.forEach((flavor) => { %>
+              <li><%= flavor.buildYourOwn.topping.ingredient %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include ('../views/partials/footer') %>

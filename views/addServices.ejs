@@ -1,0 +1,61 @@
+<%- include ('../views/partials/header') %>
+<%- include ('../views/partials/navbar') %>
+<div class="bg-gray-200">
+  <div class="my-2 p-4 text-3xl sm:text-4xl md:text-5xl text-center leading-tight font-medium text-red-500">
+    <h1>Add Services</h1>
+  </div>
+
+  <!-- Add Signature service -->
+  <div class="flex flex-col w-full items-center">
+    <div class="flex justify-around w-full my-4 px-6">
+      <form action="/add-services" method="POST">
+        <div class="shadow sm:rounded-md sm:overflow-hidden">
+          <div class="px-4 py-5 bg-white sm:p-6">
+            <div class="">
+              <label for="service" class="block text-sm font-medium leading-5 text-gray-700">
+                Name
+              </label>
+              <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                <input id="name" name="item" class="p-2 bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 ease-in-out text-2xl sm:leading-5" placeholder="">
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
+                Image URL
+              </label>
+              <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                <input id="name" name="image" class="p-2 bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 ease-in-out text-2xl sm:leading-5" placeholder="">
+              </div>
+            </div>
+            <div class="w-2/5 mt-6">
+              <label for="price" class="block text-sm font-medium leading-5 text-gray-700">Price</label>
+              <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                <div class="flex items-center pointer-events-none">
+                  <span class="text-gray-500 text-2xl sm:leading-5">
+                    $
+                  </span>
+                </div>
+                <input id="price" name="price" class="bg-gray-400 p-2 form-input block text-2xl sm:leading-5 rounded-md" placeholder="0.00" aria-describedby="price-currency">
+                <div class="flex items-center pointer-events-none">
+                  <span class="text-gray-500 text-2xl sm:leading-5" id="price-currency">
+                    USD
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white flex justify-start sm:p-6">
+            <span class="rounded-md shadow-sm">
+              <button type="submit"
+                class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                Add
+              </button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include ('../views/partials/footer') %>
