@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const Schema = mongoose.Schema;
+const slug = require('slugs');
 
 
-const faqSchema = new mongoose.Schema({
+const faqSchema = new Schema({
   question: {
     type:String,
     unique: true,

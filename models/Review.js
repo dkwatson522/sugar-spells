@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const Schema = mongoose.Schema;
+const slug = require('slugs');
 
-const reviewSchema = new mongoose.Schema({
+const reviewSchema = new Schema({
   text:String,
   reviewer: {
     id: {
