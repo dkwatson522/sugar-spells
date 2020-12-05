@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const Schema = mongoose.Schema;
+const slug = require('slugs');
 
-const flavorSchema = new mongoose.Schema({
+const flavorSchema = new Schema({
   signature: {
     name: {
       type: String,

@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+mongoose.Promise = global.Promise;
+const slug = require('slugs');
 const validator = require('validator');
 
 const contactSchema = new Schema({

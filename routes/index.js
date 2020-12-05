@@ -6,7 +6,6 @@ const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', storeController.homePage);
-// router.get('/add', authController.isLoggedIn, storeController.addStore);
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
@@ -21,7 +20,10 @@ router.post('/register',
 
 router.get('/logout', authController.logout);
 
-router.get('/faqs', storeController.faqsPage);
+//FAQ routes
+router.get('/faqs', storeController.getFaqs);
+router.get('/add-faq', storeController.addFaq);
+router.post('/add-faq', storeController.createFaq)
 
 // Contact routes
 router.get('/contact', storeController.contactPage);

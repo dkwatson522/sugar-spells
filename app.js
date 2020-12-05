@@ -19,8 +19,8 @@ require('./handlers/passport');
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our pug files
-app.set('view engine', 'ejs'); // we use the engine pug, mustache or EJS work great too
+app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our ejs files
+app.set('view engine', 'ejs');
 
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,7 +49,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
+// The flash middleware let's us use req.flash('error', 'Something went wrong'), to pass to next page
 app.use(flash());
 
 // pass variables to our templates + all requests
@@ -78,10 +78,10 @@ app.use(errorHandlers.notFound);
 app.use(errorHandlers.flashValidationErrors);
 
 // Otherwise this was a really bad error we didn't expect! Shoot eh
-// if (app.get('env') === 'development') {
-//   /* Development Error Handler - Prints stack trace */
-//   app.use(errorHandlers.developmentErrors);
-// }
+if (app.get('env') === 'development') {
+  /* Development Error Handler - Prints stack trace */
+  app.use(errorHandlers.developmentErrors);
+}
 
 // production error handler
 // app.use(errorHandlers.productionErrors);

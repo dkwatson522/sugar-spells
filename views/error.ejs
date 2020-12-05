@@ -1,1 +1,10 @@
-<h1>error!!!</h1>
+<%- include ('../views/partials/header') %>
+<%- include ('../views/partials/navbar') %>
+
+<div class="p-12">
+  <h2><%= message %></h2>
+  <p><%= status %></p>
+  <p><%= stackHighlighted %></p>
+</div>
+
+<%- include ('../views/partials/footer') %>
