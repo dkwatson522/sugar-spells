@@ -9,14 +9,12 @@ const flavorSchema = new Schema({
       type: String,
       unique: true,
       lowercase: true,
-      trim: true,
-      required: 'Please supply a flavor name'
+      trim: true
     },
     description: {
       type: String,
       lowercase: true,
-      trim: true,
-      required: 'Please supply a description'
+      trim: true
     }
   },
   buildYourOwn: {
@@ -25,8 +23,7 @@ const flavorSchema = new Schema({
         type: String,
         unique: true,
         lowercase: true,
-        trim: true,
-        required: 'Please supply an ingredient'
+        trim: true
       }
     },
     filling: {
@@ -34,8 +31,7 @@ const flavorSchema = new Schema({
         type: String,
         unique: true,
         lowercase: true,
-        trim: true,
-        required: 'Please supply an ingredient'
+        trim: true
       }
     },
     topping: {
@@ -43,8 +39,7 @@ const flavorSchema = new Schema({
         type: String,
         unique: true,
         lowercase: true,
-        trim: true,
-        required: 'Please supply an ingredient'
+        trim: true
       }
     }
   }

@@ -29,6 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Allows us to override POST Method with PUT and DELETE verb
+app.use(methodOverride("_method"));
+
 // Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
 app.use(expressValidator());
 
@@ -56,8 +59,8 @@ app.use(flash());
 app.use((req, res, next) => {
   res.locals.h = helpers;
   res.locals.flashes = req.flash();
-  // res.locals.user = req.user || null;
-  res.locals.currentUser = req.user;
+  res.locals.user = req.user || null;
+  // res.locals.curretUser = req.user;
   res.locals.currentPath = req.path;
   next();
 });

@@ -4,6 +4,8 @@ const Service = mongoose.model('Service');
 const User = mongoose.model('User');
 const FAQ = mongoose.model('FAQ');
 const Contact = mongoose.model('Contact')
+const Shop = mongoose.model('Shop')
+const mail = require('../handlers/mail');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
@@ -21,7 +23,9 @@ const multerOptions = {
 
 // HOMPAGE
 exports.homePage = (req, res) => {
-  res.render('index', { title: 'Home'});
+  req.flash('success', 'welcome home')
+  // console.log(req.flash())
+  res.render('index', { title: 'Home' });
 };
 
 // FLAVORS
@@ -33,9 +37,23 @@ exports.addFlavor = (req, res) => {
   res.render('addFlavors', { title: 'Add New Flavor'})
 };
 exports.createFlavor = async (req, res) => {
-  // req.body.author = req.user._id;
-  console.log(req.body)
-  const store = await (new Flavor(req.body)).save();
+  const flavor = await (new Flavor(req.body)).save();
+  req.flash('success', `Successfully created new flavor!`)
+  res.redirect('/flavors');
+};
+exports.showFlavor = async (req, res) => {
+  const { id } = req.params;
+  const flavor = await Flavor.findById(id);
+  res.render('editFlavor', {title: 'Edit Flavor', flavor})
+}
+exports.updateFlavor = async (req,res) => {
+  const { id } = req.params;
+  const flavor = await Flavor.findByIdAndUpdate(id, { ...req.body }, { new: true } );
+  res.redirect('/flavors');
+}
+exports.deleteFlavor = async (req, res) => {
+  const { id } = req.params;
+  const flavor = await Flavor.findByIdAndDelete(id);
   res.redirect('/flavors');
 };
 
@@ -51,6 +69,21 @@ exports.createService = async (req, res) => {
   const service = await (new Service(req.body)).save();
   res.redirect('/services');
 };
+exports.showService = async (req, res) => {
+  const { id } = req.params;
+  const service = await Service.findById(id);
+  res.render('editService', {title: 'Edit Service', service})
+}
+exports.updateService = async (req,res) => {
+  const { id } = req.params;
+  const service = await Service.findByIdAndUpdate(id, { ...req.body }, { new: true } );
+  res.redirect('/services');
+}
+exports.deleteService = async (req, res) => {
+  const { id } = req.params;
+  const faq = await Service.findByIdAndDelete(id);
+  res.redirect('/services');
+};
 
 // FAQs
 exports.getFaqs = async (req, res) => {
@@ -64,37 +97,51 @@ exports.createFaq = async (req, res) => {
   const faq = await (new FAQ(req.body)).save();
   res.redirect('/faqs')
 }
+exports.showFaq = async (req, res) => {
+  const { id } = req.params;
+  const faq = await FAQ.findById(id);
+  res.render('editFaq', {title: 'Edit Faq', faq})
+}
+exports.updateFaq = async (req,res) => {
+  const { id } = req.params;
+  const faq = await FAQ.findByIdAndUpdate(id, { ...req.body }, { new: true } );
+  res.redirect('/faqs');
+}
+exports.deleteFaq = async (req, res) => {
+  const { id } = req.params;
+  const faq = await FAQ.findByIdAndDelete(id);
+  res.redirect('/faqs');
+};
 
 // CONTACTS
-exports.contactPage = (req, res) => {
-  res.render('contact', { title: 'Contact Us'})
+exports.contactPage = async (req, res) => {
+  const services = await Service.find();
+  res.render('contact', { title: 'Contact Us', services})
 };
 exports.createMessage = async (req, res) => {
-  const message = await (new Contact(req.body)).save();
+  const contact = await (new Contact(req.body)).save();
+  // await mail.sendMail
+  const message = req.body
+  const deliveryDate = (message.deliveryDate) || 'TBD'
+  // console.log(messageInterests)
+  await mail.send({
+    email: message.email,
+    message: message.message,
+    subject: message.subject,
+    name: message.name,
+    deliveryDate: deliveryDate,
+    interests: message.interests
+  });
   res.redirect('/');
 };
+
 
 // ABOUT
 exports.aboutPage = (req, res) => {
   res.render('about', { title: 'About the Baker'})
 };
 
-
-
-exports.upload = multer(multerOptions).single('photo');
-
-exports.resize = async (req, res, next) => {
-  // check if there is no new file to resize
-  if (!req.file) {
-    next(); // skip to the next middleware
-    return;
-  }
-  const extension = req.file.mimetype.split('/')[1];
-  req.body.photo = `${uuid.v4()}.${extension}`;
-  // now we resize
-  const photo = await jimp.read(req.file.buffer);
-  await photo.resize(800, jimp.AUTO);
-  await photo.write(`./public/uploads/${req.body.photo}`);
-  // once we have written the photo to our filesystem, keep going!
-  next();
+// Cake care
+exports.cakeCare = (req, res) => {
+  res.render('cakeCare', {title: 'Cake Care'})
 };

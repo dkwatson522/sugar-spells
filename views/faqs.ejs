@@ -8,7 +8,7 @@
         Most Frequently Asked Questions
       </h2>
       <div class=" text-center font-bold text-4xl mb-2">
-        <% if(currentUser) { %>
+        <% if(user) { %>
           <div class="text-xl text-blue-400 hover:text-blue-200">
             <a href="/add-faq">
               <i class="fas fa-plus-circle"></i>
@@ -23,24 +23,32 @@
             <% if (faq) { %>
               <div>
                 <dt class="text-lg leading-7">
-                  <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 1 ? null : 1)" class="text-left w-full flex justify-between items-start text-gray-400 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150"
-                    x-bind:aria-expanded="openPanel === 1">
-                    <span class="uppercase font-medium text-gray-900">
+                  <span class="uppercase font-medium bg-red-200 text-gray-900">
                       <%= faq.question %>
-                    </span>
-                    <span class="ml-6 h-7 flex items-center">
-                      <svg class="h-6 w-6 transform rotate-0" x-description="Heroicon name: chevron-down" x-state:on="Open" x-state:off="Closed" x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                      </svg>
-                    </span>
-                  </button>
+                  </span>
                 </dt>
-                <dd class="my-4 pr-12" x-show="openPanel === 1" style="display: none;">
-                  <p class="uppercase  text-base leading-6 text-gray-500">
+                <dd class="mt-4 pr-12">
+                  <span class="uppercase  text-base leading-6 text-gray-700">
                     <%= faq.response %>
-                  </p>
+                  </span>
+                  <% if(faq.reference) { %>
+                    <span>
+                      <a class="underline text-blue-400" href="<%=faq.reference%>" target="_blank">
+                        HERE
+                      </a>
+                    </span>
+                    <% } %>
                 </dd>
+                <% if(user) { %>
+                  <div class="flex justify-end">
+                    <form class="p-2" action="/faqs/<%= faq._id %>?_method=DELETE" method="POST">
+                      <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                    </form>
+                    <form class="p-2" action="/faqs/<%= faq._id %>" method="GET">
+                      <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                    </form>
+                  </div>
+                <% } %>
               </div>
             <% } %>
           <% }) %>
