@@ -1,14 +1,11 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
-
-
-
 <div class="w-full flex flex-row flex-wrap justify-around bg-blue-100 p-2">
   <div class="max-w-sm rounded-md overflow-hidden shadow-lg bg-white">
     <!-- <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains"> -->
     <div class="text-center px-6 py-4">
       <div class="font-bold text-4xl mb-2">
-        <% if(!currentUser) { %>
+        <% if(!user) { %>
           <h3>
             Signature Cake Spells
             <i class="fas fa-magic"></i>
@@ -31,8 +28,18 @@
         <% flavors.forEach((flavor) => { %>
           <% if (flavor.signature.name) { %>
           <div class="w-full">
-            <div class="text-xl font-bold text-gray-100 bg-purple-400 mb-2">
+            <div class="flex justify-around items-center text-xl font-bold text-gray-100 bg-purple-400 mb-2 capitalize">
               <h5><%= flavor.signature.name %></h5>
+              <% if(user) { %>
+                <div class="flex justify-end">
+                  <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
+                    <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                  </form>
+                  <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
+                    <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                  </form>
+                </div>
+              <% } %>
             </div>
             <p class="text-gray-700 text-base mb-2">
               <%= flavor.signature.description %>
@@ -46,7 +53,7 @@
   <div class="max-w-sm rounded-md overflow-hidden shadow-lg bg-white">
     <div class="text-center px-6 py-4">
       <div class="font-bold text-4xl mb-2">
-        <% if(!currentUser) { %>
+        <% if(!user) { %>
           <h3>
             Build Your Own Magic
             <i class="fas fa-fill-drip"></i>
@@ -73,7 +80,19 @@
           </div>
           <ul>
             <% flavors.forEach((flavor) => { %>
-              <li><%= flavor.buildYourOwn.base.ingredient %></li>
+              <li class="flex justify-between items-center text-gray-700">
+                <span class="text-left"><%= flavor.buildYourOwn.base.ingredient %></span>
+                <% if(flavor.buildYourOwn.base.ingredient && user) { %>
+                  <div class="flex justify-end">
+                    <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
+                      <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                    </form>
+                    <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
+                      <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                    </form>
+                  </div>
+                <% } %>
+              </li>
             <% }) %>
           </ul>
         </div>
@@ -85,7 +104,19 @@
           </div>
           <ul>
             <% flavors.forEach((flavor) => { %>
-              <li><%= flavor.buildYourOwn.filling.ingredient %></li>
+              <li class="flex justify-between items-center text-gray-700">
+                <span class="text-left"><%= flavor.buildYourOwn.filling.ingredient %></span>
+                <% if(flavor.buildYourOwn.filling.ingredient && user) { %>
+                  <div class="flex justify-end">
+                    <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
+                      <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                    </form>
+                    <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
+                      <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                    </form>
+                  </div>
+                <% } %>
+              </li>
             <% }) %>
           </ul>
         </div>
@@ -97,7 +128,19 @@
           </div>
           <ul>
             <% flavors.forEach((flavor) => { %>
-              <li><%= flavor.buildYourOwn.topping.ingredient %></li>
+              <li class="flex justify-between items-center text-gray-700">
+                <span class="text-left"><%= flavor.buildYourOwn.topping.ingredient %></span>
+                <% if(flavor.buildYourOwn.topping.ingredient && user) { %>
+                  <div class="flex justify-end">
+                    <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
+                      <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                    </form>
+                    <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
+                      <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                    </form>
+                  </div>
+                <% } %>
+              </li>
             <% }) %>
           </ul>
         </div>

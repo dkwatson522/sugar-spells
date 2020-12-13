@@ -2,11 +2,11 @@
 <%- include ('../views/partials/navbar') %>
 <div class="w-full flex justify-around">
   <div class="bg-gray-200 w-full py-4">
-    <!-- Add Frequently Asked Question -->
+    <!-- Edit Frequently Asked Question -->
     <div id="signature" class="w-full px-6">
       <div class="flex flex-col">
         <div class="">
-          <form class="flex justify-around w-full px-6" action="/add-faq" method="POST">
+          <form class="flex justify-around w-full px-6" action="/faqs/<%=faq._id%>?_method=PUT" method="POST">
             <div class="bg-white shadow sm:rounded-md sm:overflow-hidden">
               <div class="px-4 py-5 sm:p-6">
 <!-- Question -->
@@ -17,7 +17,7 @@
                       Question
                     </label>
                     <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                      <input id="question" name="question" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+                      <input id="question" name="question" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="" value="<%= faq.question %>">
                     </div>
                   </div>
                 </div>
@@ -27,7 +27,7 @@
                     Response
                   </label>
                   <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                    <textarea id="response" name="response" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder=""></textarea>
+                    <textarea id="response" name="response" rows="5" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder=""><%= faq.response %></textarea>
                   </div>
                   <p class="mt-2 text-sm text-gray-500">
                     Brief description of the response to be displayed to the customer.
@@ -39,7 +39,7 @@
                     Reference
                   </label>
                   <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                    <input id="reference" name="reference" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+                    <input id="reference" name="reference" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="" value="<%= faq.reference %>">
                   </div>
                   <p class="mt-2 text-sm text-gray-500">
                     Input URL for reference.

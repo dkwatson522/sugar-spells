@@ -7,11 +7,11 @@ const validator = require('validator');
 const contactSchema = new Schema({
   email: {
     type: String,
-    unique: true,
+    // unique: true,
     lowercase: true,
     trim: true,
     validate: [validator.isEmail, 'Invalid Email Address'],
-    required: 'Please Supply an email address'
+    required: 'Please supply an email address'
   },
   name: {
     type: String,
@@ -34,7 +34,7 @@ const contactSchema = new Schema({
   },
   deliveryDate: {
     type: Date,
-    required: 'Please supply a delivery date!'
+    // required: 'Please supply a delivery date!'
   }
 })
 

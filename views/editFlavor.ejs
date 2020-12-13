@@ -3,53 +3,54 @@
 <div class="w-full flex justify-around">
   <div class="bg-gray-200 w-full">
     <div class="my-2 p-4 text-3xl sm:text-4xl md:text-5xl text-center leading-tight font-medium text-red-500">
-      <h1>Add Flavors</h1>
+      <h1>Edit Flavors</h1>
     </div>
 
-    <!-- Add Signature Flavor -->
-    <div id="signature" class="w-full px-6">
-      <div class="flex flex-col">
-        <div class="">
-          <form class="flex justify-around w-full px-6" action="/add-flavors" method="POST">
-            <div class="bg-white shadow sm:rounded-md sm:overflow-hidden">
-              <div class="px-4 py-5 sm:p-6">
-                <div class="mb-4 text-xl">
-                  <span>Signature Flavor</span>
-                  <div class="">
-                    <label for="flavor" class="block text-sm font-medium leading-5 text-gray-700">
-                      Name
-                    </label>
-                    <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                      <input id="name" name="signature[name]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+    <!-- Edit Signature Flavor -->
+      <div id="signature" class="w-full px-6">
+        <div class="flex flex-col">
+          <div class="">
+            <form class="flex justify-around w-full px-6" action="/flavors/<%=flavor._id%>?_method=PUT" method="POST">
+              <div class="bg-white shadow sm:rounded-md sm:overflow-hidden">
+                <div class="px-4 py-5 sm:p-6">
+                  <div class="mb-4 text-xl">
+                    <span>Signature Flavor</span>
+                    <div class="">
+                      <label for="flavor" class="block text-sm font-medium leading-5 text-gray-700">
+                        Name
+                      </label>
+                      <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                        <input id="name" name="signature[name]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="" value="<%=flavor.signature.name%>">
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="mt-6">
-                  <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
-                    Description
-                  </label>
-                  <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                    <textarea id="description" name="signature[description]" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder=""></textarea>
+                  <div class="mt-6">
+                    <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
+                      Description
+                    </label>
+                    <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                      <textarea id="description" name="signature[description]" rows="6" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder=""><%=flavor.signature.description%></textarea>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-500">
+                      Brief description of the flavor to be displayed to the customer.
+                    </p>
                   </div>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Brief description of the flavor to be displayed to the customer.
-                  </p>
+                </div>
+                <div class="bg-white flex justify-start sm:p-6">
+                  <span class="rounded-md shadow-sm">
+                    <button type="submit"
+                      class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                      Add
+                    </button>
+                  </span>
                 </div>
               </div>
-              <div class="bg-white flex justify-start sm:p-6">
-                <span class="rounded-md shadow-sm">
-                  <button type="submit"
-                    class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                    Add
-                  </button>
-                </span>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+
 
     <!-- Add Build Your Own Ingredient -->
     <div id="build" class="w-full px-6">
@@ -72,7 +73,7 @@
                                   Base
                                 </label>
                                 <div class="mt-1 flex rounded-md shadow-sm">
-                                  <input id="base" name="buildYourOwn[base][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+                                  <input id="base" name="buildYourOwn[base][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="" value="<%=flavor.buildYourOwn.base.ingredient%>">
                                 </div>
                               </div>
                             </div>
@@ -101,7 +102,7 @@
                                 Filling
                               </label>
                               <div class="mt-1 flex rounded-md shadow-sm">
-                                <input id="filling" name="buildYourOwn[filling][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+                                <input id="filling" name="buildYourOwn[filling][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="" value="<%=flavor.buildYourOwn.filling.ingredient%>">
                               </div>
                             </div>
                           </div>
@@ -129,7 +130,7 @@
                                 Topping
                               </label>
                               <div class="mt-1 flex rounded-md shadow-sm">
-                                <input id="topping" name="buildYourOwn[topping][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+                                <input id="topping" name="buildYourOwn[topping][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="" value="<%=flavor.buildYourOwn.topping.ingredient%>">
                               </div>
                             </div>
                           </div>
@@ -138,16 +139,14 @@
                           <span class="inline-flex rounded-md shadow-sm">
                             <button type="submit"
                               class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                              Add
+                              Save
                             </button>
                           </span>
                         </div>
                       </div>
                     </form>
-
                   </div>
                 </div>
-
               </div>
             </div>
           </form>

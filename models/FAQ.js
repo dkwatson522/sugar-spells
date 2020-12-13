@@ -18,6 +18,10 @@ const faqSchema = new Schema({
     lowercase: true,
     trim: true,
     required: 'Please provide a response!'
+  },
+  reference: {
+    type: String,
+    trim: true
   }
 })
 
