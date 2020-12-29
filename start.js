@@ -20,6 +20,7 @@ require('./models/Flavor');
 require('./models/Service');
 require('./models/User');
 require('./models/Review');
+require('./models/Order');
 
 // Start app
 const app = require('./app');

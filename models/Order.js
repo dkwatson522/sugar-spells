@@ -15,12 +15,12 @@ const orderSchema = new Schema({
     required: 'This field is required'
   },
   name: {
-    first{
+    first: {
       type: String,
       lowercase: true,
       trim: true
     },
-    last {
+    last: {
       type: String,
       lowercase: true,
       trim: true
@@ -53,9 +53,35 @@ const orderSchema = new Schema({
   },
   deliveryType: {
     type: String,
-
-  }
+    required: 'This field is required'
+  },
+  interests: {
+    service: {
+      type: String,
+      required: 'This field is required'
+    },
+    cakeTiers: {
+      type: Number
+    },
+    flowers: {
+      type: String
+    },
+    quantity: {
+      type: Number
+    }
+  },
+  photo: String,
+  addOn: [String],
+  description: {
+    type: String,
+    trim: true,
+    required: 'This field is required'
+  },
+  created: {
+    type: Date,
+    default: Date.now
+  },
 
 })
 
-module.exports = mongoose.model("Shop", shopSchema)
+module.exports = mongoose.model("Order", orderSchema)
