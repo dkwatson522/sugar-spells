@@ -54,4 +54,7 @@ router.get('/about', storeController.aboutPage)
 // Cake Cake Route
 router.get('/cake-care', storeController.cakeCare)
 
+// Order Route
+router.get('/order', storeController.orderForm);
+
  module.exports = router;

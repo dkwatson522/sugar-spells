@@ -4,7 +4,7 @@ const Service = mongoose.model('Service');
 const User = mongoose.model('User');
 const FAQ = mongoose.model('FAQ');
 const Contact = mongoose.model('Contact')
-const Shop = mongoose.model('Shop')
+const Order = mongoose.model('Order')
 const mail = require('../handlers/mail');
 const multer = require('multer');
 const jimp = require('jimp');
@@ -141,7 +141,15 @@ exports.aboutPage = (req, res) => {
   res.render('about', { title: 'About the Baker'})
 };
 
-// Cake care
+
+// CAKE CARE
 exports.cakeCare = (req, res) => {
   res.render('cakeCare', {title: 'Cake Care'})
 };
+
+
+// ORDERS
+exports.orderForm = async (req, res) => {
+  const services = await Service.find();
+  res.render('order', {title: 'Create an Order', services} )
+}
