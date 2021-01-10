@@ -16,4 +16,4 @@ exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Some details about the site
 // exports.siteName = `Sugar Spell – A Little Magic in Every Bite!`;
-exports.siteName = 'Sugar Spell!';
+exports.siteName = 'Sugar Spell – A Little Magic in Every Bite!';
