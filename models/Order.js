@@ -8,7 +8,6 @@ const validator = require('validator');
 const orderSchema = new Schema({
   email: {
     type: String,
-    // unique: true,
     lowercase: true,
     trim: true,
     validate: [validator.isEmail, 'Invalid Email Address'],
@@ -51,27 +50,39 @@ const orderSchema = new Schema({
     trim: true,
     required: 'This field is required'
   },
-  deliveryType: {
-    type: String,
-    required: 'This field is required'
-  },
-  interests: {
-    service: {
+  delivery: {
+    type: {
       type: String,
       required: 'This field is required'
     },
-    cakeTiers: {
-      type: Number
-    },
-    flowers: {
+    address: {
       type: String
-    },
-    quantity: {
-      type: Number
     }
   },
+  treat:[{
+    name: {
+      type: String,
+      required: 'Please choose a treat!'
+    },
+    amount: {
+      type: Number,
+      required: 'Please provide a treat amount'
+    },
+    cakeTierAmount: Number,
+    flavorType: {
+      signature: String,
+      buildYourOwn: {
+        base: String,
+        filling: String,
+        topping: String
+      }
+    },
+    frosting: String,
+    flavor: String,
+    flowerType: String
+  }],
+
   photo: String,
-  addOn: [String],
   description: {
     type: String,
     trim: true,

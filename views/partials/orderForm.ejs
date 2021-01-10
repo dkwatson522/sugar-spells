@@ -1,212 +1,1011 @@
-<div class="w-full flex justify-around">
-  <form class="flex justify-around w-2/3 px-6" action="/new-order" method="POST">
+<div class="w-full flex-col justify-around px-48">
+  <form class="flex justify-around px-6" action="/new-order" method="POST">
     <div class="bg-white shadow sm:rounded-md sm:overflow-hidden">
-      <div class="px-4 py-5 sm:p-6">
-        <span class="text-lg">Create an Order Inquiry</span>
-        <!-- email input -->
-        <div class="mb-4 text-xl">
-          <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
-            Email
-          </label>
-          <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-            <input id="email" name="email" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder="">
+      <div class="px-4 py-5 sm:p-6 flex-col">
+        <div class="">
+          <div class="font-bold text-lg">
+            <h2>Tell Me About Yourself</h2>
           </div>
-          <span class="text-xs text-red-400">*Required</span>
+          <!-- Email & Phone # Input -->
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- email input -->
+            <div class="flex-col my-2 md:pr-2">
+              <label for="email" class="text-sm font-base leading-5 text-gray-700">
+                Email
+              </label>
+              <div class="mt-1 rounded-md">
+                <input id="email" name="email" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="Enter Email">
+              </div>
+            </div>
+            <!-- phone number input -->
+            <div class="flex-col my-2 md:pl-2">
+              <label for="phone number" class="text-sm font-base leading-5 text-gray-700">
+                Phone Number
+              </label>
+              <div class="mt-1 rounded-md">
+                <input name="phoneNumber" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="(xxx)-xxx-xxxx">
+              </div>
+            </div>
+          </div>
+
+          <!-- name input -->
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- first name input -->
+            <div class="flex-col my-2 md:pr-2">
+              <label for="firstName" class="text-sm font-base leading-5 text-gray-700">
+                First Name
+              </label>
+              <div class="mt-1 rounded-md">
+                <input id="firstName" name="name[first]" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="Sugar">
+              </div>
+            </div>
+            <!-- phone number input -->
+            <div class="flex-col my-2 md:pl-2">
+              <label for="lastName" class="text-sm font-base leading-5 text-gray-700">
+                Last Name
+              </label>
+              <div class="mt-1 rounded-md">
+                <input name="name[last]" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="Spells">
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- event date input -->
+            <div class="flex-col my-2 md:pr-2">
+              <label for="eventDate" class="text-sm font-base leading-5 text-gray-700">
+                Event Date
+              </label>
+              <div class="mt-1 rounded-md">
+                <input name="eventDate" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" id="datepicker" placeholder="Select a Date">
+              </div>
+            </div>
+            <!-- event time input -->
+            <div class="flex-col my-2 md:pl-2">
+              <label for="lastName" class="text-sm font-base leading-5 text-gray-700">
+                Event Time
+              </label>
+              <div class="mt-1 rounded-md">
+                <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="readyTime" id="time">
+                  <option value="8:00 AM">8:00 AM</option>
+                  <option value="8:15 AM">8:15 AM</option>
+                  <option value="8:30 AM">8:30 AM</option>
+                  <option value="8:45 AM">8:45 AM</option>
+
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="9:15 AM">9:15 AM</option>
+                  <option value="9:30 AM">9:30 AM</option>
+                  <option value="9:45 AM">9:45 AM</option>
+
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="10:15 AM">10:15 AM</option>
+                  <option value="10:30 AM">10:30 AM</option>
+                  <option value="10:45 AM">10:45 AM</option>
+
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="11:15 AM">11:15 AM</option>
+                  <option value="11:30 AM">11:30 AM</option>
+                  <option value="11:45 AM">11:45 AM</option>
+
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="12:15 PM">12:15 PM</option>
+                  <option value="12:30 PM">12:30 PM</option>
+                  <option value="12:45 PM">12:45 PM</option>
+
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="1:15 PM">1:15 PM</option>
+                  <option value="1:30 PM">1:30 PM</option>
+                  <option value="1:45 PM">1:45 PM</option>
+
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="2:15 PM">2:15 PM</option>
+                  <option value="2:30 PM">2:30 PM</option>
+                  <option value="2:45 PM">2:45 PM</option>
+
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="3:15 PM">3:15 PM</option>
+                  <option value="3:30 PM">3:30 PM</option>
+                  <option value="3:45 PM">3:45 PM</option>
+
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="4:15 PM">4:15 PM</option>
+                  <option value="4:30 PM">4:30 PM</option>
+                  <option value="4:45 PM">4:45 PM</option>
+
+                  <option value="5:00 PM">5:00 PM</option>
+                  <option value="5:15 PM">5:15 PM</option>
+                  <option value="5:30 PM">5:30 PM</option>
+                  <option value="5:45 PM">5:45 PM</option>
+
+                  <option value="6:00 PM">6:00 PM</option>
+                  <option value="6:15 PM">6:15 PM</option>
+                  <option value="6:30 PM">6:30 PM</option>
+                  <option value="6:45 PM">6:45 PM</option>
+
+                  <option value="7:00 PM">7:00 PM</option>
+                  <option value="7:15 PM">7:15 PM</option>
+                  <option value="7:30 PM">7:30 PM</option>
+                  <option value="7:45 PM">7:45 PM</option>
+
+                  <option value="8:00 PM">8:00 PM</option>
+                  <option value="8:15 PM">8:15 PM</option>
+                  <option value="8:30 PM">8:30 PM</option>
+                  <option value="8:45 PM">8:45 PM</option>
+
+                  <option value="9:00 PM">9:00 PM</option>
+                  <option value="9:15 PM">9:15 PM</option>
+                  <option value="9:30 PM">9:30 PM</option>
+                  <option value="9:45 PM">9:45 PM</option>
+                  <option value="10:00 PM">10:00 PM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- event type input -->
+            <div class="flex-col my-2 md:pr-2">
+              <label for="eventType" class="text-sm font-base leading-5 text-gray-700">
+                Event Type
+              </label>
+              <div class="mt-1 rounded-md">
+                <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="eventType">
+                  <option class="" value="wedding">Wedding</option>
+                  <option class="" value="birthday">Birthday</option>
+                  <option class="" value="anniversary">Anniversary</option>
+                  <option class="" value="christening">Christening</option>
+                  <option class="" value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <!-- guest amount input -->
+            <div class="flex-col my-2 md:pl-2">
+              <label for="numberOfGuests" class="text-sm font-base leading-5 text-gray-700">
+                How many people guests will there be?
+              </label>
+              <div class="mt-1 rounded-md">
+                <input name="numberOfGuests" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="12">
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- delivery type input -->
+            <div class="flex-col my-2 md:pr-2">
+              <label for="deliveryType" class="text-sm font-base leading-5 text-gray-700">
+                How would you like to receive your order? (Delivery is required for cakes more than 2 tiers**)
+              </label>
+              <div class="mt-1 rounded-md">
+                <div class="" id="delivery">
+                  <input type="radio" name="deliveryType" value="pick up"><span class="pl-2">Pick Up</span><br>
+                  <input type="radio" name="deliveryType" value="delivery"><span class="pl-2">Delivery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- delivery address *optional* input -->
+            <div class="flex-col my-2 md:pl-2" id="delivery-addressInput">
+              <label for="numberOfGuests" class="text-sm font-base leading-5 text-gray-700">
+                Venue (Name and address)
+              </label>
+              <div class="mt-1 rounded-md">
+                <textarea id="description" name="delivery[address]" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder=""></textarea>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- name input -->
-        <div class="mb-4 text-xl">
-          <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
-              Name
-          </label>
-          <div class="mt-1 flex justify-between">
-              <!-- first name -->
-            <input id="name" name="name[first]" class="bg-gray-400 form-input w-1/3 rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder="First Name">
-              <!-- last name -->
-            <input id="name" name="name[last]" class="bg-gray-400 form-input w-1/3 rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder="Last Name">
-          </div>
-          <span class="text-xs text-red-400">*Required</span>
-        </div>
-
-        <!-- phone number input -->
-        <div class="mb-4 text-xl">
-          <label for="phone number" class="block text-sm font-medium leading-5 text-gray-700">
-              Phone Number
-            </label>
-            <div class="mt-1 flex justify-start">
-              <input id="name" name="phoneNumber" class="bg-gray-400 form-input  block w-1/3 rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder="(xxx)-xxx-xxxx">
-          </div>
-        </div>
-        <!-- event information -->
-        <div class="w-full flex justify-between">
-          <!-- event date -->
-          <div class="mb-4 text-xl mr-2">
-            <label class="block text-sm font-medium leading-5 text-gray-700">
-              Select Date
-            </label>
-            <input class="form-input py-2 px-3  text-gray-700 text-lg w-full bg-gray-400 rounded" type="text" name="eventDate" id="datepicker" placeholder="Select a Date">
-            <span class="text-xs text-red-400">*Required</span>
-          </div>
-          <!-- event time -->
-          <div class="mb-4 text-xl mx-2">
-            <label class="block text-sm font-medium leading-5 text-gray-700">
-              Select Time
-            </label>
-            <select class="form-input py-2 px-3  text-gray-700 text-lg w-full bg-gray-400 rounded" name="time" id="time">
-              <option value="8:00 AM">8:00 AM</option>
-              <option value="8:15 AM">8:15 AM</option>
-              <option value="8:30 AM">8:30 AM</option>
-              <option value="8:45 AM">8:45 AM</option>
-
-              <option value="9:00 AM">9:00 AM</option>
-              <option value="9:15 AM">9:15 AM</option>
-              <option value="9:30 AM">9:30 AM</option>
-              <option value="9:45 AM">9:45 AM</option>
-
-              <option value="10:00 AM">10:00 AM</option>
-              <option value="10:15 AM">10:15 AM</option>
-              <option value="10:30 AM">10:30 AM</option>
-              <option value="10:45 AM">10:45 AM</option>
-
-              <option value="11:00 AM">11:00 AM</option>
-              <option value="11:15 AM">11:15 AM</option>
-              <option value="11:30 AM">11:30 AM</option>
-              <option value="11:45 AM">11:45 AM</option>
-
-              <option value="12:00 PM">12:00 PM</option>
-              <option value="12:15 PM">12:15 PM</option>
-              <option value="12:30 PM">12:30 PM</option>
-              <option value="12:45 PM">12:45 PM</option>
-
-              <option value="1:00 PM">1:00 PM</option>
-              <option value="1:15 PM">1:15 PM</option>
-              <option value="1:30 PM">1:30 PM</option>
-              <option value="1:45 PM">1:45 PM</option>
-
-              <option value="2:00 PM">2:00 PM</option>
-              <option value="2:15 PM">2:15 PM</option>
-              <option value="2:30 PM">2:30 PM</option>
-              <option value="2:45 PM">2:45 PM</option>
-
-              <option value="3:00 PM">3:00 PM</option>
-              <option value="3:15 PM">3:15 PM</option>
-              <option value="3:30 PM">3:30 PM</option>
-              <option value="3:45 PM">3:45 PM</option>
-
-              <option value="4:00 PM">4:00 PM</option>
-              <option value="4:15 PM">4:15 PM</option>
-              <option value="4:30 PM">4:30 PM</option>
-              <option value="4:45 PM">4:45 PM</option>
-
-              <option value="5:00 PM">5:00 PM</option>
-              <option value="5:15 PM">5:15 PM</option>
-              <option value="5:30 PM">5:30 PM</option>
-              <option value="5:45 PM">5:45 PM</option>
-
-              <option value="6:00 PM">6:00 PM</option>
-              <option value="6:15 PM">6:15 PM</option>
-              <option value="6:30 PM">6:30 PM</option>
-              <option value="6:45 PM">6:45 PM</option>
-
-              <option value="7:00 PM">7:00 PM</option>
-              <option value="7:15 PM">7:15 PM</option>
-              <option value="7:30 PM">7:30 PM</option>
-              <option value="7:45 PM">7:45 PM</option>
-
-              <option value="8:00 PM">8:00 PM</option>
-              <option value="8:15 PM">8:15 PM</option>
-              <option value="8:30 PM">8:30 PM</option>
-              <option value="8:45 PM">8:45 PM</option>
-
-              <option value="9:00 PM">9:00 PM</option>
-              <option value="9:15 PM">9:15 PM</option>
-              <option value="9:30 PM">9:30 PM</option>
-              <option value="9:45 PM">9:45 PM</option>
-              <option value="10:00 PM">10:00 PM</option>
-            </select>
-            <span class="text-xs text-red-400">*Required</span>
-          </div>
-          <!-- event type -->
-          <div class="mb-4 text-xl ml-2">
-            <label class="block text-sm font-medium leading-5 text-gray-700">
-              Event Type
-            </label>
-            <select class="form-input py-2 px-3  text-gray-700 text-lg w-full bg-gray-400 rounded" name="eventType">
-              <option class="" value="wedding">Wedding</option>
-              <option class="" value="birthday">Birthday</option>
-              <option class="" value="anniversary">Anniversary</option>
-              <option class="" value="christening">Christening</option>
-              <option class="" value="other">Other</option>
-
-            </select>
-            <span class="text-xs text-red-400">*Required</span>
-          </div>
-        </div>
-
-        <!-- description -->
-        <div class="mt-6">
-          <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
-            Description
-          </label>
-          <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-            <textarea id="description" name="description" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder="Provide a brief description of order you are looking to create"></textarea>
-          </div>
-          <span class="text-xs text-red-400">*Required</span>
-        </div>
-
-
-        <div class="mt-6 w-full flex justify-around">
-          <div class="w-1/4 mb-4 text-xl mr-2">
-            <label for="photo" class="block text-sm leading-5 font-medium text-gray-700">
-              Photo
-            </label>
-            <input class="form-input py-2 px-3  text-gray-700 text-lg w-full bg-gray-400 rounded" type="text" name="photo"  placeholder="Add a photo">
-            <!-- <span class="text-xs text-red-400">*Required</span> -->
-
+        <div class="">
+          <div class="font-bold text-lg mt-6">
+            <h2>About Your Order</h2>
           </div>
 
-          <div class="w-1/2 mb-4 text-xl mr-2">
-            <label for="addOn" class="block text-sm leading-5 font-medium text-gray-700">
-              Add On
-            </label>
-            <div class="flex flex-row flex-wrap justify-around">
-              <%services.forEach((service) => { %>
-                <div class="mt-4 px-2">
-                  <div class="flex items-start">
-                    <div class="flex items-center h-5">
-                      <input name="interests" value="<%= service.item %>" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+          <!-- Interest Select -->
+          <div class="flex flex-col md:flex-row justify-between">
+            <div class="flex-col my-2 md:pr-2">
+              <label for="interest" class="text-sm font-base leading-5 text-gray-700">
+                Interested in
+              </label>
+              <!-- interest choices -->
+              <div class="px-2" id="interest">
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[name]" value="Cake" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" id="cake">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="interest" class="font-medium text-gray-700">Cake</label>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[name]" value="Sugar Cookies" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" id="sugarCookies">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="interest" class="font-medium text-gray-700">Sugar Cookies</label>
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[name]" value="Cupcakes" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" id="cupcakes">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="interest" class="font-medium text-gray-700">Cupcakes</label>
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[name]" value="Rice Krispie Pops" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" id="riceKrispiePops">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="interest" class="font-medium text-gray-700">Rice Krispie Pops</label>
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[name]" value="Chocolate Dipped Strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" id="chocolateDippedStrawberries">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="interest" class="font-medium text-gray-700">Chocolate Dipped Strawberries</label>
+                  </div>
+                </div>
+
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[name]" value="Cake Pops" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out" id="cakePops">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="interest" class="font-medium text-gray-700">Cake Pops</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- interest information -->
+          <div class="" >
+            <div class="flex flex-col justify-between" id="cake-select">
+
+              <div class="flex flex-col md:flex-row justify-between">
+                <!-- cake tiers select -->
+                <div class="flex-col my-2 md:pr-2">
+                  <label for="cakeTier" class="text-sm font-base leading-5 text-gray-700">
+                    How many tiers?
+                  </label>
+                  <p class="text-xs italic">We will discuss cake sizes during our initial email.</p>
+                  <div class="mt-1 rounded-md">
+                    <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="treat[cakeTierAmount]" id="cakeTier-select">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- flower select -->
+                <div class="flex-col my-2 md:pl-2">
+                  <label for="phone number" class="text-sm font-base leading-5 text-gray-700">
+                    Would you like some flowers on your cake?
+                  </label>
+                  <p class="text-xs italic">I have been known to add an entire garden to my cakes, tee-hee!</p>
+                  <div class="mt-1 rounded-md">
+                    <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="treat[flowerType]">
+                      <option value="sugar">Sugar</option>
+                      <option value="fresh">Fresh</option>
+                      <option value="none">None</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- cake tier information -->
+              <div class="transition duration-500 ease-in-out flex-col justify-around text-sm">
+
+                <div class="flex-col">
+                  <div class="">
+                    <div class="font-bold text-lg mt-6">
+                      <h2>What's Yo Flava? (Cake That Is)</h2>
+                      <p class="text-sm font-normal font-base leading-5 text-gray-700 mt-2">Please feel free to ask us about our GF (Gluten Free), NF (Nut Free) or EF (Egg Free) options. You can mix and match up to 2 flavors per tier* (An additional fee may apply)</p>
                     </div>
-                    <div class="ml-3 text-sm leading-5">
-                      <label for="comments" class="font-medium text-gray-700"><%= service.item %></label>
+                    <!-- Tier 1 -->
+                    <div class="" id="cakeTier-1">
+                      <div class="">
+                        <h2 class="text-lg bold my-2">Tier 1 (Top/Smallest)</h2>
+                      </div>
+                      <div class="border-solid border-4 border-light-blue-500 p-2">
+                        <div class="text-lg bold my-2">
+                          <p>Try one of our signature flavor combinations or build your own?</p>
+                        </div>
+                        <div class="flex-col">
+                          <div class="mb-2">
+                            <label for="tierType">Tier 1 (Top) <span>*</span></label>
+                          </div>
+                          <div class="flex-col" id="flavorType-select-1">
+                            <input type="radio" name="treat[flavorType]" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
+                            <input type="radio" name="treat[flavorType]" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
+                          </div>
+                        </div>
+                        <div class="flex-col" id="signatureCake-select-1">
+                          <div class="text-lg bold my-2">
+                            <p>Signature Cakes</p>
+                          </div>
+                          <div class="text-gray-700">
+                            <p>You can find out more on the <span class="text-blue-700"><a href="/flavors" target="_blank">flavors</a></span> page...</p>
+                          </div>
+                          <div class="">
+                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][signature]">
+                              <option value="Velvet Queen">Velvet Queen</option>
+                              <option value="Cookie Monster">Cookie Monster</option>
+                              <option value="Lemon & Poppyseed">Lemon & Poppyseed</option>
+                              <option value="Almond & Hazelnut Prailine">Almond & Hazelnut Prailine</option>
+                              <option value="Birthday Wishes">Almond & Hazelnut Prailine</option>
+                              <option value="Banofee Crumble">Banofee Crumble</option>
+                              <option value="Strawberry Shortcake">Strawberry Shortcake</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="flex-col" id="buildYourOwnCake-select-1">
+                          <div class="text-lg bold my-2">
+                            <p>Custom Flavors</p>
+                          </div>
+                          <div class="">
+                            <div class="my-2">
+                              <label for="tierFlavor">Cake <span>*</span></label>
+                              <p class="text-xs italic">NF = Nut Free, EF = Egg Free</p>
+                            </div>
+                            <div class="">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][buildYourOwn][base]">
+                                <option value="Lemon Poppy Seed (NF)">Lemon Poppy Seed (NF)</option>
+                                <option value="Mexican Vanilla (NF)">Mexican Vanilla (NF)</option>
+                                <option value="Cookies & Cream | Oreo (NF, can be EF)">Cookies & Cream | Oreo (NF, can be EF)</option>
+                                <option value="Mocha Choolate (NF)">Mocha Choolate (NF)</option>
+                                <option value="Red Velvet (NF)">Red Velvet (NF)</option>
+                                <option value="Bailey's Irish Cream(Vanilla)">Bailey's Irish Cream(Vanilla)</option>
+                                <option value="Bailey's Irish Cream(Chocolate)">Bailey's Irish Cream(Chocolate)</option>
+                                <option value="Funfetti Vanilla">Funfetti Vanilla</option>
+                                <option value="Almond Cream">Almond Cream</option>
+                                <option value="Banana">Banana</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="my-2">
+                            <div class="my-2">
+                              <label for="tierFilling">Buttercream/Filling<span>*</span></label>
+                              <p>All of my buttercreams are a SMBC (Swiss Meringue Buttercream) base. It is silky, smooth and not overly sweet. The perfect base!</p>
+                            </div>
+                            <div class="my-2">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][buildYourOwn][filling]">
+                                <optgroup label="Buttercream">
+                                  <option value="Cookies and Cream (Oreo)">Cookies and Cream (Oreo)</option>
+                                  <option value="Vanilla">Vanilla"</option>
+                                  <option value="Strawberry">Strawberry</option>
+                                  <option value="Chocolate">Chocolate</option>
+                                  <option value="Irish Cream (Bailey's)">Irish Cream (Bailey's)</option>
+                                  <option value="Cheesecake (Cream Cheese Vanilla)">Cheesecake (Cream Cheese Vanilla)</option>
+                                  <option value="Dulce De Leche">Dulce De Leche</option>
+                                  <option value="Coffee">Coffee</option>
+                                  <option value="Salted Caramel">Salted Caramel</option>
+                                </optgroup>
+                                <optgroup label="Chocolate Ganache">
+                                  <option value="Whipped Dark Chocolate Ganache">Whipped Dark Chocolate Ganache</option>
+                                  <option value="Whipped White Chocolate Ganache">Whipped White Chocolate Ganache</option>
+                                  <option value="Whipped Peanut Butter Ganache">Whipped Peanut Butter Ganache</option>
+                                </optgroup>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="my-2">
+                            <div class="my-2 text-base">
+                              <label for="tierExtra"><span><i class="fas fa-star"></i> </span>Make your cake extra special</label>
+                              <p class="text-xs italic">These add-ons deliver extra flavor, texture and makes the cake uniquely suit your taste.</p>
+                              <p class="text-xs italic">Additional fee may apply**</p>
+                            </div>
+                            <div class="flex flex-wrap">
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][topping]" value="Fresh Strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Fresh Strawberries</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Freeze Dried Rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Freeze Dried Rasberries</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Double Stuffed Oreo Cookies (Chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Double Stuffed Oreo Cookies (Chunks)</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Caramelized Popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Caramelized Popcorn</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Crushed Pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Crushed Pretzels</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Salted Caramel Drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Salted Caramel Drizzle</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Pecans (Chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Pecans (Chopped)</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Almond & Hazelnut Praline Crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Almond & Hazelnut Praline Crunch</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tier 2 -->
+                    <div class="" id="cakeTier-2">
+                      <div class="">
+                        <h2 class="text-lg bold my-2">Tier 2</h2>
+                      </div>
+                      <div class="border-solid border-4 border-light-blue-500 p-2">
+                        <div class="text-lg bold my-2">
+                          <p>Try one of our signature flavor combinations or build your own?</p>
+                        </div>
+                        <div class="flex-col">
+                          <div class="mb-2">
+                            <label for="tierType">Tier 2 <span>*</span></label>
+                          </div>
+                          <div class="flex-col" id="flavorType-select-2">
+                            <input type="radio" name="treat[flavorType]" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
+                            <input type="radio" name="treat[flavorType]" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
+                          </div>
+                        </div>
+                        <div class="flex-col" id="signatureCake-select-2">
+                          <div class="text-lg bold my-2">
+                            <p>Signature Cakes</p>
+                          </div>
+                          <div class="text-gray-700">
+                            <p>You can find out more on the <span class="text-blue-700"><a href="/flavors" target="_blank">flavors</a></span> page...</p>
+                          </div>
+                          <div class="">
+                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][signature]">
+                              <option value="Velvet Queen">Velvet Queen</option>
+                              <option value="Cookie Monster">Cookie Monster</option>
+                              <option value="Lemon & Poppyseed">Lemon & Poppyseed</option>
+                              <option value="Almond & Hazelnut Prailine">Almond & Hazelnut Prailine</option>
+                              <option value="Birthday Wishes">Almond & Hazelnut Prailine</option>
+                              <option value="Banofee Crumble">Banofee Crumble</option>
+                              <option value="Strawberry Shortcake">Strawberry Shortcake</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div class="flex-col" id="buildYourOwnCake-select-2">
+                          <div class="text-lg bold my-2">
+                            <p>Custom Flavors</p>
+                          </div>
+                          <div class="">
+                            <div class="my-2">
+                              <label for="tierFlavor">Cake <span>*</span></label>
+                              <p class="text-xs italic">NF = Nut Free, EF = Egg Free</p>
+                            </div>
+                            <div class="">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][buildYourOwn][base]">
+                                <option value="Lemon Poppy Seed (NF)">Lemon Poppy Seed (NF)</option>
+                                <option value="Mexican Vanilla (NF)">Mexican Vanilla (NF)</option>
+                                <option value="Cookies & Cream | Oreo (NF, can be EF)">Cookies & Cream | Oreo (NF, can be EF)</option>
+                                <option value="Mocha Choolate (NF)">Mocha Choolate (NF)</option>
+                                <option value="Red Velvet (NF)">Red Velvet (NF)</option>
+                                <option value="Bailey's Irish Cream(Vanilla)">Bailey's Irish Cream(Vanilla)</option>
+                                <option value="Bailey's Irish Cream(Chocolate)">Bailey's Irish Cream(Chocolate)</option>
+                                <option value="Funfetti Vanilla">Funfetti Vanilla</option>
+                                <option value="Almond Cream">Almond Cream</option>
+                                <option value="Banana">Banana</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="my-2">
+                            <div class="my-2">
+                              <label for="tierFilling">Buttercream/Filling<span>*</span></label>
+                              <p>All of my buttercreams are a SMBC (Swiss Meringue Buttercream) base. It is silky, smooth and not overly sweet. The perfect base!</p>
+                            </div>
+                            <div class="my-2">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][buildYourOwn][filling]">
+                                <optgroup label="Buttercream">
+                                  <option value="Cookies and Cream (Oreo)">Cookies and Cream (Oreo)</option>
+                                  <option value="Vanilla">Vanilla"</option>
+                                  <option value="Strawberry">Strawberry</option>
+                                  <option value="Chocolate">Chocolate</option>
+                                  <option value="Irish Cream (Bailey's)">Irish Cream (Bailey's)</option>
+                                  <option value="Cheesecake (Cream Cheese Vanilla)">Cheesecake (Cream Cheese Vanilla)</option>
+                                  <option value="Dulce De Leche">Dulce De Leche</option>
+                                  <option value="Coffee">Coffee</option>
+                                  <option value="Salted Caramel">Salted Caramel</option>
+                                </optgroup>
+                                <optgroup label="Chocolate Ganache">
+                                  <option value="Whipped Dark Chocolate Ganache">Whipped Dark Chocolate Ganache</option>
+                                  <option value="Whipped White Chocolate Ganache">Whipped White Chocolate Ganache</option>
+                                  <option value="Whipped Peanut Butter Ganache">Whipped Peanut Butter Ganache</option>
+                                </optgroup>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="my-2">
+                            <div class="my-2 text-base">
+                              <label for="tierExtra"><span><i class="fas fa-star"></i> </span>Make your cake extra special</label>
+                              <p class="text-xs italic">These add-ons deliver extra flavor, texture and makes the cake uniquely suit your taste.</p>
+                              <p class="text-xs italic">Additional fee may apply**</p>
+                            </div>
+                            <div class="flex flex-wrap">
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][topping]" value="Fresh Strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Fresh Strawberries</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Freeze Dried Rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Freeze Dried Rasberries</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Double Stuffed Oreo Cookies (Chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Double Stuffed Oreo Cookies (Chunks)</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Caramelized Popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Caramelized Popcorn</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Crushed Pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Crushed Pretzels</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Salted Caramel Drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Salted Caramel Drizzle</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Pecans (Chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Pecans (Chopped)</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Almond & Hazelnut Praline Crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Almond & Hazelnut Praline Crunch</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tier 3 -->
+                    <div class="" id="cakeTier-3">
+                      <div class="">
+                        <h2 class="text-lg bold my-2">Tier 3</h2>
+                      </div>
+                      <div class="border-solid border-4 border-light-blue-500 p-2">
+                        <div class="text-lg bold my-2">
+                          <p>Try one of our signature flavor combinations or build your own?</p>
+                        </div>
+                        <div class="flex-col">
+                          <div class="mb-2">
+                            <label for="tierType">Tier 3 <span>*</span></label>
+                          </div>
+                          <div class="flex-col" id="flavorType-select-3">
+                            <input type="radio" name="treat[flavorType]" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
+                            <input type="radio" name="treat[flavorType]" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
+                          </div>
+                        </div>
+                        <div class="flex-col" id="signatureCake-select-3">
+                          <div class="text-lg bold my-2">
+                            <p>Signature Cakes</p>
+                          </div>
+                          <div class="text-gray-700">
+                            <p>You can find out more on the <span class="text-blue-700"><a href="/flavors" target="_blank">flavors</a></span> page...</p>
+                          </div>
+                          <div class="">
+                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][signature]">
+                              <option value="Velvet Queen">Velvet Queen</option>
+                              <option value="Cookie Monster">Cookie Monster</option>
+                              <option value="Lemon & Poppyseed">Lemon & Poppyseed</option>
+                              <option value="Almond & Hazelnut Prailine">Almond & Hazelnut Prailine</option>
+                              <option value="Birthday Wishes">Almond & Hazelnut Prailine</option>
+                              <option value="Banofee Crumble">Banofee Crumble</option>
+                              <option value="Strawberry Shortcake">Strawberry Shortcake</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="flex-col" id="buildYourOwnCake-select-3">
+                          <div class="text-lg bold my-2">
+                            <p>Custom Flavors</p>
+                          </div>
+                          <div class="">
+                            <div class="my-2">
+                              <label for="tierFlavor">Cake <span>*</span></label>
+                              <p class="text-xs italic">NF = Nut Free, EF = Egg Free</p>
+                            </div>
+                            <div class="">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][buildYourOwn][base]">
+                                <option value="Lemon Poppy Seed (NF)">Lemon Poppy Seed (NF)</option>
+                                <option value="Mexican Vanilla (NF)">Mexican Vanilla (NF)</option>
+                                <option value="Cookies & Cream | Oreo (NF, can be EF)">Cookies & Cream | Oreo (NF, can be EF)</option>
+                                <option value="Mocha Choolate (NF)">Mocha Choolate (NF)</option>
+                                <option value="Red Velvet (NF)">Red Velvet (NF)</option>
+                                <option value="Bailey's Irish Cream(Vanilla)">Bailey's Irish Cream(Vanilla)</option>
+                                <option value="Bailey's Irish Cream(Chocolate)">Bailey's Irish Cream(Chocolate)</option>
+                                <option value="Funfetti Vanilla">Funfetti Vanilla</option>
+                                <option value="Almond Cream">Almond Cream</option>
+                                <option value="Banana">Banana</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="my-2">
+                            <div class="my-2">
+                              <label for="tierFilling">Buttercream/Filling<span>*</span></label>
+                              <p>All of my buttercreams are a SMBC (Swiss Meringue Buttercream) base. It is silky, smooth and not overly sweet. The perfect base!</p>
+                            </div>
+                            <div class="my-2">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="treat[flavorType][buildYourOwn][filling]">
+                                <optgroup label="Buttercream">
+                                  <option value="Cookies and Cream (Oreo)">Cookies and Cream (Oreo)</option>
+                                  <option value="Vanilla">Vanilla"</option>
+                                  <option value="Strawberry">Strawberry</option>
+                                  <option value="Chocolate">Chocolate</option>
+                                  <option value="Irish Cream (Bailey's)">Irish Cream (Bailey's)</option>
+                                  <option value="Cheesecake (Cream Cheese Vanilla)">Cheesecake (Cream Cheese Vanilla)</option>
+                                  <option value="Dulce De Leche">Dulce De Leche</option>
+                                  <option value="Coffee">Coffee</option>
+                                  <option value="Salted Caramel">Salted Caramel</option>
+                                </optgroup>
+                                <optgroup label="Chocolate Ganache">
+                                  <option value="Whipped Dark Chocolate Ganache">Whipped Dark Chocolate Ganache</option>
+                                  <option value="Whipped White Chocolate Ganache">Whipped White Chocolate Ganache</option>
+                                  <option value="Whipped Peanut Butter Ganache">Whipped Peanut Butter Ganache</option>
+                                </optgroup>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="my-2">
+                            <div class="my-2 text-base">
+                              <label for="tierExtra"><span><i class="fas fa-star"></i> </span>Make your cake extra special</label>
+                              <p class="text-xs italic">These add-ons deliver extra flavor, texture and makes the cake uniquely suit your taste.</p>
+                              <p class="text-xs italic">Additional fee may apply**</p>
+                            </div>
+                            <div class="flex flex-wrap">
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][topping]" value="Fresh Strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Fresh Strawberries</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Freeze Dried Rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Freeze Dried Rasberries</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Double Stuffed Oreo Cookies (Chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Double Stuffed Oreo Cookies (Chunks)</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Caramelized Popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Caramelized Popcorn</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Crushed Pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Crushed Pretzels</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Salted Caramel Drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Salted Caramel Drizzle</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Pecans (Chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Pecans (Chopped)</label>
+                                </div>
+                              </div>
+                              <div class="flex w-1/2">
+                                <div class="flex items-center h-5">
+                                  <input name="treat[flavorType][buildYourOwn][base]" value="Almond & Hazelnut Praline Crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                </div>
+                                <div class="ml-3 text-sm leading-5">
+                                  <label for="tierExtra" class="font-medium text-gray-700">Almond & Hazelnut Praline Crunch</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              <%}) %>
+              </div>
+            </div>
+
+
+            <!-- sugar cookie information -->
+            <div class="flex-col justify-between" id="sugarCookies-select">
+              <!-- sugar cookie amount -->
+              <div class="flex-col my-2 md:pr-2">
+                <label for="amount" class="text-sm font-base leading-5 text-gray-700">
+                  How many sugar cookies will you need?
+                </label>
+                <p class="text-sm font-normal font-base leading-5 text-gray-700 mt-2">Sugar cookies are sold by the dozen (12). If you need more than 72, please inform us in the "Brief Description" section to let us know.</p>
+                <div class="mt-1 rounded-md">
+                  <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="treat[amount]">
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
+                    <option value="48">48</option>
+                    <option value="60">60</option>
+                    <option value="72">72</option>
+                  </select>
+                </div>
+              </div>
+              <!-- sugar cookie flavor select -->
+              <div class="flex-col my-2 md:pl-2">
+                <label for="flavor" class="text-sm font-base leading-5 text-gray-700">
+                  Sugar Cookie Flavor
+                </label>
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[flavor]" value="Mexican Vanilla" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="treat[flavor]" class="font-medium text-gray-700">Mexican Vanilla</label>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[flavor]" value="Lemon" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="treat[flavor]" class="font-medium text-gray-700">Lemon</label>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="flex items-center h-5">
+                    <input name="treat[flavor]" value="Chocolate" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="treat[flavor]" class="font-medium text-gray-700">Chocolate</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-col justify-between" id="cupcakes-select">
+              <!-- cupcake amount -->
+              <div class="flex-col my-2 md:pr-2">
+                <label for="amount" class="text-sm font-base leading-5 text-gray-700">
+                  How many cupcakes will you need?
+                </label>
+                <p class="text-sm font-normal font-base leading-5 text-gray-700 mt-2">Cupcakes are sold by the dozen (12). If you need more than 72, please inform us in the "Brief Description" section to let us know.</p>
+                <div class="mt-1 rounded-md">
+                  <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="interest[quantity]" id="">
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
+                    <option value="48">48</option>
+                    <option value="60">60</option>
+                    <option value="72">72</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="flex-col my-2">
+                <label for="flavor" class="text-sm font-base leading-5 text-gray-700">
+                  Cupcake Flavor
+                </label>
+                <div class="mt-1 rounded-md">
+                  <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="treat[flavor]" id="">
+                    <option value="Lemon Poppy Seed (NF)">Lemon Poppy Seed (NF)</option>
+                    <option value="Mexican Vanilla (NF)">Mexican Vanilla (NF)</option>
+                    <option value="Cookies & Cream | Oreo (NF, can be EF)">Cookies & Cream | Oreo (NF, can be EF)</option>
+                    <option value="Mocha Chocolate (NF)">Mocha Chocolate (NF)</option>
+                    <option value="Funfetti Vanilla">Funfetti Vanilla</option>
+                    <option value="Red Velvet (NF)">Red Velvet (NF)</option>
+                    <option value="Snickerdoodle">Snickerdoodle</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex-col my-2">
+                <label for="flavor" class="text-sm font-base leading-5 text-gray-700">
+                  Cupcake Frosting
+                </label>
+                <div class="mt-1 rounded-md">
+                  <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="treat[frosting]" id="">
+                    <option value="Cookies and Cream (Oreo)">Cookies and Cream (Oreo)</option>
+                    <option value="Vanilla">Vanilla</option>
+                    <option value="Strawberry">Strawberry</option>
+                    <option value="Butter Rum">Butter Rum</option>
+                    <option value="Chocolate">Chocolate</option>
+                    <option value="Irish Cream (Bailey's)">Irish Cream (Bailey's)</option>
+                    <option value="Cheesecake (Cream Cheese Vanilla)">Cheesecake (Cream Cheese Vanilla)</option>
+                    <option value="Browned Butter">Browned Butter</option>
+                    <option value="Salted Caramel">Salted Caramel</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+            <!-- rice krispies amount -->
+            <div class="flex-col justify-between" id="riceKrispiePops-select">
+              <div class="flex-col my-2 md:pr-2">
+                <label for="amount" class="text-sm font-base leading-5 text-gray-700">
+                  How many rice krispie pops will you need?
+                </label>
+                <p class="text-sm font-normal font-base leading-5 text-gray-700 mt-2">Rice krispie pops are sold by the dozen (12). If you need more than 72, please inform us in the "Brief Description" section to let us know.</p>
+                <div class="mt-1 rounded-md">
+                  <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="interest[quantity]" id="">
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
+                    <option value="48">48</option>
+                    <option value="60">60</option>
+                    <option value="72">72</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- chocolate dipped strawberries amount -->
+            <div class="flex-col justify-between" id="chocolateDippedStrawberries-select">
+              <label for="amount" class="text-sm font-base leading-5 text-gray-700">
+                How many chocolate dipped strawberries will you need?
+              </label>
+              <p class="text-sm font-normal font-base leading-5 text-gray-700 mt-2">Chocolate dipped strawberries are sold by the dozen (12). If you need more than 72, please inform us in the "Brief Description" section to let us know.</p>
+              <div class="mt-1 rounded-md">
+                <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="interest[quantity]" id="">
+                  <option value="12">12</option>
+                  <option value="24">24</option>
+                  <option value="36">36</option>
+                  <option value="48">48</option>
+                  <option value="60">60</option>
+                  <option value="72">72</option>
+                </select>
+              </div>
+            </div>
+            <!-- cake pops amount -->
+            <div class="flex-col justify-between" id="cakePops-select">
+              <label for="amount" class="text-sm font-base leading-5 text-gray-700">
+                How many cake pops will you need?
+              </label>
+              <p class="text-sm font-normal font-base leading-5 text-gray-700 mt-2">Cake pops are sold by the dozen (12) with a limit of 2 dozen (24). If you need more than 24, please inform us in the "Brief Description" section to let us know.</p>
+              <div class="mt-1 rounded-md">
+                <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="interest[quantity]">
+                  <option value="12">12</option>
+                  <option value="24">24</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="w-1/4 mb-4 text-xl mr-2">
-          <div class="mb-4 text-xl mr-2">
-            <label for="cakeTiers" class="block text-sm leading-5 font-medium text-gray-700">
-              Cake Tiers:
+        <!-- brief description -->
+        <div class="flex-col my-4">
+          <div class="flex-col my-2">
+            <label for="description" class="text-sm font-base leading-5 text-gray-700">
+              Brief Description
             </label>
-            <select class="form-input py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTiers">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+            <p class="text-xs italic">Please note the number of tiers, shape, colors, design theme and any other relevant details.
+            </p>
+            <div class="mt-1 rounded-md">
+              <textarea id="description" name="description" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5"
+                placeholder="Provide a brief description of order you are looking to create"></textarea>
+            </div>
           </div>
+          <!-- photo -->
+          <div class="flex-col my-4">
+            <label for="photo" class="text-sm font-base leading-5 text-gray-700">
+              Photo
+            </label>
+            <input class="" type="file" name="photo">
 
+          </div>
+        </div>
+
+        <div class="bg-white flex justify-start sm:p-6">
+          <span class="rounded-md">
+            <button type="submit"
+              class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+              Add
+            </button>
+          </span>
         </div>
       </div>
-      <div class="bg-white flex justify-start sm:p-6">
-        <span class="rounded-md shadow-sm">
-          <button type="submit"
-            class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-            Add
-          </button>
-        </span>
-      </div>
-    </div>
   </form>
 </div>
