@@ -1,6 +1,6 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
-<div class="w-full flex flex-row flex-wrap justify-around bg-blue-100 p-2">
+<div class="w-full flex flex-row flex-wrap justify-around p-2">
   <div class="max-w-sm rounded-md overflow-hidden shadow-lg bg-white">
     <!-- <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains"> -->
     <div class="text-center px-6 py-4">
@@ -23,20 +23,20 @@
           </div>
         <% } %>
       </div>
-      <div class="w-full flex flex-col justify-around">
+      <div class="w-full flex flex-col justify-around uppercase">
 
         <% flavors.forEach((flavor) => { %>
           <% if (flavor.signature.name) { %>
           <div class="w-full">
-            <div class="flex justify-around items-center text-xl font-bold text-gray-100 bg-purple-400 mb-2 capitalize">
+            <div class="flex justify-around items-center text-xl font-bold text-grayy-800 bg-purple-300 mb-2 capitalize">
               <h5><%= flavor.signature.name %></h5>
               <% if(user) { %>
                 <div class="flex justify-end">
                   <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
-                    <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                    <button><i class="fas fa-trash" style="color: #3b5360"></i></button>
                   </form>
                   <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
-                    <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                    <button><i class="fas fa-edit" style="color: #3b5360"></i></button>
                   </form>
                 </div>
               <% } %>
@@ -73,22 +73,22 @@
       </div>
       <div class="w-full flex flex-col justify-end">
         <div class="w-full">
-          <div class="text-xl font-bold text-gray-100 bg-pink-400 my-2">
+          <div class="text-xl font-bold text-grayy-800 bg-pink-300 my-2">
             <h5>
               Cake / Sponge
             </h5>
           </div>
           <ul>
             <% flavors.forEach((flavor) => { %>
-              <li class="flex justify-between items-center text-gray-700">
+              <li class="flex justify-between items-center text-gray-700 uppercase">
                 <span class="text-left"><%= flavor.buildYourOwn.base.ingredient %></span>
                 <% if(flavor.buildYourOwn.base.ingredient && user) { %>
                   <div class="flex justify-end">
                     <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
-                      <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                      <button><i class="fas fa-trash" style="color: #3b5360"></i></button>
                     </form>
                     <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
-                      <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                      <button><i class="fas fa-edit" style="color: #3b5360"></i></button>
                     </form>
                   </div>
                 <% } %>
@@ -97,22 +97,22 @@
           </ul>
         </div>
         <div class="w-full">
-          <div class="text-xl font-bold text-gray-100 bg-pink-400 my-2">
+          <div class="text-xl font-bold text-grayy-800 bg-pink-300 my-2">
             <h4>
               Buttercream / Filling
             </h4>
           </div>
           <ul>
             <% flavors.forEach((flavor) => { %>
-              <li class="flex justify-between items-center text-gray-700">
+              <li class="flex justify-between items-center text-gray-700 uppercase">
                 <span class="text-left"><%= flavor.buildYourOwn.filling.ingredient %></span>
                 <% if(flavor.buildYourOwn.filling.ingredient && user) { %>
                   <div class="flex justify-end">
                     <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
-                      <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                      <button><i class="fas fa-trash" style="color: #3b5360"></i></button>
                     </form>
                     <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
-                      <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                      <button><i class="fas fa-edit" style="color: #3b5360"></i></button>
                     </form>
                   </div>
                 <% } %>
@@ -121,22 +121,22 @@
           </ul>
         </div>
         <div class="w-full">
-          <div class="text-xl font-bold text-gray-100 bg-pink-400 my-2">
+          <div class="text-xl font-bold text-grayy-800 bg-pink-300 my-2">
             <h4>
               Sprinkle in a little fairy dust (extras)
             </h4>
           </div>
           <ul>
             <% flavors.forEach((flavor) => { %>
-              <li class="flex justify-between items-center text-gray-700">
+              <li class="flex justify-between items-center text-gray-700 uppercase">
                 <span class="text-left"><%= flavor.buildYourOwn.topping.ingredient %></span>
                 <% if(flavor.buildYourOwn.topping.ingredient && user) { %>
                   <div class="flex justify-end">
                     <form class="px-2" action="/flavors/<%= flavor._id %>?_method=DELETE" method="POST">
-                      <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
+                      <button><i class="fas fa-trash" style="color: #3b5360"></i></button>
                     </form>
                     <form class="px-2" action="/flavors/<%= flavor._id %>" method="GET">
-                      <button><i class="fas fa-edit" style="color: #044701"></i></button>
+                      <button><i class="fas fa-edit" style="color: #3b5360"></i></button>
                     </form>
                   </div>
                 <% } %>

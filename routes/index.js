@@ -4,6 +4,9 @@ const storeController = require('../controllers/storeController');
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
+const multer = require('multer');
+const { storage } = require('../cloudinary');
+const upload = multer({ storage })
 
 router.get('/', storeController.homePage);
 
@@ -39,9 +42,9 @@ router.delete('/flavors/:id', catchErrors(storeController.deleteFlavor));
 // Service routes
 router.get('/services', catchErrors(storeController.getServices));
 router.get('/add-services', authController.isLoggedIn, storeController.addService)
-router.post('/add-services', catchErrors(storeController.createService));
+router.post('/add-services',storeController.imageUpload, catchErrors(storeController.createService));
 router.get('/services/:id', authController.isLoggedIn, catchErrors(storeController.showService));
-router.put('/services/:id', authController.isLoggedIn, catchErrors(storeController.updateService))
+router.put('/services/:id', authController.isLoggedIn, storeController.imageUpload, catchErrors(storeController.updateService))
 router.delete('/services/:id', catchErrors(storeController.deleteService))
 
 // Contact routes
@@ -51,10 +54,15 @@ router.post('/contact', catchErrors(storeController.createMessage));
 // About route
 router.get('/about', storeController.aboutPage)
 
-// Cake Cake Route
+// Cake Care Route
 router.get('/cake-care', storeController.cakeCare)
 
 // Order Route
 router.get('/order', storeController.orderForm);
+router.post('/new-order', storeController.imagesUpload, catchErrors(storeController.newOrder));
+
+//Gallery Route
+router.get('/gallery', storeController.showGallery)
+
 
  module.exports = router;

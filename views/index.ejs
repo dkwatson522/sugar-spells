@@ -2,14 +2,27 @@
 <%- include ('../views/partials/navbar') %>
 
 <div class="w-full">
-  <div class="h-full">
-    <iframe class="w-full  opacity-50 pointer-events-none" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/0flZPi8pbjU?autoplay=1&amp;mute=1&amp;playlist=0flZPi8pbjU&amp;controls=0&amp;rel=0&amp;playsinline=1&amp;loop=1&amp;modestbranding&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.thesugarspell.com&amp;widgetid=1" id="widget2"></iframe>
+  <!-- Video Container -->
+  <div class="w-full flex justify-center items-center relative">
+    <iframe class="h-24 opacity-75 pointer-events-none" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/0flZPi8pbjU?autoplay=1&amp;mute=1&amp;playlist=0flZPi8pbjU&amp;controls=0&amp;rel=0&amp;playsinline=1&amp;loop=1&amp;modestbranding&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.thesugarspell.com&amp;widgetid=1" id="widget2" style="width: 1440px; height: 550px;"></iframe>
+    <div class="z-10 absolute flex items-center justify-center">
+      <div class="flex-col justify-around flex text-center">
+        <p class="text-4xl font-bold">Ready for Some Magic?</p>
+        <p class="px-4 text-lg">HURRY... BEFORE I PUT A SPELL ON YOU</p>
+        <div class="flex justify-center">
+          <button class="mt-2 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out" type="button" name="button">
+            <a href="/order">Create Your Order!</a>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
+
   <!-- Statistics -->
-  <div class="w-full px-2">
-    <div class="my-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="flex items-center bg-background overflow-visible shadow rounded-lg">
+  <div class="w-full bg-pink-400 px-4 py-8">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="flex items-center bg-pink-200 overflow-visible shadow rounded-lg">
         <div class="w-full px-4 py-5 sm:p-6">
           <div class="flex items-center">
             <div class="flex-shrink-0 bg-indigo-300 rounded-md p-3">
@@ -22,7 +35,7 @@
                     4,688
                   </div>
                 </dd>
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm leading-5 font-medium text-gray-700">
                   CUPCAKES BAKED & SPRINKLED
                 </dt>
 
@@ -31,7 +44,7 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center bg-background overflow-hidden shadow rounded-lg">
+      <div class="flex items-center bg-pink-200 overflow-hidden shadow rounded-lg">
         <div class="w-full px-4 py-5 sm:p-6">
           <div class="flex items-center">
             <div class="flex-shrink-0 bg-indigo-300 rounded-md p-3">
@@ -44,7 +57,7 @@
                     267
                   </div>
                 </dd>
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm leading-5 font-medium text-gray-700">
                   CUSTOM CAKES FROSTED
                 </dt>
               </dl>
@@ -52,7 +65,7 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center bg-background overflow-hidden shadow rounded-lg">
+      <div class="flex items-center bg-pink-200 overflow-hidden shadow rounded-lg">
         <div class="w-full px-4 py-5 sm:p-6">
           <div class="flex items-center">
             <div class="flex-shrink-0 bg-indigo-300 rounded-md p-3">
@@ -65,16 +78,15 @@
                     306
                   </div>
                 </dd>
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm leading-5 font-medium text-gray-700">
                   HAPPY CLIENTS
                 </dt>
-
               </dl>
             </div>
           </div>
         </div>
       </div>
-      <div class="flex items-center bg-background overflow-hidden shadow rounded-lg">
+      <div class="flex items-center bg-pink-200 overflow-hidden shadow rounded-lg">
         <div class="w-full px-4 py-5 sm:p-6">
           <div class="flex items-center">
             <div class="flex-shrink-0 bg-indigo-300 rounded-md p-3">
@@ -87,7 +99,7 @@
                     5
                   </div>
                 </dd>
-                <dt class="text-sm leading-5 font-medium text-gray-500">
+                <dt class="text-sm leading-5 font-medium text-gray-700">
                   YEARS OF EXPERIENCE
                 </dt>
               </dl>
@@ -98,22 +110,18 @@
     </div>
   </div>
 
-<div class="w-full bg-blue-200">
-  <div class="px-4 py-8 text-center text-xl">
+<div class="w-full bg-blue-500 px-4 py-8">
+  <div class=" text-center text-xl font-semibold">
     <p>
       <span >WE USE MINDFUL INGREDIENTS TO DESIGN BESPOKE CREATIONS FOR A LITTLE BIT OF MAGIC IN EVERY BITE.</span>
     </p>
   </div>
 </div>
 
-<div class="w-full bg-orange-200">
-  <div class="py-8 px-4">
-    <div class="text-center font-bold text-5xl text-orange-500">
-      <h3 class="tracking-widest">OUR SERVICES</h3>
-    </div>
-    <div class="text-center text-gray-600">
-      <p>We are always exploring new treats and flavors, so please feel free to send an inquiry for a special dessert!</p>
-    </div>
+<div class="w-full bg-orange-500 px-4 py-8">
+  <div class="text-center">
+    <h3 class="font-bold tracking-widest text-5xl text-center">OUR SERVICES</h3>
+    <p class="text-gray-800 text-center">We are always exploring new treats and flavors, so please feel free to send an inquiry for a special dessert!</p>
   </div>
 </div>
 
@@ -125,7 +133,7 @@
       <div class="border rounded p-6 xl:px-2 h-full bg-purple-100 text-gray-800">
         <div class="flex justify-center items-center p-2">
           <span class="rounded text-white">
-            <img class="fill-current text-blue-500 w-16 h-16" src="/images/rainbow-sprinkles-sugar-cookie-solid.png">
+            <img class="fill-current text-blue-500 w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610940868/SugarSpells/xuwtnf5nsfug94swptma.png">
           </span>
         </div>
         <div class="flex flex-col py-2 px-3">
@@ -144,7 +152,7 @@
       <div class="border rounded p-6 xl:px-2 h-full bg-purple-100 text-gray-800">
         <div class="flex justify-center items-center p-2">
           <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="./images/gift-cake-surprise-bow.svg" alt="">
+            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610941161/SugarSpells/qvuveereilruq1pdkbpv.svg" alt="">
           </span>
         </div>
         <div class="flex flex-col py-2 px-3">
@@ -163,7 +171,7 @@
       <div class="border rounded p-6 xl:px-2 h-full bg-purple-100 text-gray-800">
         <div class="flex justify-center items-center p-2">
           <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="./images/iconfinder_biscuit_1760343.svg" alt="">
+            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610941074/SugarSpells/fo8bydxlszuo8ihkvcwv.svg" alt="">
           </span>
         </div>
         <div class="flex flex-col py-2 px-3">
@@ -182,7 +190,7 @@
       <div class="border rounded p-6 xl:px-2 h-full bg-purple-100 text-gray-800">
         <div class="flex justify-center items-center p-2">
           <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="./images/cupcake.svg" alt="">
+            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610940298/SugarSpells/vnxb5jvz3arhavmhsmx9.svg" alt="">
           </span>
         </div>
         <div class="flex flex-col py-2 px-3">
@@ -204,7 +212,7 @@
       <div class="border rounded p-6 xl:px-2 h-full bg-purple-100 text-gray-800">
         <div class="flex justify-center items-center p-2">
           <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="./images/donut.svg" alt="">
+            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610940981/SugarSpells/rsxnyasab8kgdvothkfm.svg" alt="">
           </span>
         </div>
         <div class="flex flex-col py-2 px-3">
@@ -226,7 +234,7 @@
       <div class="border rounded p-6 xl:px-2 h-full bg-purple-100 text-gray-800">
         <div class="flex justify-center items-center p-2">
           <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="./images/cake-pop.svg" alt="">
+            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610940829/SugarSpells/gnbpn8furiucfxyqkn0p.png" alt="">
           </span>
         </div>
         <div class="flex flex-col py-2 px-3">
@@ -237,7 +245,7 @@
             My same delicious cake recipe crumbled and hand rolled or shaped. Then dipped in smooth decadent chocolate or candy coating (tastes like vanilla).
           </p>
           <p class="text-gray-600 text-center pb-2">
-            Max of 2 dozen (12) per order**
+            Max of 2 dozen (24) per order**
           </p>
         </div>
       </div>
@@ -425,30 +433,32 @@
 
 <!-- SIGN UP CONTAINER -->
 <div class="w-full bg-red-300 text-gray-800">
-  <div class="w-full flex flex-col md:flex-row justify-between py-4 px-16">
-    <div class="w-3/5 flex flex-col p-2 mr-3">
-      <span class="mb-4 text-2xl">Join our magical family...</span>
-      <div class="w-full">
-        <label class="block text-white text-sm font-bold h-4 mb-2" for="email">   Email address:
-        </label>
+    <div class="w-full flex flex-col md:flex-row justify-between py-4 px-16">
+      <div class="w-3/5 flex flex-col p-2 mr-3">
+        <span class="mb-4 text-2xl">Join our magical family...</span>
         <div class="w-full">
-          <input id="" placeholder="Your email address" class="shadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full text-lg" type="email" name="customer[email]">
+          <label class="block text-white text-sm font-bold h-4 mb-2" for="email">   Email address:
+          </label>
+          <div class="flex w-full">
+            <input id="email" placeholder="Your email address" class="shadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full text-lg mr-2" type="email" name="customer[email]">
+            <button name="customer[email" type="submit" class="py-3 px-5 rounded bg-orange-500 text-base text-white font-bold focus:outline-none focus:shadow-outline w-full sm:w-auto mt-2 sm:mt-0">Sign Up</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="w-full md:w-2/5 flex flex-col justify-end p-2">
-      <div class="flex justify-start">
-        <span>Be the first to hear about:</span>
+      <div class="w-full md:w-2/5 flex flex-col justify-end p-2">
+        <div class="flex justify-start">
+          <span>Be the first to hear about:</span>
+        </div>
+        <div class="w-full">
+          <ul class="pt-2 list-disc">
+            <li class="pl-1">Monthly taste boxes</li>
+            <li class="pl-1">New flavors</li>
+            <li class="pl-1">New treat options</li>
+            <li class="pl-1">Special holiday promotions</li>
+          </ul>
+
       </div>
-      <div class="w-full">
-        <ul class="pt-2 list-disc">
-          <li class="pl-1">Monthly taste boxes</li>
-          <li class="pl-1">New flavors</li>
-          <li class="pl-1">New treat options</li>
-          <li class="pl-1">Special holiday promotions</li>
-        </ul>
-
     </div>
   </div>
 </div>

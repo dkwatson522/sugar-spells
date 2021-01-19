@@ -1,18 +1,19 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
 
-<div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-menu">
+<div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
   <div class="max-w-md w-full">
-    <div>
-      <!-- <a href="/">
-        <img class="mx-auto h-auto w-auto hover:opacity-50 transition duration-300 ease-in-out" src="/images/logo.png">
-      </a> -->
+    <div class="flex-col">
       <h2 class="text-center text-3xl leading-9 font-extrabold text-gray-900">
         Sign in to your account
       </h2>
       <p class="mt-2 text-center text-sm leading-5 text-gray-600">
         to create your very own spell
       </p>
+      <span class="py-2 flex justify-around">
+        <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-16 h-16 border-2 border-transparent hover:border-indigo-400">
+      </span>
+
     </div>
     <form class="mt-8" action="/login" method="POST">
       <input type="hidden" name="remember" value="true">
@@ -22,21 +23,6 @@
         </div>
         <div class="-mt-px">
           <input aria-label="Password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password">
-        </div>
-      </div>
-
-      <div class="mt-6 flex items-center justify-between">
-        <div class="flex items-center">
-          <input id="remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
-          <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-900">
-            Remember me
-          </label>
-        </div>
-
-        <div class="text-sm leading-5">
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-            Forgot your password?
-          </a>
         </div>
       </div>
 

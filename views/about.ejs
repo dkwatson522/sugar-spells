@@ -1,209 +1,226 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
 
-<div class="w-full flex flex-col py-6 px-12 font-semibold text-xl text-blue-400 bg-gray-300">
-  <div class="w-1/2">
-    <p class="my-2 text-3xl">
+<div class="w-full flex flex-col py-6 px-12 font-semibold text-xl text-gray-800">
+  <div class="text-center bg-white border-solid border-4 border-black mx-auto p-4">
+    <p class="font-bold text-5xl">
       Chantel Phillips
     </p>
-    <p class="text-xl">
+    <p class="font-light text-xl">
       Self-Taught Baker and Confectionary Artist
+    </p>
+    <p class="font-light text-xl">
       (more than a baker)
     </p>
   </div>
-  <div class="mt-4 flex flex-col justify-around items-center">
-      <img class="mx-auto rounded-full w-64 h-64" src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="">
+  <div class="px-8 mt-4 flex flex-col justify-around items-center">
+      <img class="mx-auto rounded-full w-64 h-64" src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Chef">
     <p class="text-sm italic text-gray-500">Photo by Peridot Imagery</p>
   </div>
-  <!-- Education Start -->
-  <div class="w-full flex mt-6">
-    <div class="w-1/2 flex flex-col px-2">
-      <div class="text-3xl">
+
+  <div class="md:divide-x-4 divide-blue-600 divide-dashed xs:flex-col md:flex mt-6 px-8">
+    <div class="xs:w-full md:w-1/2 flex flex-col px-8 md:text-right">
+      <!-- Experience Start -->
+      <div class="divide-y-4 divide-blue-600 text-3xl my-4">
         <h3>Experience</h3>
-      </div>
-      <div class="pt-2">
-        <p class="text-xl">
-          2020 - Present
-        </p>
-        <p class="text-lg font-light">
-          Technical Group Manager
-        </p>
-        <p class="text-gray-700 font-light text-sm">
-          After my years contributing to a cool team, I was promoted to Manager. I oversee a small team at a tech company and it has been a fun time demonstrating and developing my leadership skills.
-          Your girl’s a boss!
-        </p>
+        <div class="">
+          <div class="pt-2">
+            <p class="text-xl">
+              2020 - Present
+            </p>
+            <p class="text-lg font-light">
+              Technical Group Manager
+            </p>
+            <p class="text-gray-700 font-light text-sm">
+              After my years contributing to a cool team, I was promoted to Manager. I oversee a small team at a tech company and it has been a fun time demonstrating and developing my leadership skills.
+              Your girl’s a boss!
+            </p>
+          </div>
+          <div class="pt-2">
+            <p class="text-xl">
+              2015 - 2019
+            </p>
+            <p class="text-lg font-light">
+              Pro A/V
+            </p>
+            <p class="text-gray-700 font-light text-sm">
+              This one is always a bit hard to explain. So, let’s try this, think smart home. Now upgrade that to commercial and high-end residential with industry leading new technology like A/V over IP, RS232, TCP/IP and IR control. That’s the field I work in currently! Programming and hardware support sums it nicely.
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <p class="text-xl">
+              2014
+            </p>
+            <p class="text-lg font-light">
+              3D Printer Build
+            </p>
+            <p class="text-gray-700 font-light text-sm">
+              Heard of these cool things? Yea, well I built one from scratch. Definitely had a problem with the melting board at first, but once that was fixed we built a few cool things! Functional rolling tractor cars and many interlocking interfaces, sounds easier than it is. Great hands on experience designing projects and completing the actual build.
+            </p>
+          </div>
+          <div class="pt-2">
+            <p class="text-xl">
+              2010 - 2013
+            </p>
+            <p class="text-lg font-light">
+              Freelance
+            </p>
+            <p class="text-gray-700 font-light text-sm">
+              After working for Elizabeth Arden, I did freelance make-up while in college studying Computer Science. I mention this because I strongly feel these skills of precise application has built a foundation for my artistry with cakes and treats today.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="pt-2">
-        <p class="text-xl">
-          2015 - 2019
-        </p>
-        <p class="text-lg font-light">
-          Pro A/V
-        </p>
-        <p class="text-gray-700 font-light text-sm">
-          This one is always a bit hard to explain. So, let’s try this, think smart home. Now upgrade that to commercial and high-end residential with industry leading new technology like A/V over IP, RS232, TCP/IP and IR control. That’s the field I work in currently! Programming and hardware support sums it nicely.
-        </p>
-      </div>
-
-      <div class="pt-2">
-        <p class="text-xl">
-          2014
-        </p>
-        <p class="text-lg font-light">
-          3D Printer Build
-        </p>
-        <p class="text-gray-700 font-light text-sm">
-          Heard of these cool things? Yea, well I built one from scratch. Definitely had a problem with the melting board at first, but once that was fixed we built a few cool things! Functional rolling tractor cars and many interlocking interfaces, sounds easier than it is. Great hands on experience designing projects and completing the actual build.
-        </p>
-      </div>
-      <div class="pt-2">
-        <p class="text-xl">
-          2010 - 2013
-        </p>
-        <p class="text-lg font-light">
-          Freelance
-        </p>
-        <p class="text-gray-700 font-light text-sm">
-          After working for Elizabeth Arden, I did freelance make-up while in college studying Computer Science. I mention this because I strongly feel these skills of precise application has built a foundation for my artistry with cakes and treats today.
-        </p>
-      </div>
-      <!-- Education End -->
-      <div class="text-3xl">
+      <!-- About Me Start -->
+      <div class="divide-y-4 divide-blue-600 text-3xl my-4">
         <h3>About Me</h3>
+        <div class="">
+          <div class="pt-2">
+            <p class="text-gray-700 font-light text-sm">
+              Oh hey!  Well, I’m Chantel and I have an addiction to baking. Phew… now that that’s out of the way, I’d like to tell you a little bit about myself. I am a self-taught sugar artist and baker. I must say my mother and grandmother have been the bakers in my family for as long as I can remember.  My mom made those elaborate stair case multi-level huge wedding cakes that were oh so popular among the Caribbean community. However, they specialized in traditional Jamaican rum cake. I never thought I would bake because I remember the long hours they spent baking, decorating and assembling.  (insert Spongebob 10 years later meme lol). Here I am, doing just that! It was all sparked by an invitation to participate in a baking contest at our bi-annual family reunion hosted by my aunt Veronica. I was the only one who actually showed up with a submission and everyone loved it! I never stopped and with the help of my super supportive family and friends I didn’t have to. I’ve grown to hone my own aesthetic for design which is clean lines, modern and fun!
+            </p>
+            <span class="text-gray-700 font-light text-sm">
+              Oh yea and I love decorating with fresh florals!
+            </span>
+            <p class="text-gray-700 font-light text-sm mt-4">
+              P.S. I currently still work full-time in the Pro AV industry programming custom GUI’s and providing hardware support. I’m currently working on completing my PCAP, CSS and Oracle certifications.
+            </p>
+            <p class="text-gray-700 font-semibold text-sm mt-4">
+              If you want to see a picture of my first cake ever and my inspirational mother with one of her cakes, click <a href="#" class="text-blue-400">here.</a>
+            </p>
+          </div>
+        </div>
+
       </div>
-      <div class="pt-2">
-        <p class="text-gray-700 font-light text-sm">
-          Oh hey!  Well, I’m Chantel and I have an addiction to baking. Phew… now that that’s out of the way, I’d like to tell you a little bit about myself. I am a self-taught sugar artist and baker. I must say my mother and grandmother have been the bakers in my family for as long as I can remember.  My mom made those elaborate stair case multi-level huge wedding cakes that were oh so popular among the Caribbean community. However, they specialized in traditional Jamaican rum cake. I never thought I would bake because I remember the long hours they spent baking, decorating and assembling.  (insert Spongebob 10 years later meme lol). Here I am, doing just that! It was all sparked by an invitation to participate in a baking contest at our bi-annual family reunion hosted by my aunt Veronica. I was the only one who actually showed up with a submission and everyone loved it! I never stopped and with the help of my super supportive family and friends I didn’t have to. I’ve grown to hone my own aesthetic for design which is clean lines, modern and fun!
-        </p>
-        <span class="text-gray-700 font-light text-sm">
-          Oh yea and I love decorating with fresh florals!
-        </span>
-        <p class="text-gray-700 font-light text-sm mt-4">
-          P.S. I currently still work full-time in the Pro AV industry programming custom GUI’s and providing hardware support. I’m currently working on completing my PCAP, CSS and Oracle certifications.
-        </p>
-        <p class="text-gray-700 font-semibold text-sm mt-4">
-          If you want to see a picture of my first cake ever and my inspirational mother with one of her cakes, click <a href="#" class="text-blue-400">here.</a>
-        </p>
-      </div>
+
 
     </div>
-    <div class="w-1/2 flex flex-col px-2">
-      <div class="text-3xl">
+    <div class="md:w-1/2 flex flex-col px-8 text-left">
+      <div class="divide-y-4 divide-blue-600 text-3xl my-4">
         <h3>Education</h3>
+        <div class="">
+          <div class="pt-2">
+            <p class="text-xl">
+              2020 (Starting 2nd Quarter)
+            </p>
+            <p class="text-lg font-light">
+              CSS & Java Course
+            </p>
+          </div>
+          <div class="pt-2">
+            <p class="text-xl">
+              2016
+            </p>
+            <p class="text-lg font-light">
+              UI & UX Course
+            </p>
+          </div>
+          <div class="pt-2">
+            <p class="text-xl">
+              2015
+            </p>
+            <p class="text-lg font-light">
+              HDBaseT Certification
+            </p>
+          </div>
+          <div class="pt-2">
+            <p class="text-xl">
+              2014
+            </p>
+            <p class="text-lg font-light">
+              Made My First Cake!
+            </p>
+          </div>
+          <div class="pt-2">
+            <p class="text-xl">
+              2011
+            </p>
+            <p class="text-lg font-light">
+              35mm & Digital Photography Course3
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="pt-2">
-        <p class="text-xl">
-          2020 (Starting 2nd Quarter)
-        </p>
-        <p class="text-lg font-light">
-          CSS & Java Course
-        </p>
-      </div>
-      <div class="pt-2">
-        <p class="text-xl">
-          2016
-        </p>
-        <p class="text-lg font-light">
-          UI & UX Course
-        </p>
-      </div>
-      <div class="pt-2">
-        <p class="text-xl">
-          2015
-        </p>
-        <p class="text-lg font-light">
-          HDBaseT Certification
-        </p>
-      </div>
-      <div class="pt-2">
-        <p class="text-xl">
-          2014
-        </p>
-        <p class="text-lg font-light">
-          Made My First Cake!
-        </p>
-      </div>
-      <div class="pt-2">
-        <p class="text-xl">
-          2011
-        </p>
-        <p class="text-lg font-light">
-          35mm & Digital Photography Course3
-        </p>
-      </div>
-      <div class="text-3xl">
+
+      <div class="divide-y-4 divide-blue-600 text-3xl my-4">
         <h3>Skills</h3>
-      </div>
-      <div class="pt-2">
-        <div class="relative w-full bg-gray-300 h-8 rounded-sm">
-          <div class="absolute inset-0 font-light w-buttercream rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
-            <span>Buttercream</span>
-            <span>89%</span>
+        <div class="">
+          <div class="pt-2">
+            <div class="relative w-full bg-gray-300 h-8 rounded-sm">
+              <div class="absolute inset-0 font-light w-buttercream rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
+                <span>Buttercream</span>
+                <span>89%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <div class="relative w-full bg-gray-300 h-8 rounded-sm">
+              <div class="absolute inset-0 font-light w-chocolate rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
+                <span>Chocolate Ganache</span>
+                <span>75%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <div class="relative w-full bg-gray-300 h-8 rounded-sm">
+              <div class="absolute inset-0 font-light w-fondant rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
+                <span>Fondant</span>
+                <span>93%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <div class="relative w-full bg-gray-300 h-8 rounded-sm">
+              <div class="absolute inset-0 font-light w-floral rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
+                <span>Floral Arrangement</span>
+                <span>92%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <div class="relative w-full bg-gray-300 h-8 rounded-sm">
+              <div class="absolute inset-0 font-light w-figurines rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
+                <span>Figurines and Sculptures</span>
+                <span>81%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="pt-2">
-        <div class="relative w-full bg-gray-300 h-8 rounded-sm">
-          <div class="absolute inset-0 font-light w-chocolate rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
-            <span>Chocolate Ganache</span>
-            <span>75%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pt-2">
-        <div class="relative w-full bg-gray-300 h-8 rounded-sm">
-          <div class="absolute inset-0 font-light w-fondant rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
-            <span>Fondant</span>
-            <span>93%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pt-2">
-        <div class="relative w-full bg-gray-300 h-8 rounded-sm">
-          <div class="absolute inset-0 font-light w-floral rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
-            <span>Floral Arrangement</span>
-            <span>92%</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pt-2">
-        <div class="relative w-full bg-gray-300 h-8 rounded-sm">
-          <div class="absolute inset-0 font-light w-figurines rounded-r-md bg-blue-300 h-full flex flex-row justify-between items-center text-xs text-white px-2">
-            <span>Figurines and Sculptures</span>
-            <span>81%</span>
-          </div>
-        </div>
-      </div>
       <!-- CONTACT -->
-      <div class=" my-2 text-3xl">
+      <div class="divide-y-4 divide-blue-600 text-3xl my-4">
         <h3>Contact</h3>
         <div class="">
-          <div class="text-sm">
-            <i class="fas fa-desktop pr-2 py-1"></i>
-            <span class="text-gray-700 font-light">
-              <a href="/" target="_blank">www.thesugarspell.com</a>
-            </span>
-          </div>
-          <div class="text-sm">
-            <i class="fas fa-envelope-open pr-2 py-1"></i>
-            <span class="text-gray-700 font-light">
-              <a href="mailto:orders@thesugarspell.com?Subject=Crumbs%20x%20Buttercream%20Inquiry" target="_blank">chantel@thesugarspell.com</a>
-            </span>
-          </div>
-          <div class="text-sm">
-            <i class="fas fa-phone pr-2 py-1"></i>
-            <span class="text-gray-700 font-light">
-              (914) 297-7065
-            </span>
+          <div class="">
+            <div class="text-sm">
+              <i class="fas fa-desktop pr-2 py-1"></i>
+              <span class="text-gray-700 font-light">
+                <a href="/" target="_blank">www.thesugarspell.com</a>
+              </span>
+            </div>
+            <div class="text-sm">
+              <i class="fas fa-envelope-open pr-2 py-1"></i>
+              <span class="text-gray-700 font-light">
+                <a href="mailto:orders@thesugarspell.com?Subject=Crumbs%20x%20Buttercream%20Inquiry" target="_blank">chantel@thesugarspell.com</a>
+              </span>
+            </div>
+            <div class="text-sm">
+              <i class="fas fa-phone pr-2 py-1"></i>
+              <span class="text-gray-700 font-light">
+                (914) 297-7065
+              </span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="">
+      <div class="my-4 w-auto h-auto">
         <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Cake-Room_Edit.png" alt="">
         <p class="font-medium text-center text-sm italic text-gray-500">My Cake Studio</p>
       </div>
