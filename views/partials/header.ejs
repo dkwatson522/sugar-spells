@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>
-        <% if (title) { %>
-          Sugar Spell - <%= title %>
-        <% } else { %>
-          <%= h.siteName %>
-        <% } %>
-      </title>
+    <title>
+      Sugar Spell
+    </title>
     <link rel="stylesheet" href="/stylesheets/main.css">
     <link rel="icon" href="/images/hand-icon.png">
     <script
       src="https://kit.fontawesome.com/747e4b0214.js"
       crossorigin="anonymous">
     </script>
-    <style type="text/css">
-      * {cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;}
-    </style>
-    <img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Harry Potter Magical Wand" style="position:absolute; top: 0px; right: 0px;" />
-    <style media="screen">
-      #menu-toggle:checked + #menu {
-        display: block;
-      }
-    </style>
     <!-- Alpine -->
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
@@ -37,4 +24,10 @@
       src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js">
     </script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
+    <style media="screen">
+      #menu-toggle:checked + #menu {
+        display:block;
+      }
+    </style>
   </head>

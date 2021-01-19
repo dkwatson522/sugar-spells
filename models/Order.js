@@ -4,26 +4,18 @@ const Schema = mongoose.Schema;
 const slug = require('slugs');
 const validator = require('validator');
 
-
 const orderSchema = new Schema({
   email: {
     type: String,
     lowercase: true,
     trim: true,
     validate: [validator.isEmail, 'Invalid Email Address'],
-    required: 'This field is required'
+    required: 'Please include your email address'
   },
   name: {
-    first: {
       type: String,
       lowercase: true,
       trim: true
-    },
-    last: {
-      type: String,
-      lowercase: true,
-      trim: true
-    }
   },
   phoneNumber: {
     type: String,
@@ -33,66 +25,96 @@ const orderSchema = new Schema({
   eventDate: {
     type: Date,
     trim: true,
-    required: 'This field is required'
+    required: 'Please provide an event date'
   },
-  readyTime: {
-    type: Date,
-    trim: true,
-    required: 'This field is required'
-  },
+  readyTime: String,
   eventType: {
     type: String,
-    trim: true,
-    required: 'This field is required'
+    trim: true
   },
   numberOfGuests: {
     type: Number,
     trim: true,
-    required: 'This field is required'
+    required: 'Please provide the number of guests expected'
   },
   delivery: {
-    type: {
+    preference: {
       type: String,
-      required: 'This field is required'
+      required: 'Please provide a delivery preference'
     },
     address: {
       type: String
     }
   },
-  treat:[{
+  cakeTierAmount: Number,
+  flowerType: String,
+  cake: {
+    name: {
+      type:String,
+      default: "cake"
+    },
+    flavor: {
+      signature: [String],
+      buildYourOwn: {
+        base: [String],
+        filling: [String],
+        topping: [String]
+      }
+    }
+  },
+  sugarCookies: {
+    name: {
+      type: [String],
+      default: "sugar cookies"
+    },
+    amount: Number,
+    flavor: String
+  },
+  cupcakes: {
     name: {
       type: String,
-      required: 'Please choose a treat!'
+      default: "cupcakes"
     },
-    amount: {
-      type: Number,
-      required: 'Please provide a treat amount'
-    },
-    cakeTierAmount: Number,
-    flavorType: {
-      signature: String,
-      buildYourOwn: {
-        base: String,
-        filling: String,
-        topping: String
-      }
-    },
-    frosting: String,
+    amount: Number,
     flavor: String,
-    flowerType: String
-  }],
-
-  photo: String,
+    frosting: String
+  },
+  riceKrispiePops: {
+    name: {
+      type: String,
+      default: "rice krispie pops"
+    },
+    amount: Number
+  },
+  chocolateDippedStrawberries: {
+    name: {
+      type: String,
+      default: "chocolate dipped strawberries"
+    },
+    amount: Number
+  },
+  cakepops: {
+    name: {
+      type: String,
+      default: "cake pops"
+    },
+    amount: Number
+  },
+  images: [
+    {
+      url: String,
+      fileName: String
+    }
+  ],
   description: {
     type: String,
     trim: true,
-    required: 'This field is required'
+    required: 'Please provide a brief description of the order'
   },
   created: {
     type: Date,
     default: Date.now
-  },
-
+  }
 })
 
 module.exports = mongoose.model("Order", orderSchema)

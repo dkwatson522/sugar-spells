@@ -8,7 +8,7 @@
   <!-- Add Signature service -->
   <div class="flex flex-col w-full items-center">
     <div class="flex justify-around w-full my-4 px-6">
-      <form action="/add-services" method="POST">
+      <form action="/add-services" method="POST" enctype="multipart/form-data">
         <div class="shadow sm:rounded-md sm:overflow-hidden">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="">
@@ -25,7 +25,7 @@
                 Image URL
               </label>
               <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                <input id="name" name="image" class="p-2 bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 ease-in-out text-2xl sm:leading-5" placeholder="">
+                <input type="file" name="image" value="" class="p-2 bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 ease-in-out text-2xl sm:leading-5">
               </div>
             </div>
             <div class="w-2/5 mt-6">
@@ -36,7 +36,7 @@
                     $
                   </span>
                 </div>
-                <input id="price" name="price" class="bg-gray-400 p-2 form-input block text-2xl sm:leading-5 rounded-md" placeholder="0.00" aria-describedby="price-currency">
+                <input id="price" name="price" class="bg-gray-400 p-2 form-input block text-2xl sm:leading-5 rounded-md" placeholder="00" aria-describedby="price-currency">
                 <div class="flex items-center pointer-events-none">
                   <span class="text-gray-500 text-2xl sm:leading-5" id="price-currency">
                     USD

@@ -17,7 +17,9 @@ const serviceSchema = new Schema({
     trim: true,
     required: 'Please supply a price'
   },
-  image: String
+  image: {
+    url: String,
+    fileName: String}
 })
 
 

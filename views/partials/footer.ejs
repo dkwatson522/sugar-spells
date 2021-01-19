@@ -1,183 +1,234 @@
-      <footer class="absolute inset-x-0 bottom-0 w-full w-full py-6 px-6 sm:px-12 lg:px-20 xl:px-24 text-gray-700 flex flex-col bg-background">
-        <div class="flex justify-between">
-          <!-- LEFT COLUMN -->
-          <div class="w-1/3 flex-col justify-center items-center text-center">
-            <div class="w-full flex items-center justify-center">
-              <img class="justify-center w-1/2 h-full object-cover" src="/images/Sugar-Spell-hand.png">
-            </div>
-            <span class="pr-2 text-gray-700">Copyright © 2020 Sugar Spell</span>
-          </div>
-          <!-- MIDDLE COLUMN -->
-          <div class="w-1/3 justify-center text-center">
-            <h2 class="text-gray-800 font-bold">Help & Information</h2>
-            <ul class="md:flex md:flex-col justify-end">
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/order">Place an Order</a> </li>
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/cake-care">Cake Care and Cutting (How To)</a> </li>
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/faqs">Frequently Asked Questions</a> </li>
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/privacy-policy">Privacy Policy</a> </li>
-            </ul>
-          </div>
-          <!-- RIGHT COLUMN -->
-          <div class="w-1/3 justify-center text-center">
-            <h2 class="text-gray-800 font-bold">About Us</h2>
-            <ul class="justify-end">
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/services">Services</a> </li>
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/flavors">Flavors</a> </li>
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/about">About the Baker 🖤</a> </li>
-              <li class="text-gray-700 hover:text-gray-500"> <a href="/contact">Contact Us</a> </li>
-            </ul>
-            <div class="flex-row">
-              <a href="https://www.instagram.com/sugarspellny/" target="_blank">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://www.youtube.com/channel/UC8lytG8CdwzBvCaY9X3JD9w" target="_blank">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="mailto:orders@thesugarspell.com?Subject=Crumbs%20x%20Buttercream%20Inquiry" target="_blank">
-                <i class="fas fa-envelope"></i>
-              </a>
-              <a href="https://www.facebook.com/sugarspellny/" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    <script>
-        var picker = new Pikaday({ field: document.getElementById('datepicker') });
-    </script>
+<footer class="w-full py-6 px-6 sm:px-12 lg:px-20 xl:px-24 text-gray-700 bg-background">
+  <div class="flex justify-between">
+    <!-- LEFT COLUMN -->
+    <div class="w-1/3 flex-col justify-center items-center text-center">
+      <div class="w-full flex items-center justify-center">
+        <img class="justify-center w-1/2 h-full object-cover" src="/images/Sugar-Spell-hand.png">
+      </div>
+      <span class="pr-2 text-gray-700">Copyright © 2020 Sugar Spell</span>
+    </div>
+    <!-- MIDDLE COLUMN -->
+    <div class="w-1/3 justify-center text-center">
+      <h2 class="text-gray-800 font-bold">Help & Information</h2>
+      <ul class="md:flex md:flex-col justify-end">
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/order">Place an Order</a> </li>
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/cake-care">Cake Care and Cutting (How To)</a> </li>
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/faqs">Frequently Asked Questions</a> </li>
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/privacy-policy">Privacy Policy</a> </li>
+      </ul>
+    </div>
+    <!-- RIGHT COLUMN -->
+    <div class="w-1/3 justify-center text-center">
+      <h2 class="text-gray-800 font-bold">About Us</h2>
+      <ul class="justify-end">
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/services">Services</a> </li>
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/flavors">Flavors</a> </li>
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/about">About the Baker 🖤</a> </li>
+        <li class="text-gray-700 hover:text-gray-500"> <a href="/contact">Contact Us</a> </li>
+      </ul>
+      <div class="flex-row">
+        <a href="https://www.instagram.com/sugarspellny/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UC8lytG8CdwzBvCaY9X3JD9w" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="mailto:orders@thesugarspell.com?Subject=Crumbs%20x%20Buttercream%20Inquiry" target="_blank">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.facebook.com/sugarspellny/" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var picker = new Pikaday({
+    field: document.getElementById('datepicker')
+  });
+</script>
 
 
-    <script type=" text/javascript">
+<script type=" text/javascript">
+  //hide 2nd and 3rd cake tier option on initial load
+  $("#cakeTier-2").hide( "slow" )
+  $("#cakeTier-3").hide( "slow" )
+  //logic to hide/show cake tier option based on the cake tier value selected
+  $("#cakeTier-select").change(() => {
+    const cakeTierAmount = event.target.value
 
-      $("#cakeTier-2").hide()
-      $("#cakeTier-3").hide()
-
-      $("#cakeTier-select").change(() => {
-        cakeTierAmount = event.target.value
-
-        if (cakeTierAmount === "1") {
-          $("#cakeTier-2").hide()
-          $("#cakeTier-3").hide()
-        } else if (cakeTierAmount === "2") {
-          $("#cakeTier-2").slideDown().show()
-          $("#cakeTier-3").hide()
-        } else if (cakeTierAmount === "3") {
-          $("#cakeTier-2").slideDown().show()
-          $("#cakeTier-3").slideDown().show()
-        }
-      })
-
-      <!-- hides address input on initial load -->
-      $("#delivery-addressInput").hide()
-
-      $('#delivery').change(() => {
-        if ($(event.target).is(':checked')) {
-          const deliveryOption = event.target.value.toLowerCase();
-
-          if(deliveryOption === 'delivery') {
-            $("#delivery-addressInput").slideDown().show()
-          }
-        }
-
-        if ($(event.target).is(':checked')) {
-          const deliveryOption = event.target.value.toLowerCase();
-
-          if(deliveryOption === 'pick up') {
-            $("#delivery-addressInput").slideUp().hide()
-          }
-        }
+    const deliveryAddressRequired = () => {
+      $("#delivery").prop('checked', true);
+      $("#address-input").slideDown().show()
+    }
 
 
-      })
+    if (cakeTierAmount === "1") {
+      $("#cakeTier-2").hide( "slow" )
+      $("#cakeTier-3").hide( "slow" )
+      $("#address-input").hide( "slow" )
+    } else if (cakeTierAmount === "2") {
+      $("#cakeTier-2").slideDown().show()
+      $("#cakeTier-3").hide( "slow" )
+      deliveryAddressRequired()
+    } else if (cakeTierAmount === "3") {
+      $("#cakeTier-2").slideDown().show()
+      $("#cakeTier-3").slideDown().show()
+      deliveryAddressRequired()
+    }
+  })
+  //hides delivery address input on initial load
+  $("#address-input").hide()
+  //logic to hide/show text area for delivery address input
+  $('#delivery-select').change(() => {
+    if ($(event.target).is(':checked')) {
+      const deliveryOption = event.target.value.toLowerCase();
 
-      $("#cake-select").hide()
-      $("#sugarCookies-select").hide()
-      $("#cupcakes-select").hide()
-      $("#riceKrispiePops-select").hide()
-      $("#chocolateDippedStrawberries-select").hide()
-      $("#cakePops-select").hide()
+      if (deliveryOption === 'delivery') {
+        $("#address-input").slideDown().show()
+      }
+    }
+
+    if ($(event.target).is(':checked')) {
+      const deliveryOption = event.target.value.toLowerCase();
+      if (deliveryOption === 'pick up') {
+        $("#address-input").slideUp().hide( "slow" )
+      }
+    }
+  })
+
+  $("#cake-select").hide()
+  $("#sugarCookies-select").hide()
+  $("#cupcakes-select").hide()
+  $("#riceKrispiePops-select").hide()
+  $("#chocolateDippedStrawberries-select").hide()
+  $("#cakePops-select").hide()
 
 
 
 
-      $('#interest').change(() => {
-        if ($(event.target).is(':checked')) {
-          const interest = event.target.value.toLowerCase();
-          const interestId = event.target.id;
+  $('#treat').change(() => {
+    if ($(event.target).is(':checked')) {
+      const treat = event.target.value.toLowerCase();
+      const treatId = event.target.id;
 
-          if (interest === 'cake') {
-            $(`#${interestId}-select`).slideDown().show()
-          } else if (interest === 'sugar cookies') {
-            $(`#${interestId}-select`).slideDown().show()
-          } else if (interest === 'cupcakes') {
-            $(`#${interestId}-select`).slideDown().show()
-          } else if (interest === 'rice krispie pops') {
-            $(`#${interestId}-select`).slideDown().show()
-          } else if (interest === 'chocolate dipped strawberries') {
-            $(`#${interestId}-select`).slideDown().show()
-          } else if (interest === 'cake pops') {
-            $(`#${interestId}-select`).slideDown().show()
-          }
-        }
+      if (treat === 'cake') {
+        $(`#${treatId}-select`).slideDown().show()
+      } else if (treat === 'sugar cookies') {
+        $(`#${treatId}-select`).slideDown().show()
+      } else if (treat === 'cupcakes') {
+        $(`#${treatId}-select`).slideDown().show()
+      } else if (treat === 'rice krispie pops') {
+        $(`#${treatId}-select`).slideDown().show()
+      } else if (treat === 'chocolate dipped strawberries') {
+        $(`#${treatId}-select`).slideDown().show()
+      } else if (treat === 'cake pops') {
+        $(`#${treatId}-select`).slideDown().show()
+      }
+    }
 
-        if (!$(event.target).is(':checked')) {
-          const interest = event.target.value.toLowerCase();
-          const interestId = event.target.id;
+    if (!$(event.target).is(':checked')) {
+      const treat = event.target.value.toLowerCase();
+      const treatId = event.target.id;
 
-          if (interest === 'cake') {
-            $(`#${interest}-select`).slideUp().hide()
-          } else if (interest === 'sugar cookies') {
-            $(`#${interestId}-select`).slideUp().hide()
-          } else if (interest === 'cupcakes') {
-            $(`#${interestId}-select`).slideUp().hide()
-          } else if (interest === 'rice krispie pops') {
-            $(`#${interestId}-select`).slideUp().hide()
-          } else if (interest === 'chocolate dipped strawberries') {
-            $(`#${interestId}-select`).slideUp().hide()
-          } else if (interest === 'cake pops') {
-            $(`#${interestId}-select`).slideUp().hide()
-          }
-        }
-      })
+      if (treat === 'cake') {
+        $(`#${treat}-select`).slideUp().hide( "slow" )
+      } else if (treat === 'sugar cookies') {
+        $(`#${treatId}-select`).slideUp().hide( "slow" )
+      } else if (treat === 'cupcakes') {
+        $(`#${treatId}-select`).slideUp().hide( "slow" )
+      } else if (treat === 'rice krispie pops') {
+        $(`#${treatId}-select`).slideUp().hide( "slow" )
+      } else if (treat === 'chocolate dipped strawberries') {
+        $(`#${treatId}-select`).slideUp().hide( "slow" )
+      } else if (treat === 'cake pops') {
+        $(`#${treatId}-select`).slideUp().hide( "slow" )
+      }
+    }
+  })
 
-      $("#signatureCake-select-1").hide()
-      $("#buildYourOwnCake-select-1").hide()
-      $("#signatureCake-select-2").hide()
-      $("#buildYourOwnCake-select-2").hide()
-      $("#signatureCake-select-3").hide()
-      $("#buildYourOwnCake-select-3").hide()
+  $("#signatureCake-select-1").hide( "slow" )
+  $("#buildYourOwnCake-select-1").hide( "slow" )
+  $("#signatureCake-select-2").hide( "slow" )
+  $("#buildYourOwnCake-select-2").hide( "slow" )
+  $("#signatureCake-select-3").hide( "slow" )
+  $("#buildYourOwnCake-select-3").hide( "slow" )
 
-      $("#flavorType-select-1").change(() => {
-        const flavorType = event.target.value
-        if (flavorType === "signature") {
-          $("#signatureCake-select-1").slideDown().show()
-          $("#buildYourOwnCake-select-1").hide()
-        } else if (flavorType === "buildYourOwn") {
-          $("#signatureCake-select-1").hide()
-          $("#buildYourOwnCake-select-1").slideDown().show()
-        }
-      })
-      $("#flavorType-select-2").change(() => {
-        const flavorType = event.target.value
-        if (flavorType === "signature") {
-          $("#signatureCake-select-2").slideDown().show()
-          $("#buildYourOwnCake-select-2").hide()
-        } else if (flavorType === "buildYourOwn") {
-          $("#signatureCake-select-2").hide()
-          $("#buildYourOwnCake-select-2").slideDown().show()
-        }
-      })
-      $("#flavorType-select-3").change(() => {
-        const flavorType = event.target.value
-        if (flavorType === "signature") {
-          $("#signatureCake-select-3").slideDown().show()
-          $("#buildYourOwnCake-select-3").hide()
-        } else if (flavorType === "buildYourOwn") {
-          $("#signatureCake-select-3").hide()
-          $("#buildYourOwnCake-select-3").slideDown().show()
-        }
-      })
-    </script>
-  </body>
+  $("#flavorType-select-1").change(() => {
+    const flavorType = event.target.value
+    if (flavorType === "signature") {
+      $("#signatureCake-select-1").slideDown().show()
+      $("#buildYourOwnCake-select-1").hide( "slow" )
+    } else if (flavorType === "buildYourOwn") {
+      $("#signatureCake-select-1").hide( "slow" )
+      $("#buildYourOwnCake-select-1").slideDown().show()
+    }
+  })
+  $("#flavorType-select-2").change(() => {
+    const flavorType = event.target.value
+    if (flavorType === "signature") {
+      $("#signatureCake-select-2").slideDown().show()
+      $("#buildYourOwnCake-select-2").hide( "slow" )
+    } else if (flavorType === "buildYourOwn") {
+      $("#signatureCake-select-2").hide( "slow" )
+      $("#buildYourOwnCake-select-2").slideDown().show()
+    }
+  })
+  $("#flavorType-select-3").change(() => {
+    const flavorType = event.target.value
+    if (flavorType === "signature") {
+      $("#signatureCake-select-3").slideDown().show()
+      $("#buildYourOwnCake-select-3").hide( "slow" )
+    } else if (flavorType === "buildYourOwn") {
+      $("#signatureCake-select-3").hide( "slow" )
+      $("#buildYourOwnCake-select-3").slideDown().show()
+    }
+  })
+  $("#delete-photo-1").hide()
+  $("#delete-photo-2").hide()
+
+  $("#upload").change(() => {
+    $("#files-chosen-1").text(event.target.files[0].name)
+    const tmppath1 = URL.createObjectURL(event.target.files[0]);
+    console.log(event.target.files)
+    //get parent using closest and then find img element
+    $("#preview-image-1").attr('src', tmppath1).show();
+    $("#delete-photo-1").show()
+    if (event.target.files.length === 2) {
+      $("#files-chosen-2").text(event.target.files[1].name)
+      const tmppath2 = URL.createObjectURL(event.target.files[1]);
+      //get parent using closest and then find img element
+      $("#preview-image-2").attr('src', tmppath2).show();
+      $("#delete-photo-2").show()
+    }
+
+  })
+
+  $("#delete-photo-1").click(() => {
+    $("#files-chosen-1")
+    $(event.target).closest("div").find("img").attr('src', null);
+    $("#files-chosen-1").text('No file chosen')
+    $("#preview-image-1").hide( "slow" )
+    $("#delete-photo-1").hide( "slow" )
+  })
+  $("#delete-photo-2").click(() => {
+    $("#files-chosen-2")
+    $(event.target).closest("div").find("img").attr('src', null);
+    $("#files-chosen-2").text('')
+    $("#preview-image-2").hide( "slow" )
+    $("#delete-photo-2").hide( "slow" )
+  })
+
+  $("#submit-button").click(() => {
+    $(":hidden").attr("name","");
+  })
+
+  $("#flash-success").click(() => {
+    $("#flash-success").remove()
+  })
+</script>
+</body>
+
 </html>

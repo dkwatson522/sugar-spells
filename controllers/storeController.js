@@ -7,24 +7,14 @@ const Contact = mongoose.model('Contact')
 const Order = mongoose.model('Order')
 const mail = require('../handlers/mail');
 const multer = require('multer');
+const { storage } = require('../cloudinary');
+const upload = multer({ storage });
 const jimp = require('jimp');
 const uuid = require('uuid');
-const multerOptions = {
-  storage: multer.memoryStorage(),
-  fileFilter(req, file, next) {
-    const isPhoto = file.mimetype.startsWith('images/');
-    if(isPhoto) {
-      next(null, true);
-    } else {
-      next({ message: 'That filetype isn\'t allowed!' }, false);
-    }
-  }
-};
+
 
 // HOMPAGE
 exports.homePage = (req, res) => {
-  req.flash('success', 'welcome home')
-  // console.log(req.flash())
   res.render('index', { title: 'Home' });
 };
 
@@ -66,7 +56,9 @@ exports.addService = (req, res) => {
   res.render('addServices', {title: 'Add New Services'})
 };
 exports.createService = async (req, res) => {
-  const service = await (new Service(req.body)).save();
+  const service = new Service(req.body)
+  service.image = {url:req.file.path, fileName:req.file.filename}
+  await service.save();
   res.redirect('/services');
 };
 exports.showService = async (req, res) => {
@@ -77,6 +69,8 @@ exports.showService = async (req, res) => {
 exports.updateService = async (req,res) => {
   const { id } = req.params;
   const service = await Service.findByIdAndUpdate(id, { ...req.body }, { new: true } );
+  service.image = {url:req.file.path, fileName:req.file.filename}
+  service.save()
   res.redirect('/services');
 }
 exports.deleteService = async (req, res) => {
@@ -153,3 +147,20 @@ exports.orderForm = async (req, res) => {
   const services = await Service.find();
   res.render('order', {title: 'Create an Order', services} )
 }
+exports.newOrder = async (req, res) => {
+  const order = (new Order(req.body))
+  order.images = req.files.map(file => ({url:file.path, fileName:file.fileName}))
+  await order.save()
+  req.flash('success', 'Your Order Request Email Has Been Sent!')
+  res.redirect('/')
+}
+
+
+//GALLERY
+exports.showGallery = (req, res) => {
+  res.render('gallery')
+}
+
+//IMAGE UPLOAD
+exports.imageUpload = upload.single('image')
+exports.imagesUpload = upload.array('images')
