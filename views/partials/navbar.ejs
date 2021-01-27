@@ -1,69 +1,88 @@
-<body class="bg-fixed bg-cover antialiased leading-normal tracking-normal font-sans bg-white text-gray-800 text-smooth" style="background-image: url(/images/sprinkles-background.png)">
-  <div class="flex flex-col flex-1">
-    <% if (locals.flashes){ %>
-    <%  const categories = Object.keys(locals.flashes) %>
-    <%  categories.forEach((category) => { %>
-    <%    flashes[category].forEach((message) => { %>
-    <div id='flash-success' class="flex justify-between items-center md:m-12 m-4 border-2 border-green-500 bg-green-200 font-bold">
-      <div class="px-4 text-2xl text-center">
-        <p class=""><%= message %></p>
-      </div>
-      <div class="px-4">
-        <button type="button"><i class="fas fa-times"></i></button>
-      </div>
-    </div>
-    <% })%>
-    <% }) %>
-    <%} %>
-  </div>
-  <div class="py-4">
-    <header class="lg:px-16 px-6 bg-cover flex flex-wrap items-center lg:py-0 py-2">
-      <div class="flex-1 flex justify-between items-center mr-4">
-        <a class="" href="/">
-          <img class="lg:block h-auto w-24" src="/images/logo.png" alt="logo">
-        </a>
-      </div>
-      <label for="menu-toggle" class="cursor-pointer lg:hidden block">
-        <svg class="fill-current text-gray-700 font-bold w-8 h-8" viewBox="0 0 512 512">
-          <path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"></path>
-        </svg>
-      </label>
-      <input type="checkbox" class="hidden" id="menu-toggle">
+<body class="justify-between flex flex-col min-h-screen bg-fixed bg-cover antialiased leading-normal tracking-normal font-sans bg-white text-gray-800 text-smooth" style="background-image: url(/images/sprinkles-background.png)">
 
-      <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
-        <nav>
-          <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 uppercase">
-            <li>
-              <a href="/" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Home</a>
-            </li>
-            <li>
-              <a href="/flavors" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Flavors</a>
-            </li>
-            <li>
-              <a href="/services" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Services</a>
-            </li>
-            <li>
-              <a href="/gallery" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Gallery</a>
-            </li>
-            <li>
-              <a href="/order" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Order Inquiry</a>
-            </li>
-            <li>
-              <a href="/about" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">About the Baker</a>
-            </li>
-            <li>
-              <a href="/faqs" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">FAQ</a>
-            </li>
-            <li>
-              <a href="/contact" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Contact Us</a>
-            </li>
-            <li>
-              <a href="/login" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor-pointer">
-                <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400">
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <div class="relative z-20">
+    <div class="py-4 bg-cover" style="background-image: url(/images/sprinkles-background.png)">
+      <% if (locals.flashes){ %>
+        <% const categories = Object.keys(locals.flashes) %>
+        <% categories.forEach((category) => { %>
+          <% flashes[category].forEach((message) => { %>
+            <div class="flex justify-around flex-1">
+              <div id='flash' class="max-w-sm flex justify-between items-center border-2 border-green-500 bg-green-200 font-bold">
+                <div class="px-4 text-2xl text-center">
+                  <p class=""><%= message %></p>
+                </div>
+                <div class="px-4">
+                  <button type="button"><i class="fas fa-times"></i></button>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+            <% }) %>
+          <% } %>
+      <header class="lg:px-16 px-6 bg-cover flex flex-wrap items-center lg:py-0 py-2">
+        <div class="flex-1 flex justify-between items-center mr-4">
+          <a class="" href="/">
+            <img class="lg:block h-auto w-24" src="/images/logo.png" alt="logo">
+          </a>
+        </div>
+        <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+          <svg class="fill-current text-gray-700 font-bold w-8 h-8" viewBox="0 0 512 512">
+            <path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"></path>
+          </svg>
+        </label>
+        <input type="checkbox" class="hidden" id="menu-toggle">
+
+        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+          <nav>
+            <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 uppercase">
+              <li>
+                <a href="/" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Home</a>
+              </li>
+              <li>
+                <a href="/flavors" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Flavors</a>
+              </li>
+              <li>
+                <a href="/services" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Services</a>
+              </li>
+              <li>
+                <a href="/gallery" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Gallery</a>
+              </li>
+              <li>
+                <a href="/order" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Order Inquiry</a>
+              </li>
+              <li>
+                <a href="/about" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">About the Baker</a>
+              </li>
+              <li>
+                <a href="/faqs" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">FAQ</a>
+              </li>
+              <li>
+                <a href="/contact" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Contact Us</a>
+              </li>
+              <li>
+                <% if (!user) { %>
+                  <a href="/login" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor-pointer">
+                    <div class="flex-col align-center justify-center">
+                      <div class="flex justify-center">
+                        <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400">
+                      </div>
+                      <span class="text-xs">Admin Login</span>
+                    </div>
+                  </a>
+                <% } else { %>
+                  <a href="/logout" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor-pointer">
+                    <div class="flex-col align-center justify-center">
+                      <div class="flex justify-center">
+                        <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400">
+                      </div>
+                      <span class="text-xs">Admin Logout</span>
+                    </div>
+                  </a>
+                <% } %>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
   </div>

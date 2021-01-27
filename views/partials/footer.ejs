@@ -1,4 +1,4 @@
-<footer class="w-full py-6 px-6 sm:px-12 lg:px-20 xl:px-24 text-gray-700 bg-background">
+<footer class="w-full py-6 px-6 sm:px-12 lg:px-20 xl:px-24 text-gray-700 bg-menu">
   <div class="flex justify-between">
     <!-- LEFT COLUMN -->
     <div class="w-1/3 flex-col justify-center items-center text-center">
@@ -53,8 +53,8 @@
 
 <script type=" text/javascript">
   //hide 2nd and 3rd cake tier option on initial load
-  $("#cakeTier-2").hide( "slow" )
-  $("#cakeTier-3").hide( "slow" )
+  // $("#cakeTier-2").hide( "slow" )
+  // $("#cakeTier-3").hide( "slow" )
   //logic to hide/show cake tier option based on the cake tier value selected
   $("#cakeTier-select").change(() => {
     const cakeTierAmount = event.target.value
@@ -105,7 +105,6 @@
   $("#riceKrispiePops-select").hide()
   $("#chocolateDippedStrawberries-select").hide()
   $("#cakePops-select").hide()
-
 
 
 
@@ -225,8 +224,8 @@
     $(":hidden").attr("name","");
   })
 
-  $("#flash-success").click(() => {
-    $("#flash-success").remove()
+  $("#flash").click(() => {
+    $("#flash").remove()
   })
 </script>
 </body>

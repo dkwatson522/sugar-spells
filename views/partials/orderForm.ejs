@@ -1,7 +1,7 @@
-<div class="flex justify-around mx-48">
-  <form class="sm:w-3/5 border rounded p-6 bg-white mt-5" action="/new-order" method="POST" id="test-form" enctype="multipart/form-data">
+<div class="flex justify-around my-4">
+  <form class="border rounded p-6 bg-white max-w-2xl" action="/new-order" method="POST" id="test-form" enctype="multipart/form-data">
     <div class="">
-      <div class="px-4 py-5 sm:p-6 flex-col">
+      <div class="p-4 sm:p-6 flex-col">
         <div class="">
           <div class="font-bold text-lg">
             <h2>Tell Me About Yourself</h2>
@@ -140,11 +140,11 @@
               <div class="mt-1 rounded-md">
                 <select id="eventType" name="eventType" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" required>
                   <option value="" selected>---Select Option---</option>
-                  <option class="" value="wedding">Wedding</option>
-                  <option class="" value="birthday">Birthday</option>
-                  <option class="" value="anniversary">Anniversary</option>
-                  <option class="" value="christening">Christening</option>
-                  <option class="" value="other">Other</option>
+                  <option class="" value="Wedding">Wedding</option>
+                  <option class="" value="Birthday">Birthday</option>
+                  <option class="" value="Anniversary">Anniversary</option>
+                  <option class="" value="Christening">Christening</option>
+                  <option class="" value="Other">Other</option>
                 </select>
               </div>
             </div>
@@ -167,8 +167,8 @@
               </label>
               <div class="mt-1 rounded-md">
                 <div class="" id="delivery-select">
-                  <input type="radio" name="delivery[preference]" value="pick up" id="pickup"><span class="pl-2">Pick Up</span><br>
-                  <input type="radio" name="delivery[preference]" value="delivery" id="delivery"><span class="pl-2">Delivery</span>
+                  <input type="radio" name="delivery[preference]" value="Pick Up" id="pickup"><span class="pl-2">Pick Up</span><br>
+                  <input type="radio" name="delivery[preference]" value="Delivery" id="delivery"><span class="pl-2">Delivery</span>
                 </div>
               </div>
             </div>
@@ -267,6 +267,7 @@
                   <p class="text-xs italic text-gray-700 font-normal">We will discuss cake sizes during our initial email.</p>
                   <div class="mt-1 rounded-md">
                     <select class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" name="cakeTierAmount" id="cakeTier-select">
+                      <option value="--Select Cake Tier Amount--">--Select Cake Tier Amount--</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -312,8 +313,8 @@
                             <label for="tierType">Tier 1 (Top) <span>*</span></label>
                           </div>
                           <div class="flex-col" id="flavorType-select-1">
-                            <input type="radio" name="cake[flavor]" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
-                            <input type="radio" name="cake[flavor]" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
+                            <input type="radio" name="cakeFlavorOne" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
+                            <input type="radio" name="cakeFlavorOne" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
                           </div>
                         </div>
                         <div class="flex-col" id="signatureCake-select-1">
@@ -324,7 +325,7 @@
                             <p>You can find out more on the <span class="text-blue-700"><a href="/flavors" target="_blank">flavors</a></span> page...</p>
                           </div>
                           <div class="">
-                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][signature]">
+                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierOne[flavor][signature]">
                               <option value="velvet queen">Velvet Queen</option>
                               <option value="cookie monster">Cookie Monster</option>
                               <option value="lemon & poppyseed">Lemon & Poppyseed</option>
@@ -347,7 +348,7 @@
                               <p class="text-xs italic text-gray-700 font-normal">NF = Nut Free, EF = Egg Free</p>
                             </div>
                             <div class="">
-                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][buildYourOwn][base]">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierOne[flavor][buildYourOwn][base]">
                                 <option value="lemon poppy seed (NF)">Lemon Poppy Seed (NF)</option>
                                 <option value="mexican vanilla (NF)">Mexican Vanilla (NF)</option>
                                 <option value="cookies & cream | oreo (NF, can be EF)">Cookies & Cream | Oreo (NF, can be EF)</option>
@@ -368,7 +369,7 @@
                               <p>All of my buttercreams are a SMBC (Swiss Meringue Buttercream) base. It is silky, smooth and not overly sweet. The perfect base!</p>
                             </div>
                             <div class="my-2">
-                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][buildYourOwn][filling]">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierOne[flavor][buildYourOwn][filling]">
                                 <optgroup label="Buttercream">
                                   <option value="cookies and cream (oreo)">Cookies and Cream (Oreo)</option>
                                   <option value="vanilla">Vanilla"</option>
@@ -398,7 +399,7 @@
                             <div class="flex flex-wrap">
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][topping]" value="fresh strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="fresh strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Fresh Strawberries</label>
@@ -406,7 +407,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="freeze dried rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="freeze dried rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Freeze Dried Rasberries</label>
@@ -414,7 +415,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="double stuffed oreo cookies (chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="double stuffed oreo cookies (chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Double Stuffed Oreo Cookies (Chunks)</label>
@@ -422,7 +423,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="caramelized popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="caramelized popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Caramelized Popcorn</label>
@@ -430,7 +431,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="crushed pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="crushed pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Crushed Pretzels</label>
@@ -438,7 +439,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="salted caramel drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="salted caramel drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Salted Caramel Drizzle</label>
@@ -446,7 +447,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="pecans (chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="pecans (chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Pecans (Chopped)</label>
@@ -454,7 +455,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="almond & hazelnut praline crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierOne[flavor][buildYourOwn][topping]" value="almond & hazelnut praline crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Almond & Hazelnut Praline Crunch</label>
@@ -480,8 +481,8 @@
                             <label for="tierType">Tier 2 <span>*</span></label>
                           </div>
                           <div class="flex-col" id="flavorType-select-2">
-                            <input type="radio" name="cake[flavor]" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
-                            <input type="radio" name="cake[flavor]" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
+                            <input type="radio" name="cakeFlavorTwo" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
+                            <input type="radio" name="cakeFlavorTwo" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
                           </div>
                         </div>
                         <div class="flex-col" id="signatureCake-select-2">
@@ -492,7 +493,7 @@
                             <p>You can find out more on the <span class="text-blue-700"><a href="/flavors" target="_blank">flavors</a></span> page...</p>
                           </div>
                           <div class="">
-                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][signature]">
+                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierTwo[flavor][signature]">
                               <option value="velvet queen">Velvet Queen</option>
                               <option value="cookie monster">Cookie Monster</option>
                               <option value="lemon & poppyseed">Lemon & Poppyseed</option>
@@ -515,7 +516,7 @@
                               <p class="text-xs italic text-gray-700 font-normal">NF = Nut Free, EF = Egg Free</p>
                             </div>
                             <div class="">
-                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][buildYourOwn][base]">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierTwo[flavor][buildYourOwn][base]">
                                 <option value="lemon poppy seed (NF)">Lemon Poppy Seed (NF)</option>
                                 <option value="mexican vanilla (NF)">Mexican Vanilla (NF)</option>
                                 <option value="cookies & cream | oreo (NF, can be EF)">Cookies & Cream | Oreo (NF, can be EF)</option>
@@ -536,7 +537,7 @@
                               <p>All of my buttercreams are a SMBC (Swiss Meringue Buttercream) base. It is silky, smooth and not overly sweet. The perfect base!</p>
                             </div>
                             <div class="my-2">
-                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][buildYourOwn][filling]">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierTwo[flavor][buildYourOwn][filling]">
                                 <optgroup label="Buttercream">
                                   <option value="cookies and cream (oreo)">Cookies and Cream (Oreo)</option>
                                   <option value="vanilla">Vanilla"</option>
@@ -566,7 +567,7 @@
                             <div class="flex flex-wrap">
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][topping]" value="fresh strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="fresh strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Fresh Strawberries</label>
@@ -574,7 +575,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="freeze dried rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="freeze dried rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Freeze Dried Rasberries</label>
@@ -582,7 +583,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="double stuffed oreo cookies (chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="double stuffed oreo cookies (chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Double Stuffed Oreo Cookies (Chunks)</label>
@@ -590,7 +591,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="caramelized popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="caramelized popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Caramelized Popcorn</label>
@@ -598,7 +599,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="crushed pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="crushed pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Crushed Pretzels</label>
@@ -606,7 +607,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="salted caramel drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="salted caramel drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Salted Caramel Drizzle</label>
@@ -614,7 +615,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="pecans (chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="pecans (chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Pecans (Chopped)</label>
@@ -622,7 +623,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="almond & hazelnut praline crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierTwo[flavor][buildYourOwn][topping]" value="almond & hazelnut praline crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Almond & Hazelnut Praline Crunch</label>
@@ -648,8 +649,8 @@
                             <label for="tierType">Tier 3 <span>*</span></label>
                           </div>
                           <div class="flex-col" id="flavorType-select-3">
-                            <input type="radio" name="cake[flavor]" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
-                            <input type="radio" name="cake[flavor]" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
+                            <input type="radio" name="cakeFlavorThree" value="signature"><span class="pl-2">Signature Cake Combos</span><br>
+                            <input type="radio" name="cakeFlavorThree" value="buildYourOwn"><span class="pl-2">Build Your Own Cake</span>
                           </div>
                         </div>
                         <div class="flex-col" id="signatureCake-select-3">
@@ -660,7 +661,7 @@
                             <p>You can find out more on the <span class="text-blue-700"><a href="/flavors" target="_blank">flavors</a></span> page...</p>
                           </div>
                           <div class="">
-                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][signature]">
+                            <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierThree[flavor][signature]">
                               <option value="velvet queen">Velvet Queen</option>
                               <option value="cookie monster">Cookie Monster</option>
                               <option value="lemon & poppyseed">Lemon & Poppyseed</option>
@@ -682,7 +683,7 @@
                               <p class="text-xs italic text-gray-700 font-normal">NF = Nut Free, EF = Egg Free</p>
                             </div>
                             <div class="">
-                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][buildYourOwn][base]">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierThree[flavor][buildYourOwn][base]">
                                 <option value="lemon poppy seed (NF)">Lemon Poppy Seed (NF)</option>
                                 <option value="mexican vanilla (NF)">Mexican Vanilla (NF)</option>
                                 <option value="cookies & cream | oreo (NF, can be EF)">Cookies & Cream | Oreo (NF, can be EF)</option>
@@ -703,7 +704,7 @@
                               <p>All of my buttercreams are a SMBC (Swiss Meringue Buttercream) base. It is silky, smooth and not overly sweet. The perfect base!</p>
                             </div>
                             <div class="my-2">
-                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cake[flavor][buildYourOwn][filling]">
+                              <select class="form-input h-10 py-2 px-3 text-gray-700 text-lg w-full bg-gray-400 rounded" name="cakeTierThree[flavor][buildYourOwn][filling]">
                                 <optgroup label="Buttercream">
                                   <option value="cookies and cream (oreo)">Cookies and Cream (Oreo)</option>
                                   <option value="vanilla">Vanilla"</option>
@@ -733,7 +734,7 @@
                             <div class="flex flex-wrap">
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][topping]" value="fresh strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="fresh strawberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Fresh Strawberries</label>
@@ -741,7 +742,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="freeze dried rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="freeze dried rasberries" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Freeze Dried Rasberries</label>
@@ -749,7 +750,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="double stuffed oreo cookies (chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="double stuffed oreo cookies (chunks)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Double Stuffed Oreo Cookies (Chunks)</label>
@@ -757,7 +758,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="caramelized popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="caramelized popcorn" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Caramelized Popcorn</label>
@@ -765,7 +766,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="crushed pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="crushed pretzels" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Crushed Pretzels</label>
@@ -773,7 +774,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="salted caramel drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="salted caramel drizzle" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Salted Caramel Drizzle</label>
@@ -781,7 +782,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="pecans (chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="pecans (chopped)" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Pecans (Chopped)</label>
@@ -789,7 +790,7 @@
                               </div>
                               <div class="flex w-1/2">
                                 <div class="flex items-center h-5">
-                                  <input name="cake[flavor][buildYourOwn][base]" value="almond & hazelnut praline crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                                  <input name="cakeTierThree[flavor][buildYourOwn][topping]" value="almond & hazelnut praline crunch" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                                 </div>
                                 <div class="ml-3 text-sm leading-5">
                                   <label for="tierExtra" class="font-medium text-gray-700">Almond & Hazelnut Praline Crunch</label>
@@ -836,23 +837,23 @@
                     <input name="sugarCookies[flavor]" value="mexican vanilla" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                   </div>
                   <div class="ml-3 text-sm leading-5">
-                    <label for="treat[flavor]" class="font-medium text-gray-700">Mexican Vanilla</label>
+                    <label for="sugarCookies[flavor]" class="font-medium text-gray-700">Mexican Vanilla</label>
                   </div>
                 </div>
                 <div class="flex">
                   <div class="flex items-center h-5">
-                    <input name="treat[flavor]" value="Lemon" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                    <input name="sugarCookies[flavor]" value="Lemon" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                   </div>
                   <div class="ml-3 text-sm leading-5">
-                    <label for="treat[flavor]" class="font-medium text-gray-700">Lemon</label>
+                    <label for="sugarCookies[flavor]" class="font-medium text-gray-700">Lemon</label>
                   </div>
                 </div>
                 <div class="flex">
                   <div class="flex items-center h-5">
-                    <input name="treat[flavor]" value="chocolate" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                    <input name="sugarCookies[flavor]" value="chocolate" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                   </div>
                   <div class="ml-3 text-sm leading-5">
-                    <label for="treat[flavor]" class="font-medium text-gray-700">Chocolate</label>
+                    <label for="sugarCookies[flavor]" class="font-medium text-gray-700">Chocolate</label>
                   </div>
                 </div>
               </div>
@@ -992,7 +993,7 @@
               <p class="text-sm font-semibold font-base leading-5 text-gray-700 mt-2">Upload below:</p>
               <p class="text-xs italic text-gray-700 font-normal">Don't know what design you want? Let me design something for you. Send me cool stuff like invitations, color schemes, art or anything that inpire you!</p>
             </div>
-            <div class="flex w-full mt-4 items-center justify-center bg-grey-lighter">
+            <div class="flex w-full my-2 items-center justify-center bg-grey-lighter">
               <label for="upload" class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue-600 hover:text-white">
                 <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
@@ -1001,18 +1002,18 @@
                 <input type='file' class="hidden" id="upload" name="images" multiple />
               </label>
             </div>
-            <div class="flex justify-center items-center">
+            <div class="flex justify-center items-center my-2">
               <span id="files-chosen-1" class="text-sm px-2">No files chosen</span>
-              <img id="preview-image-1" src="" class="w-24 h-24" hidden>
+              <img id="preview-image-1" src="" class="rounded-md w-24 h-24" hidden>
               <div class="flex justify-around my-4">
 
               </div>
               <span id="delete-photo-1" class="pl-2 text-red-500"><i class="fas fa-times"></i></span>
             </div>
-            <div class="flex justify-center items-center">
+            <div class="flex justify-center items-center my-2">
               <span id="files-chosen-2" class="text-sm px-2"></span>
               <div class="flex justify-around my-4">
-                <img id="preview-image-2" src="" class="w-24 h-24" hidden>
+                <img id="preview-image-2" src="" class="rounded-md w-24 h-24" hidden>
               </div>
               <span id="delete-photo-2" class="pl-2 text-red-500"><i class="fas fa-times"></i></span>
             </div>

@@ -1,0 +1,174 @@
+<div style="background-color:papayawhip; display: flex; flex-direction: column; padding:5px">
+  <div>
+    <p>Hello <%= options.name %>!</p>
+    <p>Sugar Spells has received your order request!</p>
+  </div>
+
+  <div id="event-information">
+    <p><strong>Event Information -</strong></p>
+    <div style="display: flex; justify-content: space-around;">
+      <p style="margin-left: 5px; margin-right: 5px; padding-left: 5px; padding-right: 5px">Type: <span><%= options.eventType %></span></p>
+      <p style="margin-left: 5px; margin-right: 5px; padding-left: 5px; padding-right: 5px">Date: <span><%= options.eventDate %></span></p>
+      <p style="margin-left: 5px; margin-right: 5px; padding-left: 5px; padding-right: 5px">Time: <span><%= options.readyTime %></span></p>
+      <p style="margin-left: 5px; margin-right: 5px; padding-left: 5px; padding-right: 5px">Guests: <span><%= options.numberOfGuests %></span></p>
+      <p>
+        Delivery/Pick Up: <span><%= options.delivery.preference %></span>
+      <p>
+        <%if(options.delivery.address) {%>
+        <%= options.delivery.address %>
+        <%}%>
+      </p>
+    </div>
+  </div>
+  <div>
+    <p><strong>Order Information -</strong></p>
+  </div>
+  <div style="">
+    <%if(options.cakeTierAmount) {%>
+    <div>
+      <p>Cake Tiers: <span><%= options.cakeTierAmount %></span></p>
+    </div>
+    <div style="padding-left:10px">
+      <p>Flower Type: <span><%= options.flowerType %></span></p>
+    </div>
+    <%}%>
+  </div>
+  <div class="display: flex; flex-direction: column">
+    <div style="display: flex; justify-content: flex-start; margin-bottom:10px;">
+      <!-- Cake tier 1 -->
+      <% if (options.cakeTierOne.flavor.signature) {%>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap; width: 33%; align-content: space-around;">
+        <p>1<sup>st</sup> Flavor:</p>
+        <p style="padding:10px">Signature Flavor: <%= options.cakeTierOne.flavor.signature %></p>
+      </div>
+      <%} else if (options.cakeTierOne.flavor.buildYourOwn.base) {%>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap; width: 33%; align-content: space-around;">
+        <p>1<sup>st</sup> Tier Flavor</p>
+        <p style="padding-left:10px">Base: <%= options.cakeTierOne.flavor.buildYourOwn.base %></p>
+        <p style="padding-left:10px">Filling: <%= options.cakeTierOne.flavor.buildYourOwn.filling %></p>
+        <% if (options.cakeTierOne.flavor.buildYourOwn.topping) { %>
+        <p style="padding-left:10px">Topping: <%= options.cakeTierOne.flavor.buildYourOwn.topping.join(", ") %></p>
+        <% } else { %>
+        <p style="padding-left:10px">No Extra Toppings Selected</p>
+        <% } %>
+      </div>
+      <%}%>
+
+      <!-- Cake tier 2 -->
+      <% if (options.cakeTierTwo.flavor.signature) {%>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap; width: 33%; align-content: space-around;">
+        <p>2<sup>nd</sup> Flavor:</p>
+        <p style="padding:10px">Signature Flavor: <%= options.cakeTierTwo.flavor.signature %></p>
+      </div>
+      <%} else if (options.cakeTierTwo.flavor.buildYourOwn.base) {%>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap; width: 33%; align-content: space-around;">
+        <p>2<sup>nd</sup> Tier Flavor:</p>
+        <p style="padding-left:10px">Base: <%= options.cakeTierTwo.flavor.buildYourOwn.base %></p>
+        <p style="padding-left:10px">Filling: <%= options.cakeTierTwo.flavor.buildYourOwn.filling %></p>
+        <% if (options.cakeTierTwo.flavor.buildYourOwn.topping) { %>
+        <p style="padding-left:10px">Topping: <%= options.cakeTierTwo.flavor.buildYourOwn.topping.join(", ") %></p>
+        <% } else { %>
+        <p style="padding-left:10px">No Extra Toppings Selected</p>
+        <% } %>
+      </div>
+      <%}%>
+
+      <!-- Cake tier 3 -->
+      <% if (options.cakeTierThree.flavor.signature) {%>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap; width: 33%; align-content: space-around;">
+        <p>3<sup>rd</sup> Flavor:</p>
+        <p style="padding:10px">Signature Flavor: <%= options.cakeTierThree.flavor.signature %></p>
+      </div>
+      <%} else if (options.cakeTierThree.flavor.buildYourOwn.base) {%>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap; width: 33%; align-content: space-around;">
+        <p>3<sup>rd</sup> Tier Flavor:</p>
+        <p style="padding-left:10px">Base: <%= options.cakeTierThree.flavor.buildYourOwn.base %></p>
+        <p style="padding-left:10px">Filling: <%= options.cakeTierThree.flavor.buildYourOwn.filling %></p>
+        <% if (options.cakeTierThree.flavor.buildYourOwn.topping) { %>
+        <p style="padding-left:10px">Topping: <%= options.cakeTierThree.flavor.buildYourOwn.topping.join(", ") %></p>
+        <% } else { %>
+        <p style="padding-left:10px">No Extra Toppings Selected</p>
+        <% } %>
+      </div>
+      <%}%>
+    </div>
+
+    <div style="display:flex; justify-content: flex-start; margin-top:10px;">
+      <!-- Sugar Cookies -->
+      <% if(options.sugarCookies.amount) { %>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap;">
+        <div style="font-weight: bold;" class="">
+          <p>Sugar Cookies</p>
+        </div>
+        <div style="padding-left:10px">
+          <p>Amount: <span><%= options.sugarCookies.amount %></span></p>
+          <% if (options.sugarCookies.flavor) {%>
+          <p>Flavor: <span><%= options.sugarCookies.flavor.join(', ') %></span></p>
+          <% } %>
+        </div>
+      </div>
+      <%}%>
+      <!-- Cupcakes -->
+      <% if(options.cupcakes.amount) { %>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap;">
+        <div style="font-weight: bold;" class="">
+          <p>Cupcakes</p>
+        </div>
+        <div style="padding-left:10px">
+          <p>Amount: <span><%= options.cupcakes.amount %></span></p>
+          <p>Flavor: <span><%= options.cupcakes.flavor %></span></p>
+          <p>Frosting: <span><%= options.cupcakes.frosting %></span></p>
+        </div>
+      </div>
+      <%}%>
+      <!-- Rice Krispie Pops -->
+      <% if(options.riceKrispiePops.amount) { %>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap;">
+        <div style="font-weight: bold;" class="">
+          <p>Rice Krispie Pops</p>
+        </div>
+        <div style="padding-left:10px">
+          <p>Amount: <span><%= options.riceKrispiePops.amount %></span></p>
+        </div>
+      </div>
+      <%}%>
+      <!-- Chocolate Dipped Strawberries -->
+      <% if(options.chocolateDippedStrawberries.amount) { %>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap;">
+        <div style="font-weight: bold;" class="">
+          <p>Chocolate Dipped Strawberries</p>
+        </div>
+        <div style="padding-left:10px">
+          <p>Amount: <span><%= options.chocolateDippedStrawberries.amount %></span></p>
+        </div>
+      </div>
+      <%}%>
+      <!-- Cakepops -->
+      <% if(options.cakepops.amount) { %>
+      <div style="display:flex; flex-direction: column; border: solid; padding-right: 5px; padding-left: 5px; margin-right:5px; margin-left:5px; flex-wrap: wrap;">
+        <div style="font-weight: bold;" class="">
+          <p>Cakepops</p>
+        </div>
+        <div style="padding-left:10px">
+          <p>Amount: <span><%= options.cakepops.amount %></span></p>
+        </div>
+      </div>
+      <%}%>
+    </div>
+
+    <div class="">
+      <div class="">
+        <p><strong>Order Description -</strong></p>
+      </div>
+      <div style="text-align: left; padding-left: 10px; padding-right: 10px">
+        <p><%= options.description %></p>
+      </div>
+    </div>
+    <div class="">
+      <p>Have a Great Day! I look forward to speaking with you!</p>
+    </div>
+    <div style="display:flex; justify-content: center;">
+      <img src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610994974/SugarSpells/jsjbzjb18djrxnzijfwp.png" width="100px" height="100px" alt="Sugar Spells Logo">
+    </div>
+  </div>
+</div>

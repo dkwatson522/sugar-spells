@@ -42,14 +42,15 @@ router.delete('/flavors/:id', catchErrors(storeController.deleteFlavor));
 // Service routes
 router.get('/services', catchErrors(storeController.getServices));
 router.get('/add-services', authController.isLoggedIn, storeController.addService)
-router.post('/add-services',storeController.imageUpload, catchErrors(storeController.createService));
+router.post('/add-services',storeController.imagesUpload, catchErrors(storeController.createService));
 router.get('/services/:id', authController.isLoggedIn, catchErrors(storeController.showService));
-router.put('/services/:id', authController.isLoggedIn, storeController.imageUpload, catchErrors(storeController.updateService))
+router.put('/services/:id', authController.isLoggedIn, storeController.imagesUpload, catchErrors(storeController.updateService))
 router.delete('/services/:id', catchErrors(storeController.deleteService))
 
 // Contact routes
 router.get('/contact', storeController.contactPage);
 router.post('/contact', catchErrors(storeController.createMessage));
+router.post('/add-contact', catchErrors(storeController.saveEmail))
 
 // About route
 router.get('/about', storeController.aboutPage)
@@ -62,7 +63,10 @@ router.get('/order', storeController.orderForm);
 router.post('/new-order', storeController.imagesUpload, catchErrors(storeController.newOrder));
 
 //Gallery Route
-router.get('/gallery', storeController.showGallery)
+router.get('/gallery', storeController.showGallery);
+
+//Privacy Route
+router.get('/privacy-policy', storeController.getPrivacy);
 
 
  module.exports = router;

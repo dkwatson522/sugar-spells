@@ -1,71 +1,75 @@
-<div class="w-full flex justify-around">
-  <form class="sm:w-3/5 border rounded p-6 bg-white mt-5" action="/contact" accept-charset="UTF-8" method="post"><input type="hidden" value="">
+<div class="flex justify-around my-4">
+  <form class="border rounded p-6 bg-white max-w-2xl" action="/contact" accept-charset="UTF-8" method="post"><input type="hidden" value="">
+    <div class="p-4 sm:p-6 flex-col">
+      <div class="font-bold text-lg">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="w-full my-2">
+        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="name">
+          Name
+        </label>
 
-    <div class="w-full mb-8">
-      <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="name">
-        Name
-      </label>
+        <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="name" id="contact_name">
+      </div>
 
-      <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="name" id="contact_name">
-    </div>
+      <div class="w-full mb-8">
+        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="email">
+          Email
+        </label>
 
-    <div class="w-full mb-8">
-      <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="email">
-        Email
-      </label>
+        <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="email" id="contact_email">
+      </div>
 
-      <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="email" id="contact_email">
-    </div>
+      <div class="w-full mb-8">
+        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="subject">
+          Subject
+        </label>
 
-    <div class="w-full mb-8">
-      <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="subject">
-        Subject
-      </label>
+        <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="subject" id="contact_subject">
+      </div>
 
-      <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="subject" id="contact_subject">
-    </div>
+      <div class="w-full mb-8">
+        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase">
+          Delivery Date
+        </label>
 
-    <div class="w-full mb-8">
-      <label class="block text-gray-700 text-xs font-bold mb-2 uppercase">
-        Delivery Date
-      </label>
+        <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="deliveryDate" id="datepicker" placeholder="Select a Date">
+      </div>
 
-      <input class="form-input py-2 px-3 text-gray-700 text-2xl w-full bg-gray-400 rounded" type="text" name="deliveryDate" id="datepicker" placeholder="Select a Date">
-    </div>
-
-    <div class="w-full mt-5 md:mt-0">
-      <fieldset>
-        <legend class="block text-gray-700 text-xs font-bold mb-2 uppercase">
-          I'm Interested In
-        </legend>
-        <div class="flex flex-row flex-wrap justify-around w-full">
-          <%services.forEach((service) => { %>
-            <div class="mt-4 px-2 w-1/3">
-              <div class="flex items-start">
-                <div class="flex items-center h-5">
-                  <input name="interests" value="<%= service.item %>" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
-                </div>
-                <div class="ml-3 text-sm leading-5">
-                  <label for="comments" class="font-medium text-gray-700"><%= service.item %></label>
+      <div class="w-full mt-5 md:mt-0">
+        <fieldset>
+          <legend class="block text-gray-700 text-xs font-bold mb-2 uppercase">
+            I'm Interested In
+          </legend>
+          <div class="flex flex-row flex-wrap justify-around w-full">
+            <%services.forEach((service) => { %>
+              <div class="mt-4 px-2 w-1/3">
+                <div class="flex items-start">
+                  <div class="flex items-center h-5">
+                    <input name="interests" value="<%= service.item %>" type="checkbox" class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+                  </div>
+                  <div class="ml-3 text-sm leading-5">
+                    <label for="comments" class="font-medium text-gray-700"><%= service.item %></label>
+                  </div>
                 </div>
               </div>
-            </div>
-          <%}) %>
-      </fieldset>
-    </div>
+            <%}) %>
+        </fieldset>
+      </div>
 
-    <div class="w-full my-4">
-      <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="message">
-        Message
-      </label>
+      <div class="w-full my-4">
+        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase" htmlfor="message">
+          Message
+        </label>
 
-      <textarea placeholder="" class="form-textarea text-2xl leading-tight text-gray-700 w-full bg-gray-400 text-gray-800 p-3 rounded" rows="5" cols="80" name="message" id="contact_message"></textarea>
-    </div>
+        <textarea placeholder="" class="form-textarea text-2xl leading-tight text-gray-700 w-full bg-gray-400 text-gray-800 p-3 rounded" rows="5" cols="80" name="message" id="contact_message"></textarea>
+      </div>
 
-    <div class="flex justify-start">
-      <button type="submit" class="p-2 px-8 rounded-lg font-semibold bg-orange-500 text-white hover:bg-orange-600 text-lg">
-        Send
-      </button>
+      <div class="flex justify-start">
+        <button type="submit" class="p-2 px-8 rounded-lg font-semibold bg-orange-500 text-white hover:bg-orange-600 text-lg">
+          Send
+        </button>
+      </div>
     </div>
   </form>
 </div>
