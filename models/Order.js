@@ -3,8 +3,14 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 const slug = require('slugs');
 const validator = require('validator');
+const { v4: uuidv4 } = require('uuid');
+
 
 const orderSchema = new Schema({
+  orderID: {
+    type: String,
+    default: Date.now
+  },
   email: {
     type: String,
     lowercase: true,
@@ -14,7 +20,6 @@ const orderSchema = new Schema({
   },
   name: {
       type: String,
-      lowercase: true,
       trim: true
   },
   phoneNumber: {
@@ -48,64 +53,63 @@ const orderSchema = new Schema({
   },
   cakeTierAmount: Number,
   flowerType: String,
-  cake: {
-    name: {
-      type:String,
-      default: "cake"
-    },
+  cakeTierOne: {
     flavor: {
-      signature: [String],
+      signature: String,
       buildYourOwn: {
-        base: [String],
-        filling: [String],
+        base: String,
+        filling: String,
+        topping: [String]
+      }
+    }
+  },
+  cakeTierTwo: {
+    flavor: {
+      signature: String,
+      buildYourOwn: {
+        base: String,
+        filling: String,
+        topping: [String]
+      }
+    }
+  },
+  cakeTierThree: {
+    flavor: {
+      signature: String,
+      buildYourOwn: {
+        base: String,
+        filling: String,
         topping: [String]
       }
     }
   },
   sugarCookies: {
-    name: {
-      type: [String],
-      default: "sugar cookies"
-    },
+    name: String,
     amount: Number,
-    flavor: String
+    flavor: [String]
   },
   cupcakes: {
-    name: {
-      type: String,
-      default: "cupcakes"
-    },
+    name: String,
     amount: Number,
     flavor: String,
     frosting: String
   },
   riceKrispiePops: {
-    name: {
-      type: String,
-      default: "rice krispie pops"
-    },
+    name: String,
     amount: Number
   },
   chocolateDippedStrawberries: {
-    name: {
-      type: String,
-      default: "chocolate dipped strawberries"
-    },
+    name: String,
     amount: Number
   },
   cakepops: {
-    name: {
-      type: String,
-      default: "cake pops"
-    },
+    name: String,
     amount: Number
   },
-  images: [
-    {
-      url: String,
-      fileName: String
-    }
-  ],
+  images: [{
+    url: String,
+    filename: String
+  }],
   description: {
     type: String,
     trim: true,
@@ -115,6 +119,6 @@ const orderSchema = new Schema({
     type: Date,
     default: Date.now
   }
-})
+},{ minimize: false })
 
 module.exports = mongoose.model("Order", orderSchema)

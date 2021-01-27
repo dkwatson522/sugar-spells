@@ -1,0 +1,23 @@
+<div style="display: flex; flex-direction: column">
+  <h1>Hello Sugar Spells</h1>
+  <p>You have a new message from <strong><%= options.name %></strong> - <strong><%= options.email%></strong></p>
+  <div class="">
+    <p><%= options.message %></p>
+    <p>The tentative event date is <%= options.deliveryDate %></p>
+  </div>
+  <div class="">
+    <div class="">
+      <p>Interests:</p>
+      <ul>
+        <% if (options.interests) { %>
+        <%  options.interests.forEach((interest) => { %>
+          <li><%= interest %></li>
+        <%})%>
+      <% } %>
+      </ul>
+    </div>
+  </div>
+  <div style="display:flex; justify-content: center;">
+    <img src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1610994974/SugarSpells/jsjbzjb18djrxnzijfwp.png" width="100px" height="25px" alt="Sugar Spells Logo">
+  </div>
+</div>

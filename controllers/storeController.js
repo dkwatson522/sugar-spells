@@ -10,7 +10,7 @@ const multer = require('multer');
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
 const jimp = require('jimp');
-const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 
 // HOMPAGE
@@ -114,20 +114,44 @@ exports.contactPage = async (req, res) => {
 };
 exports.createMessage = async (req, res) => {
   const contact = await (new Contact(req.body)).save();
-  // await mail.sendMail
-  const message = req.body
-  const deliveryDate = (message.deliveryDate) || 'TBD'
-  // console.log(messageInterests)
-  await mail.send({
-    email: message.email,
-    message: message.message,
-    subject: message.subject,
-    name: message.name,
+  // const message = req.body
+  const deliveryDate = (contact.deliveryDate) || 'TBD'
+  console.log(contact.interests)
+  // console.log(messageInterests) should create join with , lookup
+  await mail.sendContactInfo({
+    email: contact.email,
+    message: contact.message,
+    subject: contact.subject,
+    name: contact.name,
     deliveryDate: deliveryDate,
-    interests: message.interests
+    interests: contact.interests
   });
+  req.flash('success', 'Your Contact Email Has Been Sent!')
   res.redirect('/');
 };
+exports.saveEmail = async (req, res) => {
+  const email = await (new Contact(req.body)).save();
+  req.flash('success', `${req.body.email} Has Been Added to our Newsletter!`)
+  res.redirect('/');
+}
+
+
+// ORDERS
+exports.orderForm = async (req, res) => {
+  res.render('order', {title: 'Create an Order'} )
+}
+exports.newOrder = async (req, res) => {
+  // console.log(req.files);
+  const order = (new Order(req.body))
+  // creating array for images uploaded
+  order.images = req.files.map(file => ({url:file.path, filename:file.filename}));
+  order.orderID = Date.now();
+  await order.save()
+  console.log(order)
+  await mail.sendOrderInfo(order)
+  req.flash('success', 'Your Order Request Email Has Been Sent!')
+  res.redirect('/')
+}
 
 
 // ABOUT
@@ -142,25 +166,15 @@ exports.cakeCare = (req, res) => {
 };
 
 
-// ORDERS
-exports.orderForm = async (req, res) => {
-  const services = await Service.find();
-  res.render('order', {title: 'Create an Order', services} )
-}
-exports.newOrder = async (req, res) => {
-  const order = (new Order(req.body))
-  order.images = req.files.map(file => ({url:file.path, fileName:file.fileName}))
-  await order.save()
-  req.flash('success', 'Your Order Request Email Has Been Sent!')
-  res.redirect('/')
-}
-
-
 //GALLERY
 exports.showGallery = (req, res) => {
-  res.render('gallery')
+  res.render('gallery', { title: 'Gallery'})
 }
 
+//PRIVACY POLICY
+exports.getPrivacy = (req, res) => {
+  res.render('privacy', { title: 'Privacy Policy'})
+};
+
 //IMAGE UPLOAD
-exports.imageUpload = upload.single('image')
 exports.imagesUpload = upload.array('images')
