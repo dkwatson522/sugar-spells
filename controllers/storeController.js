@@ -140,6 +140,7 @@ exports.saveEmail = async (req, res) => {
 exports.orderForm = async (req, res) => {
   res.render('order', {title: 'Create an Order'} )
 }
+
 exports.newOrder = async (req, res) => {
   // console.log(req.files);
   const order = (new Order(req.body))
@@ -149,8 +150,30 @@ exports.newOrder = async (req, res) => {
   await order.save()
   console.log(order)
   await mail.sendOrderInfo(order)
-  req.flash('success', 'Your Order Request Email Has Been Sent!')
+  req.flash('success', `Your Order ${order.orderID} Request Email Has Been Sent!`)
   res.redirect('/')
+}
+exports.searchOrder = async (req, res) => {
+  // const { orderID } = req.params;
+  const order = await Order.find()
+  // console.log(order)
+  res.render('searchOrder', {order})
+}
+exports.getByOrderID = async (req, res) => {
+  console.log(req.query)
+  const { orderID } = req.query;
+
+
+  const order = await Order.findOne({orderID}, (error, data) => {
+    if(error) {
+      console.log(error)
+    } else {
+      console.log(data)
+    }
+  });
+
+  // res.send("Order Info here", {order})
+  res.render('showOrder', {title: 'Show Order', order})
 }
 
 
@@ -175,6 +198,11 @@ exports.showGallery = (req, res) => {
 exports.getPrivacy = (req, res) => {
   res.render('privacy', { title: 'Privacy Policy'})
 };
+
+//THROWBACKS
+exports.getThrowbacks = (req, res) => {
+  res.render('throwbacks', {title: 'Throwbacks'})
+}
 
 //IMAGE UPLOAD
 exports.imagesUpload = upload.array('images')

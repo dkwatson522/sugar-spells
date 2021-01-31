@@ -7,7 +7,7 @@
         <% categories.forEach((category) => { %>
           <% flashes[category].forEach((message) => { %>
             <div class="flex justify-around flex-1">
-              <div id='flash' class="max-w-sm flex justify-between items-center border-2 border-green-500 bg-green-200 font-bold">
+              <div id='flash' class="max-w-xl flex justify-between items-center border-2 border-green-500 bg-green-200 font-bold">
                 <div class="px-4 text-2xl text-center">
                   <p class=""><%= message %></p>
                 </div>
@@ -45,13 +45,27 @@
                 <a href="/services" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Services</a>
               </li>
               <li>
-                <a href="/gallery" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Gallery</a>
+                <a href="/gallery" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Gallery <i class="fas fa-magic"></i></a>
               </li>
               <li>
-                <a href="/order" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Order Inquiry</a>
+                <div id="dropdown-button" class="inline-block relative lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">
+                  <button class="inline-flex items-center uppercase">
+                    <span class="mr-1">Order Inquiry</span>
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                  </button>
+                  <ul id="dropdown-menu" class="absolute w-full hidden text-gray-700 pt-1">
+                    <li class=""><a class="border-b-2 border-transparent hover:border-indigo-400 rounded-t bg-pink-200 py-2 px-4 block whitespace-no-wrap" href="/order">New Order</a></li>
+                    <li class=""><a class="border-b-2 border-transparent hover:border-indigo-400 rounded-b bg-pink-200 py-2 px-4 block whitespace-no-wrap" href="/order-search">Search Order</a></li>
+                  </ul>
+                </div>
               </li>
+              <script type="text/javascript">
+                $('#dropdown-button').hover(() => {
+                  $('#dropdown-menu').toggleClass('hidden')
+                })
+              </script>
               <li>
-                <a href="/about" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">About the Baker</a>
+                <a href="/about" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">About the Baker <i class="far fa-heart text-red-500"></i></a>
               </li>
               <li>
                 <a href="/faqs" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">FAQ</a>

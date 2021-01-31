@@ -1,0 +1,218 @@
+<%- include ('../views/partials/header') %>
+<%- include ('../views/partials/navbar') %>
+<div class="flex justify-around">
+  <div class="flex flex-col py-6 my-4 text-gray-700 text-center rounded-md">
+    <% if (!order) { %>
+      <div class="border rounded p-6 bg-white max-w-2xl">
+        <h1 class="font-bold text-3xl mb-2">Unable to Find Order</h1>
+        <p>Return <a class="underline text-blue-400" href="/">Home</a> or try another <a class="underline text-blue-400" href="/order-search">Search</a></p>
+      </div>
+    <% } else { %>
+      <div class="border rounded p-6 bg-white max-w-2xl">
+        <h1 class="font-bold text-3xl mb-2">
+          Order #: <%= order.orderID %>
+        </h1>
+        <div class="flex-col text-justify">
+          <h1 class="text-xl font-semibold">Order Information</h1>
+          <p class="mx-2">
+            Name: <span class="underline font-bold uppercase"><%= order.name %></span>
+          </p>
+          <div class="flex justify-between">
+            <p class="mx-2">
+              Email: <span class="underline font-bold"><%= order.email %></span>
+            </p>
+            <p class="mx-2">
+              Phone Number: <span class="underline font-bold"><%= order.phoneNumber %></span>
+            </p>
+          </div>
+          <div class="flex justify-between">
+            <p class="mx-2">
+              Date: <span class="underline font-bold"><%= order.eventDate.toDateString() %></span>
+            </p>
+            <p class="mx-2">
+              Time: <span class="underline font-bold"><%= order.readyTime %></span>
+            </p>
+            <p class="mx-2">
+              Guests: <span class="underline font-bold"><%= order.numberOfGuests %></span>
+            </p>
+          </div>
+          <div class="flex justify-between">
+            <p class="mx-2">
+              Delivery/Pickup: <span class="underline font-bold"><%= order.delivery.preference %></span>
+            </p>
+            <% if (order.delivery.address) {%>
+              <p class="mx-2">
+                Address (If Necessary): <span class="underline font-bold"><%= order.delivery.address %></span>
+              </p>
+            <% } %>
+          </div>
+        </div>
+        <!-- Cake Information -->
+        <% if (!order.cakeTierAmount) { %>
+          <div class="flex-col text-justify">
+            <h1 class="text-xl font-semibold">Cake Information</h1>
+            <p class="mx-2">
+              No cake ordered
+            </p>
+          </div>
+        <% } else { %>
+          <div class="flex-col text-justify">
+            <h1 class="text-xl font-semibold">Cake Information</h1>
+            <div class="flex justify-between">
+              <p class="mx-2">
+                Cake Tiers: <span class="underline font-bold"><%= order.cakeTierAmount %></span>
+              </p>
+              <p class="mx-2">
+                Flower Type: <span class="underline font-bold"><%= order.flowerType %></span>
+              </p>
+            </div>
+          </div>
+          <!-- Cake Tier 1 Details -->
+          <div class="flex-col text-justify">
+            <% if (order.cakeTierOne.flavor.signature) { %>
+              <div class="flex justify-between mx-2">
+                <p class="font-semibold">Tier 1</p>
+                <p class="">
+                  Signature Cake Flavor: <span class="underline font-bold" class="underline font-bold"><%= order.cakeTierOne.flavor.signature %></span>
+                </p>
+              </div>
+            <% } else if (order.cakeTierOne.flavor.buildYourOwn.base) { %>
+              <div class="flex-col mx-2">
+                <p class="font-semibold">Tier 1 - Build Your Own</p>
+              </div>
+
+              <div class="flex-col text-justify mx-2">
+                <p>
+                  Base: <span class="underline font-bold"><%= order.cakeTierOne.flavor.buildYourOwn.base %></span>
+                </p>
+                <p>
+                  Filling: <span class="underline font-bold"><%= order.cakeTierOne.flavor.buildYourOwn.filling %></span>
+                </p>
+                <p>
+                  Topping: <span class="underline font-bold"><%= order.cakeTierOne.flavor.buildYourOwn.topping.join(', ') %></span>
+                </p>
+              </div>
+            <% } %>
+            <!-- Cake Tier 2 Details -->
+            <% if (order.cakeTierTwo.flavor.signature) { %>
+              <div class="flex justify-between mx-2">
+                <p class="font-semibold">Tier 2 - Signature Cake Flavor: <span class="underline font-bold" class="underline font-bold"><%= order.cakeTierTwo.flavor.signature %></span></p>
+              </div>
+            <% } else if (order.cakeTierTwo.flavor.buildYourOwn.base) { %>
+              <div class="flex-col mx-2">
+                <p class="font-semibold">Tier 2 - Build Your Own</p>
+              </div>
+
+              <div class="flex-col text-justify mx-2">
+                <p>
+                  Base: <span class="underline font-bold"><%= order.cakeTierTwo.flavor.buildYourOwn.base %></span>
+                </p>
+                <p>
+                  Filling: <span class="underline font-bold"><%= order.cakeTierTwo.flavor.buildYourOwn.filling %></span>
+                </p>
+                <p>
+                  Topping: <span class="underline font-bold"><%= order.cakeTierTwo.flavor.buildYourOwn.topping.join(', ') %></span>
+                </p>
+              </div>
+            <% } %>
+            <!-- Cake Tier 3 Details -->
+            <% if (order.cakeTierThree.flavor.signature) { %>
+              <div class="flex justify-between mx-2">
+                <p class="font-semibold">Tier 3 - Signature Cake Flavor: <span class="underline font-bold" class="underline font-bold"><%= order.cakeTierThree.flavor.signature %></span></p>
+              </div>
+            <% } else if (order.cakeTierThree.flavor.buildYourOwn.base) { %>
+              <div class="flex-col mx-2">
+                <p class="font-semibold">Tier 3 - Build Your Own</p>
+              </div>
+
+              <div class="flex-col text-justify mx-2">
+                <p>
+                  Base: <span class="underline font-bold"><%= order.cakeTierThree.flavor.buildYourOwn.base %></span>
+                </p>
+                <p>
+                  Filling: <span class="underline font-bold"><%= order.cakeTierThree.flavor.buildYourOwn.filling %></span>
+                </p>
+                <p>
+                  Topping: <span class="underline font-bold"><%= order.cakeTierThree.flavor.buildYourOwn.topping.join(', ') %></span>
+                </p>
+              </div>
+            <% } %>
+
+          <% } %>
+
+          <!-- Treats Information -->
+          <% if (order.sugarCookies.amount || order.cupcakes.amount || order.riceKrispiePops.amount || order.chocolateDippedStrawberries.amount || order.cakepops.amount) { %>
+            <div class="flex-col text-justify">
+              <h1 class="text-xl font-semibold">Treats Information</h1>
+              <% if (order.sugarCookies.amount) { %>
+                <div class="flex-col text-justify mx-2">
+                  <p class="underline font-bold">Sugar Cookies</p>
+                  <p>Amount: <span class="underline font-bold"><%= order.sugarCookies.amount %></span></p>
+                  <p>Flavor: <span class="underline font-bold"><%= order.sugarCookies.flavor.join(', ') %></span></p>
+                </div>
+              <% } %>
+              <% if (order.cupcakes.amount) { %>
+                <div class="flex-col text-justify mx-2">
+                  <p class="underline font-bold">Cupcakes</p>
+                  <p>Amount: <span class="underline font-bold"><%= order.cupcakes.amount %></span></p>
+                  <p>Flavor: <span class="underline font-bold"><%= order.cupcakes.flavor %></span></p>
+                  <p>Frosting: <span class="underline font-bold"><%= order.cupcakes.frosting %></span></p>
+                </div>
+              <% } %>
+              <% if (order.riceKrispiePops.amount) { %>
+                <div class="flex-col text-justify mx-2">
+                  <p class="underline font-bold">Rice Krispie Pops</p>
+                  <p>Amount: <span class="underline font-bold"><%= order.riceKrispiePops.amount %></span></p>
+                </div>
+              <% } %>
+              <% if (order.chocolateDippedStrawberries.amount) { %>
+                <div class="flex-col text-justify mx-2">
+                  <p class="underline font-bold">Chocolate Dipped Strawberries</p>
+                  <p>Amount: <span class="underline font-bold"><%= order.chocolateDippedStrawberries.amount %></span></p>
+                </div>
+              <% } %>
+              <% if (order.cakepops.amount) { %>
+                <div class="flex-col text-justify mx-2">
+                  <p class="underline font-bold">Cakepops</p>
+                  <p>Amount: <span class="underline font-bold"><%= order.cakepops.amount %></span></p>
+                </div>
+              <% } %>
+            <% } else { %>
+              <div class="flex-col text-justify">
+                <h1 class="text-xl font-semibold">Treats Information</h1>
+                <p class="mx-2">
+                  No treats ordered
+                </p>
+              </div>
+            <% } %>
+            </div>
+            <!-- Description -->
+            <div class="flex-col text-justify">
+              <h1 class="text-xl font-semibold">Order Description</h1>
+              <p class="mx-2">
+                <%= order.description %>
+              </p>
+            </div>
+            <!-- Images -->
+            <div class="flex-col text-justify">
+              <h1 class="text-xl font-semibold">Order Images</h1>
+              <div class="flex justify-around">
+                <% order.images.forEach((image) => { %>
+                  <div class="w-1/2 mx-2">
+                    <img src="<%= image.url %>">
+                  </div>
+                <% }) %>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+      </div>
+    <% } %>
+  </div>
+</div>
+<%- include ('../views/partials/footer') %>

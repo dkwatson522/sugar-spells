@@ -46,18 +46,17 @@ exports.sendOrderInfo = async (options) => {
   const text = htmlToText.fromString(html);
   const inlined = juice(html);
 
+  const attachments = options.images.map((image) => {
+  return { filename: image.filename, url: image.url };
+  });
+
   let info = await transporter.sendMail({
     from: `${options.email}`,
     to: "sugarspells@sugarspells.com", // list of receivers
     subject: `Order#${options.orderID} - ${options.name.toUpperCase()}`,
     html: inlined,
-    text: text
-    // attachments: [
-    //   {filename: options.images.fileName[0],
-    //   href: options.images.url[0]},
-    //   {filename: options.images.fileName[1],
-    //   href: options.images.url[1]}
-    // ]
+    text: text,
+    attachments: attachments
   })
 
   console.log("Message sent: %s", info.messageId);
@@ -68,25 +67,3 @@ exports.sendOrderInfo = async (options) => {
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
 }
-
-
-// const generateHTML = (filename, options = {}) => {
-//   const html = ejs.renderFile(`${__dirname}/../views/email/${filename}.ejs`, options);
-//   const inlined = juice(html);
-//   return inlined;
-// };
-//
-// exports.send = async (options) => {
-//   const html = generateHTML(options.filename, options);
-//   const text = htmlToText.fromString(html);
-//
-//   const mailOptions = {
-//     from: `Daniel Watson <noreply@danielwatson.com>`,
-//     to: options.user.email,
-//     subject: options.subject,
-//     html,
-//     text
-//   };
-//   const sendMail = promisify(transport.sendMail, transport);
-//   return sendMail(mailOptions);
-// };

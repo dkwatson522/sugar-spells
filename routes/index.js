@@ -61,12 +61,20 @@ router.get('/cake-care', storeController.cakeCare)
 // Order Route
 router.get('/order', storeController.orderForm);
 router.post('/new-order', storeController.imagesUpload, catchErrors(storeController.newOrder));
+router.get('/order-search', storeController.searchOrder)
+router.get('/order/:orderID', catchErrors(storeController.getByOrderID))
+
 
 //Gallery Route
 router.get('/gallery', storeController.showGallery);
 
 //Privacy Route
 router.get('/privacy-policy', storeController.getPrivacy);
+
+//Throwback Route
+router.get('/throwbacks', storeController.getThrowbacks)
+
+
 
 
  module.exports = router;

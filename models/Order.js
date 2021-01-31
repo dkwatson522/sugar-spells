@@ -102,7 +102,7 @@ const orderSchema = new Schema({
     name: String,
     amount: Number
   },
-  cakepops: {
+  cakePops: {
     name: String,
     amount: Number
   },

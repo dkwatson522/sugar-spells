@@ -1,9 +1,7 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
 <div class="bg-gray-200">
-  <div class="my-2 p-4 text-3xl sm:text-4xl md:text-5xl text-center leading-tight font-medium text-red-500">
-    <h1>Add Services</h1>
-  </div>
+
 
   <!-- Add Signature service -->
   <div class="flex flex-col w-full items-center">
@@ -11,6 +9,9 @@
       <form action="/add-services" method="POST" enctype="multipart/form-data">
         <div class="shadow sm:rounded-md sm:overflow-hidden">
           <div class="px-4 py-5 bg-white sm:p-6">
+            <div class="my-2 text-lg leading-tight font-bold text-red-500">
+              <h1>Add Services</h1>
+            </div>
             <div class="">
               <label for="service" class="block text-sm font-medium leading-5 text-gray-700">
                 Name
@@ -22,7 +23,7 @@
 
             <div class="mt-6">
               <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
-                Image URL
+                Upload Image
               </label>
               <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
                 <input type="file" name="image" value="" class="p-2 bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 ease-in-out text-2xl sm:leading-5">
@@ -38,7 +39,7 @@
                 </div>
                 <input id="price" name="price" class="bg-gray-400 p-2 form-input block text-2xl sm:leading-5 rounded-md" placeholder="00" aria-describedby="price-currency">
                 <div class="flex items-center pointer-events-none">
-                  <span class="text-gray-500 text-2xl sm:leading-5" id="price-currency">
+                  <span class="pl-2 text-gray-500 text-2xl sm:leading-5" id="price-currency">
                     USD
                   </span>
                 </div>
