@@ -2,7 +2,7 @@
 <%- include ('../views/partials/navbar') %>
 <div class="flex justify-around">
   <div class="flex flex-col py-6 my-4 text-gray-700 text-center rounded-md">
-    <div class="bg-white max-w-3xl mx-auto">
+    <div class="border rounded p-6 bg-white max-w-2xl">
       <img class="w-full" src="./images/FAQ.png" alt="">
       <h2 class="text-center text-xl leading-9 font-semibold text-gray-500 sm:leading-10">
         Most Frequently Asked Questions
@@ -40,7 +40,7 @@
                     <% } %>
                 </dd>
                 <% if(user) { %>
-                  <div class="flex justify-end">
+                  <div class="flex justify-center">
                     <form class="p-2" action="/faqs/<%= faq._id %>?_method=DELETE" method="POST">
                       <button><i class="fas fa-trash" style="color: #AA3838"></i></button>
                     </form>
