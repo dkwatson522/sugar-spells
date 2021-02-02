@@ -1,15 +1,14 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
-<div class="bg-gray-200">
-  <div class="my-2 p-4 text-3xl sm:text-4xl md:text-5xl text-center leading-tight font-medium text-red-500">
-    <h1>Edit Services</h1>
-  </div>
-
+<div class="flex justify-around">
   <!-- Add Signature service -->
-  <div class="flex flex-col w-full items-center">
-    <div class="flex justify-around w-full my-4 px-6">
-      <form action="/services/<%=service._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div class="shadow sm:rounded-md sm:overflow-hidden">
+  <div class="flex flex-col py-6 my-4 text-gray-700 text-center rounded-md">
+    <div class="border rounded p-6 bg-white max-w-2xl">
+      <h1 class="font-bold text-3xl text-justify">
+        Edit Services
+      </h1>
+      <div class="text-justify">
+        <form action="/services/<%=service._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="">
               <label for="service" class="block text-sm font-medium leading-5 text-gray-700">
@@ -21,12 +20,30 @@
             </div>
 
             <div class="mt-6">
-              <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
+              <!-- <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
                 Image URL
               </label>
               <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
                 <input type="file" name="image" class="p-2 bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 ease-in-out text-2xl sm:leading-5" placeholder="" value="<%=service.image.url%>">
+              </div> -->
+              <div class="h-full border-solid border-black border-4 text-center my-2" id="dropzone">
+                Drop files here
               </div>
+
+              <form action="test.php" enctype="multipart/form-data" method="post">
+                <input type="file" name="files[]" id="files" multiple>
+              </form>
+
+              <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+              <script>
+                var $dropzone = $('#dropzone');
+                $dropzone.on('drag dragstart dragend dragover dragenter dragleave drop', function(event) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }).on('drop', function(event) {
+                  document.querySelector('#files').files = event.originalEvent.dataTransfer.files;
+                });
+              </script>
             </div>
             <div class="w-2/5 mt-6">
               <label for="price" class="block text-sm font-medium leading-5 text-gray-700">Price</label>
@@ -53,8 +70,8 @@
               </button>
             </span>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>

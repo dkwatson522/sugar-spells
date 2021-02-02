@@ -49,8 +49,8 @@ router.delete('/services/:id', catchErrors(storeController.deleteService))
 
 // Contact routes
 router.get('/contact', storeController.contactPage);
-router.post('/contact', catchErrors(storeController.createMessage));
-router.post('/add-contact', catchErrors(storeController.saveEmail))
+router.post('/contact', storeController.sanitizeMessage, catchErrors(storeController.createMessage));
+router.post('/add-contact', storeController.sanitizeEmail, catchErrors(storeController.saveEmail))
 
 // About route
 router.get('/about', storeController.aboutPage)
@@ -60,7 +60,7 @@ router.get('/cake-care', storeController.cakeCare)
 
 // Order Route
 router.get('/order', storeController.orderForm);
-router.post('/new-order', storeController.imagesUpload, catchErrors(storeController.newOrder));
+router.post('/new-order', storeController.imagesUpload, storeController.sanitizeOrder, catchErrors(storeController.newOrder));
 router.get('/order-search', storeController.searchOrder)
 router.get('/order/:orderID', catchErrors(storeController.getByOrderID))
 

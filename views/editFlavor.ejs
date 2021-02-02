@@ -6,81 +6,91 @@
     <div class="border rounded p-6 bg-white max-w-2xl">
       <% if ( flavor.signature.name ) {%>
         <div class="flex-col">
-          <h1 class="font-bold text-3xl">Edit Signature Flavor</h1>
-          <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
-            <div class="m-2">
-              <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
-                Name
-              </label>
-              <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="signature[name]" value="<%=flavor.signature.name%>">
-            </div>
-            <div class="m-2">
-              <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
-                Description
-              </label>
-              <textarea id="description" name="signature[description]" rows="6" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder=""><%=flavor.signature.description%></textarea>
-            </div>
-            <div class="w-full flex justify-center mt-6">
-              <button type="submit"
-                class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                Add
-              </button>
-            </div>
-          </form>
+          <h1 class="font-bold text-3xl">
+            Edit Signature Flavor
+          </h1>
+          <div class="">
+            <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
+              <div class="m-2">
+                <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
+                  Name
+                </label>
+                <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="signature[name]" value="<%=flavor.signature.name%>">
+              </div>
+              <div class="m-2">
+                <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
+                  Description
+                </label>
+                <textarea id="description" name="signature[description]" rows="6" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder=""><%=flavor.signature.description%></textarea>
+              </div>
+              <div class="w-full flex justify-center mt-6">
+                <button type="submit"
+                  class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                  Add
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       <% } else if ( flavor.buildYourOwn.base.ingredient ) { %>
         <div class="flex-col">
           <h1 class="font-bold text-3xl">Edit Build Your Own - Base</h1>
-          <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
-            <div class="m-2">
-              <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
-                Name
-              </label>
-              <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="buildYourOwn[base][ingredient]" value="<%=flavor.buildYourOwn.base.ingredient%>">
-            </div>
-            <div class="flex justify-between sm:p-6">
-                <button type="submit"
-                  class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                  Add
-                </button>
-            </div>
-          </form>
+          <div class="">
+            <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
+              <div class="m-2">
+                <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
+                  Name
+                </label>
+                <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="buildYourOwn[base][ingredient]" value="<%=flavor.buildYourOwn.base.ingredient%>">
+              </div>
+              <div class="flex justify-between sm:p-6">
+                  <button type="submit"
+                    class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                    Add
+                  </button>
+              </div>
+            </form>
+          </div>
         </div>
       <% } else if ( flavor.buildYourOwn.filling.ingredient ) { %>
         <div class="flex-col">
           <h1 class="font-bold text-3xl">Edit Build Your Own - Filling</h1>
-          <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
-            <div class="m-2">
-              <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
-                Name
-              </label>
-              <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="buildYourOwn[filling][ingredient]" value="<%=flavor.buildYourOwn.filling.ingredient%>">
-            </div>
-            <div class="flex justify-between sm:p-6">
-                <button type="submit"
-                  class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                  Add
-                </button>
-            </div>
-          </form>
+          <div class="">
+            <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
+              <div class="m-2">
+                <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
+                  Name
+                </label>
+                <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="buildYourOwn[filling][ingredient]" value="<%=flavor.buildYourOwn.filling.ingredient%>">
+              </div>
+              <div class="flex justify-between sm:p-6">
+                  <button type="submit"
+                    class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                    Add
+                  </button>
+              </div>
+            </form>
+          </div>
         </div>
       <% } else if ( flavor.buildYourOwn.topping.ingredient ) { %>
         <div class="flex-col">
           <h1 class="font-bold text-3xl">Edit Build Your Own - Topping</h1>
-          <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
-            <div class="m-2">
-              <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
-                Name
-              </label>
-              <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="buildYourOwn[topping][ingredient]" value="<%=flavor.buildYourOwn.topping.ingredient%>">
-            </div>
-            <div class="flex justify-between sm:p-6">
-                <button type="submit"
-                  class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                  Add
-                </button>
-            </div>
-          </form>
+          <div class="">
+            <form class="flex-col text-justify" action="/flavors/<%=flavor._id%>?_method=PUT" method="post">
+              <div class="m-2">
+                <label class="block text-sm font-medium leading-5 text-gray-700" for="flavorName">
+                  Name
+                </label>
+                <input class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" type="text" name="buildYourOwn[topping][ingredient]" value="<%=flavor.buildYourOwn.topping.ingredient%>">
+              </div>
+              <div class="flex justify-between sm:p-6">
+                  <button type="submit"
+                    class="py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                    Add
+                  </button>
+              </div>
+            </form>
+          </div>
         </div>
       <% } %>
 

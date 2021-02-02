@@ -1,159 +1,162 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
-<div class="w-full flex justify-around">
-  <div class="bg-gray-200 w-full">
-    <div class="my-2 p-4 text-3xl sm:text-4xl md:text-5xl text-center leading-tight font-medium text-red-500">
-      <h1>Add Flavors</h1>
-    </div>
-
-    <!-- Add Signature Flavor -->
-    <div id="signature" class="w-full px-6">
-      <div class="flex flex-col">
+<div class="flex justify-around">
+  <div class="flex-col py-6 my-4 text-gray-700 text-justify rounded-md">
+    <div class="border rounded p-6 bg-white max-w-2xl">
+      <div class="flex-col">
+        <h1 class="font-bold text-3xl">
+          Add Flavor
+        </h1>
         <div class="">
-          <form class="flex justify-around w-full px-6" action="/add-flavors" method="POST">
-            <div class="bg-white shadow sm:rounded-md sm:overflow-hidden">
-              <div class="px-4 py-5 sm:p-6">
-                <div class="mb-4 text-xl">
-                  <span>Signature Flavor</span>
-                  <div class="">
-                    <label for="flavor" class="block text-sm font-medium leading-5 text-gray-700">
-                      Name
-                    </label>
-                    <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                      <input id="name" name="signature[name]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
-                    </div>
-                  </div>
-                </div>
+          <select id="form-select" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5">
+            <option value="" selected>---Select Flavor Option---</option>
+            <option class="" value="signature">Add Signature Flavor</option>
+            <option class="" value="base">Add Base Flavor</option>
+            <option class="" value="filling">Add Filling Flavor</option>
+            <option class="" value="topping">Add Topping Flavor</option>
+          </select>
 
-                <div class="mt-6">
-                  <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
-                    Description
-                  </label>
-                  <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
-                    <textarea id="description" name="signature[description]" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder=""></textarea>
-                  </div>
-                  <p class="mt-2 text-sm text-gray-500">
-                    Brief description of the flavor to be displayed to the customer.
-                  </p>
+        </div>
+        <form id="signature-form" action="/add-flavors" method="POST">
+          <div class="mb-4 text-3xl">
+            <div class="mb-4 text-xl">
+              <div class="">
+                <label for="flavor" class="block text-sm font-medium leading-5 text-gray-700">
+                  Signature Flavor Name
+                </label>
+                <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                  <input name="" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
                 </div>
-              </div>
-              <div class="bg-white flex justify-start sm:p-6">
-                <span class="rounded-md shadow-sm">
-                  <button type="submit"
-                    class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                    Add
-                  </button>
-                </span>
               </div>
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Add Build Your Own Ingredient -->
-    <div id="build" class="w-full px-6">
-      <div class="flex flex-col">
-        <div class="my-5">
-          <form action="/add-flavors" method="POST">
-            <div class="px-4 py-5 sm:p-6 bg-white shadow sm:rounded-md sm:overflow-hidden">
-              <div class="mb-4 text-xl">
-                <span>Build Your Own</span>
-
-                <div class="flex bg-white">
-                  <div class="w-1/3 bg-gray-200 mx-2 rounded-md">
-                    <div class="">
-                      <form action="/add-flavors" method="POST">
-                        <div class="shadow sm:rounded-md sm:overflow-hidden">
-                          <div class="px-4 py-5 sm:p-6">
-                            <div class="grid grid-cols-3 gap-6">
-                              <div class="col-span-3 sm:col-span-2">
-                                <label for="company_website" class="block text-sm font-medium leading-5 text-gray-700">
-                                  Base
-                                </label>
-                                <div class="mt-1 flex rounded-md shadow-sm">
-                                  <input id="base" name="buildYourOwn[base][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="flex justify-start sm:p-6">
-                            <span class="inline-flex rounded-md shadow-sm">
-                              <button type="submit"
-                                class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                                Add
-                              </button>
-                            </span>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-
-
-                  <div class="w-1/3 bg-gray-200 mx-2 rounded-md">
-                    <form action="/add-flavors" method="POST">
-                      <div class="shadow sm:rounded-md sm:overflow-hidden">
-                        <div class="px-4 py-5 sm:p-6">
-                          <div class="grid grid-cols-3 gap-6">
-                            <div class="col-span-3 sm:col-span-2">
-                              <label for="filling" class="block text-sm font-medium leading-5 text-gray-700">
-                                Filling
-                              </label>
-                              <div class="mt-1 flex rounded-md shadow-sm">
-                                <input id="filling" name="buildYourOwn[filling][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="flex justify-start sm:p-6">
-                          <span class="inline-flex rounded-md shadow-sm">
-                            <button type="submit"
-                              class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                              Add
-                            </button>
-                          </span>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-
-
-                  <div class="w-1/3 bg-gray-200 mx-2 rounded-md">
-                    <form action="/add-flavors" method="POST">
-                      <div class="shadow sm:rounded-md sm:overflow-hidden">
-                        <div class="px-4 py-5 sm:p-6">
-                          <div class="grid grid-cols-3 gap-6">
-                            <div class="col-span-3 sm:col-span-2">
-                              <label for="company_website" class="block text-sm font-medium leading-5 text-gray-700">
-                                Topping
-                              </label>
-                              <div class="mt-1 flex rounded-md shadow-sm">
-                                <input id="topping" name="buildYourOwn[topping][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="flex justify-start sm:p-6">
-                          <span class="inline-flex rounded-md shadow-sm">
-                            <button type="submit"
-                              class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                              Add
-                            </button>
-                          </span>
-                        </div>
-                      </div>
-                    </form>
-
-                  </div>
+            <div class="mt-6">
+              <label for="description" class="block text-sm leading-5 font-medium text-gray-700">
+                Description
+              </label>
+              <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                <textarea id="description" name="signature[description]" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder=""></textarea>
+              </div>
+              <p class="mt-2 text-sm text-gray-500">
+                Brief description of the flavor to be displayed to the customer.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white flex justify-center sm:p-6">
+            <span class="rounded-md shadow-sm">
+              <button type="submit"
+                class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                Add
+              </button>
+            </span>
+          </div>
+        </form>
+        <!-- Base -->
+        <form id="base-form" action="/add-flavors" method="POST" >
+          <div class="mb-4 text-3xl">
+            <div class="mb-4 text-xl">
+              <div class="">
+                <label for="flavor" class="block text-sm font-medium leading-5 text-gray-700">
+                  Build Your Own - Base
+                </label>
+                <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                  <input name="buildYourOwn[base][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
                 </div>
-
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+          <div class="bg-white flex justify-center sm:p-6">
+            <span class="rounded-md shadow-sm">
+              <button type="submit"
+                class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                Add
+              </button>
+            </span>
+          </div>
+        </form>
+        <!-- Filling -->
+        <form id="filling-form" action="/add-flavors" method="POST" >
+          <div class="mb-4 text-3xl">
+            <div class="mb-4 text-xl">
+              <div class="">
+                <label for="flavor" class="block text-sm font-medium leading-5 text-gray-700">
+                  Build Your Own - Filling
+                </label>
+                <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                  <input name="buildYourOwn[filling][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white flex justify-center sm:p-6">
+            <span class="rounded-md shadow-sm">
+              <button type="submit"
+                class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                Add
+              </button>
+            </span>
+          </div>
+        </form>
+        <!-- Topping -->
+        <form id="topping-form" action="/add-flavors" method="POST">
+          <div class="mb-4 text-3xl">
+            <div class="mb-4 text-xl">
+              <div class="">
+                <label for="flavor" class="block text-sm font-medium leading-5 text-gray-700">
+                  Build Your Own - Topping
+                </label>
+                <div class="bg-gray-400 mt-1 flex rounded-md shadow-sm">
+                  <input name="buildYourOwn[topping][ingredient]" class="bg-gray-400 form-input flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-2xl sm:leading-5" placeholder="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white flex justify-center sm:p-6">
+            <span class="rounded-md shadow-sm">
+              <button type="submit"
+                class="inline-flex justify-center py-2 px-4 border border-transparent text-xl leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                Add
+              </button>
+            </span>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $("#signature-form").hide()
+  $("#base-form").hide()
+  $("#filling-form").hide()
+  $("#topping-form").hide()
+
+  $("#form-select").change(() => {
+    const formSelected = event.target.value
+
+    if ( formSelected === "signature" ) {
+      $("#signature-form").slideDown().show()
+      $("#base-form").hide()
+      $("#filling-form").hide()
+      $("#topping-form").hide()
+    } else if (formSelected === "base") {
+      $("#signature-form").hide()
+      $("#base-form").slideDown().show()
+      $("#filling-form").hide()
+      $("#topping-form").hide()
+    } else if (formSelected === "filling") {
+      $("#signature-form").hide()
+      $("#base-form").hide()
+      $("#filling-form").slideDown().show()
+      $("#topping-form").hide()
+    } else if (formSelected === "topping") {
+      $("#signature-form").hide()
+      $("#base-form").hide()
+      $("#filling-form").hide()
+      $("#topping-form").slideDown().show()
+    }
+
+  })
+
+
+</script>
 <%- include ('../views/partials/footer') %>

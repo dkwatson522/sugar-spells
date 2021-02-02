@@ -1,15 +1,12 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
-<div class="bg-gray-200">
-
-
-  <!-- Add Signature service -->
-  <div class="flex flex-col w-full items-center">
-    <div class="flex justify-around w-full my-4 px-6">
+<div class="flex justify-around">
+  <div class="flex flex-col py-6 my-4 text-gray-700 text-center rounded-md">
+    <div class="border rounded p-6 bg-white max-w-2xl">
       <form action="/add-services" method="POST" enctype="multipart/form-data">
-        <div class="shadow sm:rounded-md sm:overflow-hidden">
-          <div class="px-4 py-5 bg-white sm:p-6">
-            <div class="my-2 text-lg leading-tight font-bold text-red-500">
+        <div class="">
+          <div class="text-justify">
+            <div class="font-bold text-3xl">
               <h1>Add Services</h1>
             </div>
             <div class="">
