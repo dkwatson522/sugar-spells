@@ -13,6 +13,8 @@ const expressValidator = require('express-validator');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
+//takes out ability to add queries to the query string
+const mongoSanitize = require('express-mongo-sanitize');
 require('./handlers/passport');
 
 
@@ -30,10 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Allows us to override POST Method with PUT and DELETE verb
+// Allows us to override POST Method with PUT and DELETE
 app.use(methodOverride("_method"));
 
-// Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
+// Exposes a bunch of methods for validating data.
 app.use(expressValidator());
 
 // populates req.cookies with any cookies that came along with the request
@@ -58,6 +60,7 @@ app.use(flash());
 
 // pass variables to our templates + all requests
 app.use((req, res, next) => {
+  // console.log(req.query)
   res.locals.h = helpers;
   res.locals.flashes = req.flash();
   res.locals.user = req.user || null;
@@ -65,6 +68,9 @@ app.use((req, res, next) => {
   res.locals.currentPath = req.path;
   next();
 });
+
+//Mongo Injection
+app.use(mongoSanitize());
 
 // promisify some callback based APIs
 app.use((req, res, next) => {

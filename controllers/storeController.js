@@ -112,6 +112,12 @@ exports.contactPage = async (req, res) => {
   const services = await Service.find();
   res.render('contact', { title: 'Contact Us', services})
 };
+
+exports.sanitizeMessage= (req, res, next) => {
+  req.sanitizeBody('*').trim().escape();
+  next();
+}
+
 exports.createMessage = async (req, res) => {
   const contact = await (new Contact(req.body)).save();
   // const message = req.body
@@ -129,6 +135,11 @@ exports.createMessage = async (req, res) => {
   req.flash('success', 'Your Contact Email Has Been Sent!')
   res.redirect('/');
 };
+
+exports.sanitizeEmail = (req, res, next) => {
+  req.sanitizeBody('*').trim().escape();
+  next();
+}
 exports.saveEmail = async (req, res) => {
   const email = await (new Contact(req.body)).save();
   req.flash('success', `${req.body.email} Has Been Added to our Newsletter!`)
@@ -139,6 +150,11 @@ exports.saveEmail = async (req, res) => {
 // ORDERS
 exports.orderForm = async (req, res) => {
   res.render('order', {title: 'Create an Order'} )
+}
+
+exports.sanitizeOrder = (req, res, next) => {
+  req.sanitizeBody('*').trim().escape();
+  next();
 }
 
 exports.newOrder = async (req, res) => {
