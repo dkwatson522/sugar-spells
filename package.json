@@ -4,7 +4,7 @@
   "description": "This is a website for buying and selling of bakery goods.",
   "main": "start.js",
   "scripts": {
-    "build:css": "tailwind build src/style.css -o public/stylesheets/main.css"
+    "build": "tailwind build src/style.css -o public/stylesheets/main.css"
   },
   "keywords": [
     "bakery",
@@ -49,6 +49,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
+    "postcss-import": "^14.0.0",
     "slug": "^3.3.4",
     "slugs": "^0.1.3",
     "tailwindcss": "^1.6.2",

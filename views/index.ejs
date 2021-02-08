@@ -1,26 +1,31 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
 
-<div class="w-full absolute top-0 -mt-32">
+<div class="w-full">
   <!-- Video Container -->
-  <div class="w-full flex justify-center items-center relative">
-    <iframe class="w-full opacity-75 pointer-events-none" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"  src="https://www.youtube.com/embed/0flZPi8pbjU?autoplay=1&amp;mute=1&amp;playlist=0flZPi8pbjU&amp;controls=0&amp;rel=0&amp;playsinline=1&amp;loop=1&amp;modestbranding&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.thesugarspell.com&amp;widgetid=1" id="widget2" style="width: 1440px; height: 810px;"></iframe>
-    <div class="z-10 absolute flex items-center justify-center">
-      <div class="flex-col justify-around flex text-center">
-        <p class="text-4xl font-bold">Ready for Some Magic?</p>
-        <p class="px-4 text-lg">HURRY... BEFORE I PUT A SPELL ON YOU</p>
-        <div class="flex justify-center">
-          <button class="mt-2 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out transform hover:scale-110" type="button" name="button">
-            <a href="/order">Create Your Order!</a>
-          </button>
+  <div class="">
+    <div id="responsiveVideoWrapper" class="relative h-0 pb-fluid-video -mt-64">
+      <iframe class="opacity-75 pointer-events-none absolute top-0 left-0 w-full h-full" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"
+        src="https://www.youtube.com/embed/0flZPi8pbjU?autoplay=1&amp;mute=1&amp;playlist=0flZPi8pbjU&amp;controls=0&amp;rel=0&amp;playsinline=1&amp;loop=1&amp;modestbranding&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.thesugarspell.com&amp;widgetid=1"
+        id="widget2">
+      </iframe>
+      <div class="w-full h-full absolute inset-0 flex items-center justify-center z-10">
+        <div class="flex-col justify-around flex text-center">
+          <p class="text-4xl font-bold">Ready for Some Magic?</p>
+          <p class="px-4 text-lg">HURRY... BEFORE I PUT A SPELL ON YOU</p>
+          <div class="flex justify-center">
+            <button
+              class="mt-2 py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out transform hover:scale-110"
+              type="button" name="button">
+              <a href="/order">Create Your Order!</a>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
   <!-- Statistics -->
-  <div class="w-full bg-pink-200 px-4 py-2">
+  <div class="w-full bg-pink-200 px-4 py-2 z-20">
     <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       <div class="flex items-center bg-pink-300 overflow-visible shadow rounded-lg">
         <div class="w-full px-4 py-4 sm:p-6">
@@ -110,334 +115,338 @@
     </div>
   </div>
 
-<div class="w-full bg-blue-200 px-4 py-8">
-  <div class=" text-center text-xl font-semibold">
-    <p>
-      <span >WE USE MINDFUL INGREDIENTS TO DESIGN BESPOKE CREATIONS FOR A LITTLE BIT OF MAGIC IN EVERY BITE.</span>
-    </p>
-  </div>
-</div>
-
-<div class="w-full bg-orange-200 px-4 py-8">
-  <div class="text-center">
-    <h3 class="font-bold tracking-widest text-5xl text-center">OUR SERVICES</h3>
-    <p class="text-gray-800 text-center">We are always exploring new treats and flavors, so please feel free to send an inquiry for a special dessert!</p>
-  </div>
-</div>
-
-<!-- ITEMS CARD CONTAINER -->
-<div class="w-full px-2 sm:px-6 py-2 border-b flex flex-col items-center bg-purple-200">
-  <div class="w-full flex flex-wrap justify-center mt-2">
-    <!-- SUGAR COOKIE CARD -->
-    <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
-      <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
-        <div class="flex justify-center items-center p-2">
-          <span class="rounded text-white">
-            <img class="fill-current text-blue-500 w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272505/SugarSpells/SugarCookie_Services-o7501hvviznhp7z7l003o470e9q4rmhqopncdztko8_bvvncc.png">
-          </span>
-        </div>
-        <div class="flex flex-col py-2 px-3">
-          <div class="font-bold text-center h-12 text-lg leading-tight">
-            Sugar Cookies
-          </div>
-          <span class="text-gray-800 text-center">
-            Your choice of Mexican vanilla, lemon or chocolate flavored cookies. I’m very proud of these cookies; they are soft with a tender bite. Always covered in royal icing details and marshmallow fondant (this is not your typical fondant people talk about). This homemade fondant melts on the pallete and compliments the cookies beautifully.
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bespoke Cakes CARD -->
-    <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
-      <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
-        <div class="flex justify-center items-center p-2">
-          <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272522/SugarSpells/Cake_Services-o7500tg2laq1bcypjpfsvad0y92l7hspxcopwstt60_kuhrzo.png" alt="">
-          </span>
-        </div>
-        <div class="flex flex-col py-2 px-3">
-          <div class="font-bold text-center h-12 text-lg leading-tight">
-            Bespoke Cakes
-          </div>
-          <span class="text-gray-800 text-center">
-            Your choice of Mexican vanilla, lemon or chocolate flavored cookies. I’m very proud of these cookies; they are soft with a tender bite. Always covered in royal icing details and marshmallow fondant (this is not your typical fondant people talk about). This homemade fondant melts on the pallete and compliments the cookies beautifully.
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Rice Krispie CARD -->
-    <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
-      <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
-        <div class="flex justify-center items-center p-2">
-          <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272536/SugarSpells/RiceKrispiePop_Services-o7550m0qe7ar6651kwypmdjuuv6a430nz6n3tkbv8w_apvinb.png" alt="">
-          </span>
-        </div>
-        <div class="flex flex-col py-2 px-3">
-          <div class="font-bold text-center h-12 text-lg leading-tight">
-            Rice Krispie Pops
-          </div>
-          <span class="text-gray-800 text-center">
-            Your choice of Mexican vanilla, lemon or chocolate flavored cookies. I’m very proud of these cookies; they are soft with a tender bite. Always covered in royal icing details and marshmallow fondant (this is not your typical fondant people talk about). This homemade fondant melts on the pallete and compliments the cookies beautifully.
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cupcake CARD -->
-    <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
-      <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
-        <div class="flex justify-center items-center p-2">
-          <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272549/SugarSpells/Cupcakes4_Services-o758dizb08ddke60m6u31wkqgwwwpklc9q3u0kyoko_guhayu.png" alt="">
-          </span>
-        </div>
-        <div class="flex flex-col py-2 px-3">
-          <div class="font-bold text-center h-12 text-lg leading-tight">
-            Cupcakes
-          </div>
-          <p class="text-gray-800 text-center pb-2">
-            Basically my cakes in mini form. They can be topped with a theme matching sprinkle mix or with handmade toppers created from sugar paste.
-          </p>
-          <p class="text-gray-800 text-center pt-2">
-            Feeling adventurous? Ask for a fruit, chocolate, sprinkle or mousse filling for your next order of cupcakes!
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- DONUTS CARD -->
-    <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
-      <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
-        <div class="flex justify-center items-center p-2">
-          <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272565/SugarSpells/Donut5_services-o759b1w2iqi9c3u5ywctk88x06tvil1jpau8zl5qn4_x0hkng.png" alt="">
-          </span>
-        </div>
-        <div class="flex flex-col py-2 px-3">
-          <div class="font-bold text-center h-12 text-lg leading-tight">
-            Donuts
-          </div>
-          <p class="text-gray-800 text-center pb-2">
-            Coming soon…
-          </p>
-          <p class="text-gray-800 text-center pt-2">
-            I am almost done perfecting the recipe!
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cake Popsicles & Cake Pops CARD -->
-    <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
-      <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
-        <div class="flex justify-center items-center p-2">
-          <span class="rounded text-white">
-            <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272578/SugarSpells/CakePopsicle_Services-o7501d6on0evo2kq2e0ixgbmh7kvmq4vanm6aojeje_fvjl97.png" alt="">
-          </span>
-        </div>
-        <div class="flex flex-col py-2 px-3">
-          <div class="font-bold text-center h-12 text-lg leading-tight">
-            Cake Popsicles & Cake Pops
-          </div>
-          <p class="text-gray-800 text-center pb-2">
-            My same delicious cake recipe crumbled and hand rolled or shaped. Then dipped in smooth decadent chocolate or candy coating (tastes like vanilla).
-          </p>
-          <p class="text-gray-800 text-center pb-2">
-            Max of 2 dozen (24) per order**
-          </p>
-        </div>
-      </div>
+  <div class="w-full bg-blue-200 px-4 py-8">
+    <div class=" text-center text-xl font-semibold">
+      <p>
+        <span>WE USE MINDFUL INGREDIENTS TO DESIGN BESPOKE CREATIONS FOR A LITTLE BIT OF MAGIC IN EVERY BITE.</span>
+      </p>
     </div>
   </div>
-</div>
 
-<!-- Reviews -->
-<div class="bg-green-200">
-  <div class="mx-auto py-2 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-4">
-    <div class="space-y-12">
-      <div class="text-center space-y-5 sm:space-y-4 w-full">
-        <h2 class="text-3xl leading-9 font-extrabold text-gray-800 tracking-tight sm:text-4xl">
-          PEOPLE TALK ABOUT US...
-        </h2>
-        <p class="text-xl leading-7 text-gray-800">Hold on a sec! I’m not trying to sell you on our services. Instead, here are some people that will do the hard work for us.
-        </p>
-      </div>
-      <ul class="space-y-4 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-        <!-- Review #1 -->
-        <li class="py-10 px-6 bg-green-300 text-center rounded-lg xl:px-10 xl:text-left">
-          <div class="flex justify-center items-center py-2 mt-5">
-          <div class="space-y-6 xl:space-y-10">
-            <div class="flex justify-center items-center p-2">
-              <span class="rounded text-white">
-                <i class="fas fa-quote-right fa-4x"></i>
-              </span>
-            </div>
-            <div class="flex flex-col py-2 px-3">
-              <span class="font-bold text-center h-full text-lg leading-tight">
-                Everything was amazing. The details nearly took me out!!!!!!!! It was so beautiful!
-              </span>
-            </div>
-            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272606/SugarSpells/IMG_6884-e1556832758668_xxlgyk.jpg" alt="">
-            <div class="flex flex-col space-y-2 flex items-center justify-between">
-              <span class="font-bold uppercase">
-                Therese
-              </span>
-              <span>
-                Helping Hands Event Planning
-              </span>
-            </div>
-          </div>
-        </li>
-        <!-- Review #2 -->
-        <li class="py-10 px-6 bg-green-300 text-center rounded-lg xl:px-10 xl:text-left">
-          <div class="flex justify-center items-center py-2 mt-5">
-          <div class="space-y-6 xl:space-y-10">
-            <div class="flex justify-center items-center p-2">
-              <span class="rounded text-white">
-                <i class="fas fa-quote-right fa-4x"></i>
-              </span>
-            </div>
-            <div class="flex flex-col py-2 px-3">
-              <span class="font-bold text-center h-full text-lg leading-tight">
-                Thank you!! You do amazing work!!! And soooo freaking delicious!!!
-              </span>
-            </div>
-            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272623/SugarSpells/20190427_142323-01-e1556831722151-scaled_xr2ob9.jpg" alt="">
-            <div class="flex flex-col space-y-2 flex items-center justify-between">
-              <span class="font-bold uppercase">
-                Rashida
-              </span>
-            </div>
-          </div>
-        </li>
-        <!-- Review #3 -->
-        <li class="py-10 px-6 bg-green-300 text-center rounded-lg xl:px-10 xl:text-left">
-          <div class="flex justify-center items-center py-2 mt-5">
-          <div class="space-y-6 xl:space-y-10">
-            <div class="flex justify-center items-center p-2">
-              <span class="rounded text-white">
-                <i class="fas fa-quote-right fa-4x"></i>
-              </span>
-            </div>
-            <div class="flex flex-col py-2 px-3">
-              <span class="font-bold text-center h-full text-lg leading-tight">
-                Thank you so much Chantel! The cake was so perfectly made. Beautiful, precise and sooo yummy!! 💕💕
-              </span>
-            </div>
-            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272648/SugarSpells/ny-cake_qiiifn.jpg" alt="">
-            <div class="flex flex-col space-y-2 flex items-center justify-between">
-              <span class="font-bold uppercase">
-                Florinda
-              </span>
-              <span>
-                Miss New York 2019
-              </span>
-            </div>
-          </div>
-        </li>
-      </ul>
+  <div class="w-full bg-orange-200 px-4 py-8">
+    <div class="text-center">
+      <h3 class="font-bold tracking-widest text-5xl text-center">OUR SERVICES</h3>
+      <p class="text-gray-800 text-center">We are always exploring new treats and flavors, so please feel free to send an inquiry for a special dessert!</p>
     </div>
   </div>
-</div>
 
-
-<!-- Hours & Location Container -->
-<div class="w-full py-12 px-4 lg:px-24 xl:px-32">
-  <div class="w-full">
-    <div class="w-full flex flex-col md:flex-row justify-between">
-      <div class="flex flex-col w-full justify-between">
-        <!-- Hours -->
-        <div class="flex flex-row justify-start pb-8">
-          <div class="w-1/6 flex flex-row justify-end">
-            <i class="far fa-clock fa-3x"></i>
+  <!-- ITEMS CARD CONTAINER -->
+  <div class="w-full px-2 sm:px-6 py-2 border-b flex flex-col items-center bg-purple-200">
+    <div class="w-full flex flex-wrap justify-center mt-2">
+      <!-- SUGAR COOKIE CARD -->
+      <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
+        <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
+          <div class="flex justify-center items-center p-2">
+            <span class="rounded text-white">
+              <img class="fill-current text-blue-500 w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272505/SugarSpells/SugarCookie_Services-o7501hvviznhp7z7l003o470e9q4rmhqopncdztko8_bvvncc.png">
+            </span>
           </div>
-          <div class="w-2/3 px-4 flex flex-col justify-between text-gray-800">
-            <h3 class="font-bold text-lg pb-2">Admin Hours</h3>
-            <div class="font-thin">
-              <p>Sunday - Tuesday 9:00am - 8:30pm</p>
-              <p>(Phone until 7:30pm)</p>
+          <div class="flex flex-col py-2 px-3">
+            <div class="font-bold text-center h-12 text-lg leading-tight">
+              Sugar Cookies
             </div>
-          </div>
-        </div>
-        <!-- Location -->
-        <div class="flex flex-row justify-start pt-8">
-          <div class="w-1/6 flex flex-row justify-end">
-            <i class="fas fa-map-pin fa-3x"></i>
-          </div>
-          <div class="w-2/3 px-4 flex flex-col justify-between text-gray-800">
-            <h3 class="font-bold text-lg pb-2">We are here</h3>
-            <div class="font-thin">
-              <p>Located in lower Wetchester.</p>
-              <p>We are serving Westchester, the Bronx, Queens, Brooklyn and Manhattan</p>
-              <p class="pt-4">Phone: (914) 297-7065</p>
-              <p>Email: hello@thesugarspell.com</p>
-            </div>
+            <span class="text-gray-800 text-center">
+              Your choice of Mexican vanilla, lemon or chocolate flavored cookies. I’m very proud of these cookies; they are soft with a tender bite. Always covered in royal icing details and marshmallow fondant (this is not your typical fondant
+              people talk about). This homemade fondant melts on the pallete and compliments the cookies beautifully.
+            </span>
           </div>
         </div>
       </div>
-      <div class="flex flex-col w-full justify-between">
-        <!-- Google Maps iframe -->
-        <div class="text-right h-full w-full">
-          <iframe class="h-full w-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Westchester%20county%2C%20ny&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" aria-label="Westchester county, ny" ></iframe>
+
+      <!-- Bespoke Cakes CARD -->
+      <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
+        <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
+          <div class="flex justify-center items-center p-2">
+            <span class="rounded text-white">
+              <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272522/SugarSpells/Cake_Services-o7500tg2laq1bcypjpfsvad0y92l7hspxcopwstt60_kuhrzo.png" alt="">
+            </span>
+          </div>
+          <div class="flex flex-col py-2 px-3">
+            <div class="font-bold text-center h-12 text-lg leading-tight">
+              Bespoke Cakes
+            </div>
+            <span class="text-gray-800 text-center">
+              Your choice of Mexican vanilla, lemon or chocolate flavored cookies. I’m very proud of these cookies; they are soft with a tender bite. Always covered in royal icing details and marshmallow fondant (this is not your typical fondant
+              people talk about). This homemade fondant melts on the pallete and compliments the cookies beautifully.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rice Krispie CARD -->
+      <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
+        <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
+          <div class="flex justify-center items-center p-2">
+            <span class="rounded text-white">
+              <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272536/SugarSpells/RiceKrispiePop_Services-o7550m0qe7ar6651kwypmdjuuv6a430nz6n3tkbv8w_apvinb.png" alt="">
+            </span>
+          </div>
+          <div class="flex flex-col py-2 px-3">
+            <div class="font-bold text-center h-12 text-lg leading-tight">
+              Rice Krispie Pops
+            </div>
+            <span class="text-gray-800 text-center">
+              Your choice of Mexican vanilla, lemon or chocolate flavored cookies. I’m very proud of these cookies; they are soft with a tender bite. Always covered in royal icing details and marshmallow fondant (this is not your typical fondant
+              people talk about). This homemade fondant melts on the pallete and compliments the cookies beautifully.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cupcake CARD -->
+      <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
+        <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
+          <div class="flex justify-center items-center p-2">
+            <span class="rounded text-white">
+              <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272549/SugarSpells/Cupcakes4_Services-o758dizb08ddke60m6u31wkqgwwwpklc9q3u0kyoko_guhayu.png" alt="">
+            </span>
+          </div>
+          <div class="flex flex-col py-2 px-3">
+            <div class="font-bold text-center h-12 text-lg leading-tight">
+              Cupcakes
+            </div>
+            <p class="text-gray-800 text-center pb-2">
+              Basically my cakes in mini form. They can be topped with a theme matching sprinkle mix or with handmade toppers created from sugar paste.
+            </p>
+            <p class="text-gray-800 text-center pt-2">
+              Feeling adventurous? Ask for a fruit, chocolate, sprinkle or mousse filling for your next order of cupcakes!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DONUTS CARD -->
+      <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
+        <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
+          <div class="flex justify-center items-center p-2">
+            <span class="rounded text-white">
+              <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272565/SugarSpells/Donut5_services-o759b1w2iqi9c3u5ywctk88x06tvil1jpau8zl5qn4_x0hkng.png" alt="">
+            </span>
+          </div>
+          <div class="flex flex-col py-2 px-3">
+            <div class="font-bold text-center h-12 text-lg leading-tight">
+              Donuts
+            </div>
+            <p class="text-gray-800 text-center pb-2">
+              Coming soon…
+            </p>
+            <p class="text-gray-800 text-center pt-2">
+              I am almost done perfecting the recipe!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cake Popsicles & Cake Pops CARD -->
+      <div class="p-3 w-full sm:w-1/2 lg:w-1/3 mb-5">
+        <div class="border rounded p-6 xl:px-2 h-full bg-purple-300 text-gray-800">
+          <div class="flex justify-center items-center p-2">
+            <span class="rounded text-white">
+              <img class="fill-current w-16 h-16" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272578/SugarSpells/CakePopsicle_Services-o7501d6on0evo2kq2e0ixgbmh7kvmq4vanm6aojeje_fvjl97.png" alt="">
+            </span>
+          </div>
+          <div class="flex flex-col py-2 px-3">
+            <div class="font-bold text-center h-12 text-lg leading-tight">
+              Cake Popsicles & Cake Pops
+            </div>
+            <p class="text-gray-800 text-center pb-2">
+              My same delicious cake recipe crumbled and hand rolled or shaped. Then dipped in smooth decadent chocolate or candy coating (tastes like vanilla).
+            </p>
+            <p class="text-gray-800 text-center pb-2">
+              Max of 2 dozen (24) per order**
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Social Media Links -->
-<div class="w-full p-4 bg-yellow-200">
-  <div class="w-full px-16 flex flex-row justify-around">
-    <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
-      <a href="https://www.instagram.com/sugarspellny/" target="_blank">
-        <i class="fab fa-instagram fa-2x" style="color:#FFFFFF"></i>
-      </a>
-    </div>
-    <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
-      <a href="https://www.youtube.com/channel/UC8lytG8CdwzBvCaY9X3JD9w" target="_blank">
-        <i class="fab fa-youtube fa-2x" style="color:#FFFFFF"></i>
-      </a>
-    </div>
-    <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
-      <a href="mailto:orders@thesugarspell.com?Subject=Crumbs%20x%20Buttercream%20Inquiry" target="_blank">
-        <i class="fas fa-envelope fa-2x" style="color:#FFFFFF"></i>
-      </a>
-    </div>
-    <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
-      <a href="https://www.facebook.com/sugarspellny/" target="_blank">
-        <i class="fab fa-facebook-f fa-2x" style="color:#FFFFFF"></i>
-      </a>
+  <!-- Reviews -->
+  <div class="bg-green-200">
+    <div class="mx-auto py-2 px-4 max-w-screen-xl sm:px-6 lg:px-8 lg:py-4">
+      <div class="space-y-12">
+        <div class="text-center space-y-5 sm:space-y-4 w-full">
+          <h2 class="text-3xl leading-9 font-extrabold text-gray-800 tracking-tight sm:text-4xl">
+            PEOPLE TALK ABOUT US...
+          </h2>
+          <p class="text-xl leading-7 text-gray-800">Hold on a sec! I’m not trying to sell you on our services. Instead, here are some people that will do the hard work for us.
+          </p>
+        </div>
+        <ul class="space-y-4 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8 ">
+          <!-- Review #1 -->
+          <li class="py-10 px-6 bg-green-300 text-center rounded-lg xl:px-10 xl:text-left">
+            <div class="flex justify-center items-center py-2 mt-5">
+              <div class="space-y-6 xl:space-y-10">
+                <div class="flex justify-center items-center p-2">
+                  <span class="rounded text-white">
+                    <i class="fas fa-quote-right fa-4x"></i>
+                  </span>
+                </div>
+                <div class="flex flex-col py-2 px-3">
+                  <span class="font-bold text-center h-full text-lg leading-tight">
+                    Everything was amazing. The details nearly took me out!!!!!!!! It was so beautiful!
+                  </span>
+                </div>
+                <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272606/SugarSpells/IMG_6884-e1556832758668_xxlgyk.jpg" alt="">
+                <div class="flex flex-col space-y-2 flex items-center justify-between">
+                  <span class="font-bold uppercase">
+                    Therese
+                  </span>
+                  <span>
+                    Helping Hands Event Planning
+                  </span>
+                </div>
+              </div>
+          </li>
+          <!-- Review #2 -->
+          <li class="py-10 px-6 bg-green-300 text-center rounded-lg xl:px-10 xl:text-left">
+            <div class="flex justify-center items-center py-2 mt-5">
+              <div class="space-y-6 xl:space-y-10">
+                <div class="flex justify-center items-center p-2">
+                  <span class="rounded text-white">
+                    <i class="fas fa-quote-right fa-4x"></i>
+                  </span>
+                </div>
+                <div class="flex flex-col py-2 px-3">
+                  <span class="font-bold text-center h-full text-lg leading-tight">
+                    Thank you!! You do amazing work!!! And soooo freaking delicious!!!
+                  </span>
+                </div>
+                <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272623/SugarSpells/20190427_142323-01-e1556831722151-scaled_xr2ob9.jpg" alt="">
+                <div class="flex flex-col space-y-2 flex items-center justify-between">
+                  <span class="font-bold uppercase">
+                    Rashida
+                  </span>
+                </div>
+              </div>
+          </li>
+          <!-- Review #3 -->
+          <li class="py-10 px-6 bg-green-300 text-center rounded-lg xl:px-10 xl:text-left">
+            <div class="flex justify-center items-center py-2 mt-5">
+              <div class="space-y-6 xl:space-y-10">
+                <div class="flex justify-center items-center p-2">
+                  <span class="rounded text-white">
+                    <i class="fas fa-quote-right fa-4x"></i>
+                  </span>
+                </div>
+                <div class="flex flex-col py-2 px-3">
+                  <span class="font-bold text-center h-full text-lg leading-tight">
+                    Thank you so much Chantel! The cake was so perfectly made. Beautiful, precise and sooo yummy!! 💕💕
+                  </span>
+                </div>
+                <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://res.cloudinary.com/dpwmzblvv/image/upload/v1612272648/SugarSpells/ny-cake_qiiifn.jpg" alt="">
+                <div class="flex flex-col space-y-2 flex items-center justify-between">
+                  <span class="font-bold uppercase">
+                    Florinda
+                  </span>
+                  <span>
+                    Miss New York 2019
+                  </span>
+                </div>
+              </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- CONTACT US -->
-<div class="w-full bg-purple-200">
-  <div class="w-full p-4">
-    <div class="flex flex-row justify-around items-center">
-      <h3 class="font-bold align-left text-xl">
-        ENJOY SCRATCH-MADE TREATS FOR YOUR NEXT EVENT!
-      </h3>
-      <div class="">
-        <a href="/contact">
-          <button class="bg-purple-400 hover:bg-purple-500 font-bold p-2 rounded tracking-wide uppercase transform hover:scale-110">
-            Contact Us
-          </button>
+
+  <!-- Hours & Location Container -->
+  <div class="w-full py-12 px-4 lg:px-24 xl:px-32">
+    <div class="w-full">
+      <div class="w-full flex flex-col md:flex-row justify-between">
+        <div class="flex flex-col w-full justify-between">
+          <!-- Hours -->
+          <div class="flex flex-row justify-start pb-8">
+            <div class="w-1/6 flex flex-row justify-end">
+              <i class="far fa-clock fa-3x"></i>
+            </div>
+            <div class="w-2/3 px-4 flex flex-col justify-between text-gray-800">
+              <h3 class="font-bold text-lg pb-2">Admin Hours</h3>
+              <div class="font-thin">
+                <p>Sunday - Tuesday 9:00am - 8:30pm</p>
+                <p>(Phone until 7:30pm)</p>
+              </div>
+            </div>
+          </div>
+          <!-- Location -->
+          <div class="flex flex-row justify-start pt-8">
+            <div class="w-1/6 flex flex-row justify-end">
+              <i class="fas fa-map-pin fa-3x"></i>
+            </div>
+            <div class="w-2/3 px-4 flex flex-col justify-between text-gray-800">
+              <h3 class="font-bold text-lg pb-2">We are here</h3>
+              <div class="font-thin">
+                <p>Located in lower Wetchester.</p>
+                <p>We are serving Westchester, the Bronx, Queens, Brooklyn and Manhattan</p>
+                <p class="pt-4">Phone: (914) 297-7065</p>
+                <p>Email: hello@thesugarspell.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full justify-between">
+          <!-- Google Maps iframe -->
+          <div class="text-right h-full w-full">
+            <iframe class="h-full w-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Westchester%20county%2C%20ny&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
+              aria-label="Westchester county, ny"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Media Links -->
+  <div class="w-full p-4 bg-yellow-200">
+    <div class="w-full px-16 flex flex-row justify-around">
+      <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
+        <a href="https://www.instagram.com/sugarspellny/" target="_blank">
+          <i class="fab fa-instagram fa-2x" style="color:#FFFFFF"></i>
+        </a>
+      </div>
+      <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
+        <a href="https://www.youtube.com/channel/UC8lytG8CdwzBvCaY9X3JD9w" target="_blank">
+          <i class="fab fa-youtube fa-2x" style="color:#FFFFFF"></i>
+        </a>
+      </div>
+      <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
+        <a href="mailto:orders@thesugarspell.com?Subject=Crumbs%20x%20Buttercream%20Inquiry" target="_blank">
+          <i class="fas fa-envelope fa-2x" style="color:#FFFFFF"></i>
+        </a>
+      </div>
+      <div class="rounded-full h-16 w-16 flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 transition duration-300 ease-in-out mx-2">
+        <a href="https://www.facebook.com/sugarspellny/" target="_blank">
+          <i class="fab fa-facebook-f fa-2x" style="color:#FFFFFF"></i>
         </a>
       </div>
     </div>
   </div>
-</div>
 
-<!-- SIGN UP CONTAINER -->
-<div class="w-full bg-red-200 text-gray-800">
+  <!-- CONTACT US -->
+  <div class="w-full bg-purple-200">
+    <div class="w-full p-4">
+      <div class="flex flex-row justify-around items-center">
+        <h3 class="font-bold align-left text-xl">
+          ENJOY SCRATCH-MADE TREATS FOR YOUR NEXT EVENT!
+        </h3>
+        <div class="">
+          <a href="/contact">
+            <button class="bg-purple-400 hover:bg-purple-500 font-bold p-2 rounded tracking-wide uppercase transform hover:scale-110">
+              Contact Us
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGN UP CONTAINER -->
+  <div class="w-full bg-red-200 text-gray-800">
     <div class="w-full flex flex-col md:flex-row justify-between py-4 px-16">
       <div class="w-full md:w-1/2 flex flex-col p-2 mr-3">
         <span class="mb-4 text-2xl">Join our magical family...</span>
         <div class="w-full">
-          <label class="block text-sm font-bold h-4 mb-2" for="email">   Email address:
+          <label class="block text-sm font-bold h-4 mb-2" for="email"> Email address:
           </label>
           <div class="flex-col md:flex-row w-full">
             <form class="" action="/add-contact" method="POST">
@@ -461,8 +470,8 @@
             <li class="pl-1">Special holiday promotions</li>
           </ul>
 
+        </div>
       </div>
     </div>
   </div>
-</div>
-<%- include ('../views/partials/footer') %>
+  <%- include ('../views/partials/footer') %>

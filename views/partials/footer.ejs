@@ -52,10 +52,13 @@
 
 
 <script type=" text/javascript">
-  //hide 2nd and 3rd cake tier option on initial load
-  // $("#cakeTier-2").hide( "slow" )
-  // $("#cakeTier-3").hide( "slow" )
-  //logic to hide/show cake tier option based on the cake tier value selected
+  $("#cake-select").hide()
+  $("#sugarCookies-select").hide()
+  $("#cupcakes-select").hide()
+  $("#riceKrispiePops-select").hide()
+  $("#chocolateDippedStrawberries-select").hide()
+  $("#cakePops-select").hide()
+
   $("#cakeTier-select").change(() => {
     const cakeTierAmount = event.target.value
 
@@ -80,7 +83,7 @@
     }
   })
   //hides delivery address input on initial load
-  $("#address-input").hide()
+  // $("#address-input").hide()
   //logic to hide/show text area for delivery address input
   $('#delivery-select').change(() => {
     if ($(event.target).is(':checked')) {
@@ -99,12 +102,7 @@
     }
   })
 
-  $("#cake-select").hide()
-  $("#sugarCookies-select").hide()
-  $("#cupcakes-select").hide()
-  $("#riceKrispiePops-select").hide()
-  $("#chocolateDippedStrawberries-select").hide()
-  $("#cakePops-select").hide()
+
 
 
 

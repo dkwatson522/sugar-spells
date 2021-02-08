@@ -13,7 +13,7 @@ const jimp = require('jimp');
 const { v4: uuidv4 } = require('uuid');
 
 
-// HOMPAGE
+// HOMEPAGE
 exports.homePage = (req, res) => {
   res.render('index', { title: 'Home' });
 };
@@ -153,7 +153,7 @@ exports.orderForm = async (req, res) => {
 }
 
 exports.sanitizeOrder = (req, res, next) => {
-  req.sanitizeBody('*').trim().escape();
+  req.sanitizeBody('*').trim();
   next();
 }
 
@@ -222,3 +222,7 @@ exports.getThrowbacks = (req, res) => {
 
 //IMAGE UPLOAD
 exports.imagesUpload = upload.array('images')
+
+exports.errors = (req, res) => {
+  res.send('error')
+}

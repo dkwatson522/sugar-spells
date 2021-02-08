@@ -20,7 +20,7 @@ exports.logout = (req, res) => {
 };
 
 exports.isLoggedIn = (req, res, next) => {
-  // checks if user is authenticated in
+  // checks if user is authenticated
   if (req.isAuthenticated()) {
     next();
     return;

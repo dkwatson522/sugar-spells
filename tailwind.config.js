@@ -25,7 +25,10 @@ module.exports = {
         'fondant': '93%',
         'floral': '92%',
         'figurines':'81%'
-        }
+      },
+      padding: {
+        "fluid-video": "56.25%"
+      }
     }
   },
   variants: {},
