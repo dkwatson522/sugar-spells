@@ -1,6 +1,12 @@
 module.exports = {
   purge: [],
   theme: {
+    fontFamily: {
+      custom: [
+        'Comfortaa',
+        'cursive'
+      ]
+    },
     container: {
       center: true,
       padding: '2rem'

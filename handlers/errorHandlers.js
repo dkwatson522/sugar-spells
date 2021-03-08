@@ -67,8 +67,10 @@ exports.developmentErrors = (err, req, res, next) => {
   No stacktraces are leaked to user
 */
 exports.productionErrors = (err, req, res, next) => {
+  // console.log(err.status.toString(), err.message)
   res.status(err.status || 500);
   res.render('error', {
+    status: err.status,
     message: err.message,
     error: {}
   });

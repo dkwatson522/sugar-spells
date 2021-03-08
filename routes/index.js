@@ -74,9 +74,4 @@ router.get('/privacy-policy', storeController.getPrivacy);
 //Throwback Route
 router.get('/throwbacks', storeController.getThrowbacks)
 
-router.get('/*', storeController.errors)
-
-
-
-
  module.exports = router;

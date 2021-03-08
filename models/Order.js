@@ -23,9 +23,9 @@ const orderSchema = new Schema({
       trim: true
   },
   phoneNumber: {
-    type: String,
+    type: Number,
     trim: true,
-    min: 10
+    min: [10, 'Please ensure phone number has at least 10 digits']
   },
   eventDate: {
     type: Date,

@@ -1,26 +1,26 @@
-<body class="justify-between flex flex-col min-h-screen bg-fixed bg-cover antialiased leading-normal tracking-normal font-sans bg-white text-gray-800 text-smooth m-0" style="background-image: url(/images/sprinkles-background.png)">
+<body class="justify-between flex flex-col min-h-screen bg-fixed bg-cover antialiased leading-normal tracking-normal font-custom bg-white text-gray-800 text-smooth m-0" style="background-image: url(/images/sprinkles-background.png)">
 
   <div class="relative z-20">
     <div class="py-4 bg-cover" style="background-image: url(/images/sprinkles-background.png)">
       <% if (locals.flashes){ %>
-        <% const categories = Object.keys(locals.flashes) %>
-        <% categories.forEach((category) => { %>
-          <% flashes[category].forEach((message) => { %>
-            <div class="flex justify-around flex-1">
-              <div id='flash' class="max-w-xl flex justify-between items-center border-2 border-green-500 bg-green-200 font-bold">
-                <div class="px-4 text-2xl text-center">
-                  <p class=""><%= message %></p>
-                </div>
-                <div class="px-4">
-                  <button type="button"><i class="fas fa-times"></i></button>
-                </div>
-              </div>
-            </div>
-            <% }) %>
-            <% }) %>
-          <% } %>
+      <% const categories = Object.keys(locals.flashes) %>
+      <% categories.forEach((category) => { %>
+      <% flashes[category].forEach((message) => { %>
+      <div class="flex justify-around flex-1">
+        <div id='flash' class="max-w-xl flex justify-between items-center border-2 border-green-500 bg-green-200 font-bold">
+          <div class="px-4 text-2xl text-center">
+            <p class=""><%= message %></p>
+          </div>
+          <div class="px-4">
+            <button type="button"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+      <% }) %>
+      <% } %>
       <header class="lg:px-16 px-6 bg-cover flex flex-wrap items-center lg:py-0 py-2">
-        <div class="flex-1 flex justify-between items-center mr-4">
+        <div class="flex-auto flex justify-center items-center">
           <a class="" href="/">
             <img class="lg:block h-auto w-24" src="/images/logo.png" alt="logo">
           </a>
@@ -34,24 +34,26 @@
 
         <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
           <nav>
-            <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 uppercase">
+            <ul class="text-center lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 uppercase">
               <li>
                 <a href="/" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Home</a>
               </li>
               <li>
-                <a href="/flavors" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Flavors</a>
+                <a href="/flavors" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Flavors <i class="fas fa-magic"></i></a>
               </li>
               <li>
                 <a href="/services" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Services</a>
               </li>
               <li>
-                <a href="/gallery" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Gallery <i class="fas fa-magic"></i></a>
+                <a href="/gallery" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">Gallery <i class="fas fa-quidditch"></i></a>
               </li>
               <li>
                 <div id="dropdown-button" class="inline-block relative lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">
                   <button class="inline-flex items-center uppercase">
                     <span class="mr-1">Order Inquiry</span>
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
                   </button>
                   <ul id="dropdown-menu" class="absolute w-full hidden text-gray-700 pt-1">
                     <li class=""><a class="border-b-2 border-transparent hover:border-indigo-400 rounded-t bg-pink-200 py-2 px-4 block whitespace-no-wrap" href="/order">New Order</a></li>
@@ -75,23 +77,23 @@
               </li>
               <li>
                 <% if (!user) { %>
-                  <a href="/login" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor-pointer">
-                    <div class="flex-col align-center justify-center">
-                      <div class="flex justify-center">
-                        <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400">
-                      </div>
-                      <span class="text-xs">Admin Login</span>
+                <a href="/login" class="lg:ml-4 flex items-center justify-center lg:mb-0 mb-4 cursor-pointer">
+                  <div class="flex-col align-center justify-center">
+                    <div class="flex justify-center">
+                      <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400">
                     </div>
-                  </a>
+                    <span class="text-xs"><i class="fas fa-hat-wizard"></i> Login</span>
+                  </div>
+                </a>
                 <% } else { %>
-                  <a href="/logout" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 cursor-pointer">
-                    <div class="flex-col align-center justify-center">
-                      <div class="flex justify-center">
-                        <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400">
-                      </div>
-                      <span class="text-xs">Admin Logout</span>
+                <a href="/logout" class="lg:ml-4 flex items-center justify-center lg:mb-0 mb-4 cursor-pointer">
+                  <div class="flex-col align-center justify-center">
+                    <div class="flex justify-center">
+                      <img src="https://www.thesugarspell.com/wp-content/uploads/2019/08/Profile_Website-600x618.png" alt="Sugar Spells" class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400">
                     </div>
-                  </a>
+                    <span class="text-xs"><i class="fas fa-hat-wizard"></i> Logout</span>
+                  </div>
+                </a>
                 <% } %>
               </li>
             </ul>

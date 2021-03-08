@@ -7,7 +7,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_CLOUD_SECRET
 })
 
-
+// sets the cloudinary folder to save to and the allowed formats for savings purposes
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {

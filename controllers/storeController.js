@@ -9,7 +9,7 @@ const mail = require('../handlers/mail');
 const multer = require('multer');
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
-const jimp = require('jimp');
+// const jimp = require('jimp');
 const { v4: uuidv4 } = require('uuid');
 
 
@@ -20,6 +20,7 @@ exports.homePage = (req, res) => {
 
 // FLAVORS
 exports.getFlavors = async (req, res) => {
+  //makes request to backend db for Flavor model before passing to the template
   const flavors = await Flavor.find()
   res.render('flavors', { title: 'Flavors', flavors })
 };
@@ -27,11 +28,13 @@ exports.addFlavor = (req, res) => {
   res.render('addFlavors', { title: 'Add New Flavor'})
 };
 exports.createFlavor = async (req, res) => {
+  // saves new flavor object and sends a flash message indicating the the flavot was created before redirecting to flavors page
   const flavor = await (new Flavor(req.body)).save();
   req.flash('success', `Successfully created new flavor!`)
   res.redirect('/flavors');
 };
 exports.showFlavor = async (req, res) => {
+  //
   const { id } = req.params;
   const flavor = await Flavor.findById(id);
   res.render('editFlavor', {title: 'Edit Flavor', flavor})
@@ -223,6 +226,6 @@ exports.getThrowbacks = (req, res) => {
 //IMAGE UPLOAD
 exports.imagesUpload = upload.array('images')
 
-exports.errors = (req, res) => {
-  res.send('error')
-}
+// exports.errors = (req, res) => {
+//   res.render('error')
+// }

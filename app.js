@@ -16,6 +16,7 @@ const errorHandlers = require('./handlers/errorHandlers');
 //takes out ability to add queries to the query string
 const mongoSanitize = require('express-mongo-sanitize');
 require('./handlers/passport');
+const helmet = require("helmet");
 
 
 // Create Express app
@@ -47,9 +48,15 @@ app.use(session({
   secret: process.env.SECRET,
   key: process.env.KEY,
   resave: false,
+
   saveUninitialized: false,
-  // secure: true,
-  store: new MongoStore({ mongooseConnection: mongoose.connection })
+  secure: true,
+  store: new MongoStore(
+    {
+      mongooseConnection: mongoose.connection,
+      touchAfter: 24 * 60 * 60
+    }
+  )
 }));
 
 // Passport JS is what we use to handle our logins
@@ -96,6 +103,10 @@ if (app.get('env') === 'development') {
 
 // production error handler
 app.use(errorHandlers.productionErrors);
+
+
+//Helmet helps you secure your Express apps by setting various HTTP headers
+app.use(helmet());
 
 
 // done! we export it so we can start the site in start.js

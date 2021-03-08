@@ -14,7 +14,7 @@
                 Email
               </label>
               <div class="mt-1 rounded-md">
-                <input id="email" name="email" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="Enter Email">
+                <input id="email" name="email" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="HPot@HogwartsU.edu" required>
               </div>
             </div>
             <!-- name input -->
@@ -23,7 +23,7 @@
                 Name
               </label>
               <div class="mt-1 rounded-md">
-                <input id="name" name="name" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="Sugar Spells">
+                <input id="name" name="name" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="Sugar Spells" required>
               </div>
             </div>
             <!-- phone number input -->
@@ -32,7 +32,7 @@
                 Phone Number
               </label>
               <div class="mt-1 rounded-md">
-                <input name="phoneNumber" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="(xxx)-xxx-xxxx">
+                <input name="phoneNumber" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="(xxx)-xxx-xxxx" required>
               </div>
             </div>
           </div>
@@ -44,12 +44,12 @@
                 Event Date
               </label>
               <div class="mt-1 rounded-md">
-                <input name="eventDate" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" id="datepicker" placeholder="Select a Date">
+                <input name="eventDate" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" id="datepicker" placeholder="Select a Date" required>
               </div>
             </div>
             <!-- event time input -->
             <div class="flex-col my-2 md:pl-2">
-              <label for="lastName" class="text-sm font-semibold leading-5 text-gray-700">
+              <label for="eventTime" class="text-sm font-semibold leading-5 text-gray-700">
                 Event Time
               </label>
               <div class="mt-1 rounded-md">
@@ -154,7 +154,7 @@
                 How many guests will there be?
               </label>
               <div class="mt-1 rounded-md">
-                <input name="numberOfGuests" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="12">
+                <input name="numberOfGuests" class="bg-gray-400 form-input h-10 w-full rounded-md p-2 text-md sm:leading-5" placeholder="12" required>
               </div>
             </div>
           </div>
@@ -167,8 +167,8 @@
               </label>
               <div class="mt-1 rounded-md">
                 <div class="" id="delivery-select">
-                  <input type="radio" name="delivery[preference]" value="Pick Up" id="pickup"><span class="pl-2">Pick Up</span><br>
-                  <input type="radio" name="delivery[preference]" value="Delivery" id="delivery"><span class="pl-2">Delivery</span>
+                  <input type="radio" name="delivery[preference]" value="Pick Up" id="pickup" required><span class="pl-2">Pick Up</span><br>
+                  <input type="radio" name="delivery[preference]" value="Delivery" id="delivery" required><span class="pl-2">Delivery</span>
                 </div>
               </div>
             </div>
@@ -979,8 +979,7 @@
             <p class="text-xs italic text-gray-700 font-normal">Please note the number of tiers, shape, colors, design theme and any other relevant details.
             </p>
             <div class="mt-1 rounded-md">
-              <textarea id="description" name="description" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5"
-                placeholder="Provide a brief description of order you are looking to create"></textarea>
+              <textarea id="description" name="description" rows="3" class="form-textarea bg-gray-400 flex-1 block w-full rounded-none rounded-md transition duration-150 p-2 ease-in-out text-lg sm:leading-5" placeholder="Provide a brief description of order you are looking to create" required></textarea>
             </div>
           </div>
         </div>

@@ -32,6 +32,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^5.3.1",
     "expresss": "0.0.0",
+    "helmet": "^4.4.1",
     "html-to-text": "^6.0.0",
     "jimp": "^0.16.1",
     "joi": "^17.3.0",

@@ -59,6 +59,11 @@
   $("#chocolateDippedStrawberries-select").hide()
   $("#cakePops-select").hide()
 
+
+
+
+
+
   $("#cakeTier-select").change(() => {
     const cakeTierAmount = event.target.value
 
@@ -77,8 +82,8 @@
       $("#cakeTier-3").hide( "slow" )
       deliveryAddressRequired()
     } else if (cakeTierAmount === "3") {
-      $("#cakeTier-2").slideDown().show()
-      $("#cakeTier-3").slideDown().show()
+      $("#cakeTier-2").slideDown().show( "slow" )
+      $("#cakeTier-3").slideDown().show( "slow" )
       deliveryAddressRequired()
     }
   })
@@ -102,10 +107,7 @@
     }
   })
 
-
-
-
-
+  //treats hide/show logic
   $('#treat').change(() => {
     if ($(event.target).is(':checked')) {
       const treat = event.target.value.toLowerCase();
@@ -145,6 +147,72 @@
       }
     }
   })
+
+
+  //treats hide/show logic on load
+  const onLoadCheckTreat = () => {
+    $('#treat input').each(function() {
+      console.log("here")
+      if ($(this).is(':checked')) {
+        const treat = this.value.toLowerCase();
+        const treatId = this.id;
+        console.log(treat)
+
+        if (treat === 'cake') {
+          $(`#${treatId}-select`).slideDown().show()
+        } else if (treat === 'sugar cookies') {
+          $(`#${treatId}-select`).slideDown().show()
+        } else if (treat === 'cupcakes') {
+          $(`#${treatId}-select`).slideDown().show()
+        } else if (treat === 'rice krispie pops') {
+          $(`#${treatId}-select`).slideDown().show()
+        } else if (treat === 'chocolate dipped strawberries') {
+          $(`#${treatId}-select`).slideDown().show()
+        } else if (treat === 'cake pops') {
+          $(`#${treatId}-select`).slideDown().show()
+        }
+      } else {
+        if (treat === 'cake') {
+          $(`#${treat}-select`).slideUp().hide( "slow" )
+        } else if (treat === 'sugar cookies') {
+          $(`#${treatId}-select`).slideUp().hide( "slow" )
+        } else if (treat === 'cupcakes') {
+          $(`#${treatId}-select`).slideUp().hide( "slow" )
+        } else if (treat === 'rice krispie pops') {
+          $(`#${treatId}-select`).slideUp().hide( "slow" )
+        } else if (treat === 'chocolate dipped strawberries') {
+          $(`#${treatId}-select`).slideUp().hide( "slow" )
+        } else if (treat === 'cake pops') {
+          $(`#${treatId}-select`).slideUp().hide( "slow" )
+        }
+      }
+    })
+  }
+  onLoadCheckTreat()
+
+
+
+
+
+  if ($('#target input').is(':checked')) {
+    const treat = event.target.value.toLowerCase();
+    const treatId = event.target.id;
+
+    if (treat === 'cake') {
+      $(`#${treatId}-select`).slideDown().show()
+    } else if (treat === 'sugar cookies') {
+      $(`#${treatId}-select`).slideDown().show()
+    } else if (treat === 'cupcakes') {
+      $(`#${treatId}-select`).slideDown().show()
+    } else if (treat === 'rice krispie pops') {
+      $(`#${treatId}-select`).slideDown().show()
+    } else if (treat === 'chocolate dipped strawberries') {
+      $(`#${treatId}-select`).slideDown().show()
+    } else if (treat === 'cake pops') {
+      $(`#${treatId}-select`).slideDown().show()
+    }
+  }
+
 
   $("#signatureCake-select-1").hide( "slow" )
   $("#buildYourOwnCake-select-1").hide( "slow" )
@@ -219,7 +287,7 @@
   })
 
   $("#submit-button").click(() => {
-    //removes attributes from all hidden elemenets except image input since we do not want to show thay ever
+    //removes attributes from all hidden elemenets except image input since we do not want to show that ever
     $(":hidden").not("#upload").attr("name","");
   })
 

@@ -1,10 +1,20 @@
 <%- include ('../views/partials/header') %>
 <%- include ('../views/partials/navbar') %>
 
-<div class="p-12">
-  <h2><%= message %></h2>
-  <p><%= status %></p>
-  <p><%= stackHighlighted %></p>
+<div class="flex justify-around">
+  <div class="flex flex-col justify-center items-center px-4">
+    <div class="border rounded p-6 bg-white w-full">
+      <h1 class="text-gray-700 text-6xl text-center"><%=status%></h1>
+      <h1 class="text-gray-700 text-xl text-center"><%=message%></h1>
+      <% if(process.env.NODE_ENV === 'development'){%>
+        <h1 class="text-gray-700 text-lg"><%=stackHighlighted%></h1>
+      <% } %>
+
+      <span class="text-gray-700 mt-4">
+        Take me <a class="font-semibold underline" href="/">home</a>
+      </span>
+    </div>
+  </div>
 </div>
 
 <%- include ('../views/partials/footer') %>
