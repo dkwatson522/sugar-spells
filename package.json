@@ -2,7 +2,7 @@
   "name": "sugar_spell",
   "version": "1.0.0",
   "description": "This is a website for buying and selling of bakery goods.",
-  "main": "start.js",
+  
   "scripts": {
     "start": "node ./start.js",
     "build": "tailwind build src/style.css -o public/stylesheets/main.css"
