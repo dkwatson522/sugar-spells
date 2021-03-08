@@ -7,9 +7,7 @@
     "start": "node ./start.js",
     "build": "tailwind build src/style.css -o public/stylesheets/main.css"
   },
-  "now": {
-    "dotenv": "variables.env.now"
-  },
+
   "keywords": [
     "bakery",
     "cake",
