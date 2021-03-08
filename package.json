@@ -4,8 +4,8 @@
   "description": "This is a website for buying and selling of bakery goods.",
 
   "scripts": {
-
-    "build": "tailwind build src/style.css -o public/stylesheets/main.css"
+    "start": "node ./start.js",
+    "build": "tailwind build src/style.css -o public/stylesheets/main.css ./start.js"
   },
 
   "keywords": [
