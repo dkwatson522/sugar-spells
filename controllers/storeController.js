@@ -140,7 +140,8 @@ exports.createMessage = async (req, res) => {
 };
 
 exports.sanitizeEmail = (req, res, next) => {
-  req.sanitizeBody('*').trim().escape();
+  console.log(req.body)
+  req.sanitizeBody('*').trim();
   next();
 }
 exports.saveEmail = async (req, res) => {
