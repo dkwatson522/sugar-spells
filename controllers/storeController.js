@@ -125,7 +125,7 @@ exports.createMessage = async (req, res) => {
   const contact = await (new Contact(req.body)).save();
   // const message = req.body
   const deliveryDate = (contact.deliveryDate) || 'TBD'
-  console.log(contact.interests)
+  // console.log(contact.interests)
   // console.log(messageInterests) should create join with , lookup
   await mail.sendContactInfo({
     email: contact.email,
@@ -140,7 +140,7 @@ exports.createMessage = async (req, res) => {
 };
 
 exports.sanitizeEmail = (req, res, next) => {
-  console.log(req.body)
+  // console.log(req.body)
   req.sanitizeBody('*').trim();
   next();
 }
@@ -168,7 +168,7 @@ exports.newOrder = async (req, res) => {
   order.images = req.files.map(file => ({url:file.path, filename:file.filename}));
   order.orderID = Date.now();
   await order.save()
-  console.log(order)
+  // console.log(order)
   await mail.sendOrderInfo(order)
   req.flash('success', `Your Order ${order.orderID} Request Email Has Been Sent!`)
   res.redirect('/')
@@ -180,15 +180,15 @@ exports.searchOrder = async (req, res) => {
   res.render('searchOrder', {order})
 }
 exports.getByOrderID = async (req, res) => {
-  console.log(req.query)
+  // console.log(req.query)
   const { orderID } = req.query;
 
 
   const order = await Order.findOne({orderID}, (error, data) => {
     if(error) {
-      console.log(error)
+      // console.log(error)
     } else {
-      console.log(data)
+      // console.log(data)
     }
   });
 

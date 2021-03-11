@@ -152,11 +152,11 @@
   //treats hide/show logic on load
   const onLoadCheckTreat = () => {
     $('#treat input').each(function() {
-      console.log("here")
+      // console.log("here")
       if ($(this).is(':checked')) {
         const treat = this.value.toLowerCase();
         const treatId = this.id;
-        console.log(treat)
+        // console.log(treat)
 
         if (treat === 'cake') {
           $(`#${treatId}-select`).slideDown().show()
@@ -257,7 +257,7 @@
   $("#upload").change(() => {
     $("#files-chosen-1").text(event.target.files[0].name)
     const tmppath1 = URL.createObjectURL(event.target.files[0]);
-    console.log(event.target.files)
+    // console.log(event.target.files)
     //get parent using closest and then find img element
     $("#preview-image-1").attr('src', tmppath1).show();
     $("#delete-photo-1").show()
