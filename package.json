@@ -1,11 +1,11 @@
 {
-  "name": "sugar_spell",
+  "name": "sugarspell",
   "version": "1.0.0",
   "description": "This is a website for buying and selling of bakery goods.",
 
   "scripts": {
-    "start": "node ./start.js",
-    "build": "tailwind build src/style.css -o public/stylesheets/main.css ./start.js"
+    "start": "node start.js",
+    "build": "tailwind build src/style.css -o public/stylesheets/main.css"
   },
 
   "keywords": [
