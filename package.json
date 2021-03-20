@@ -2,12 +2,10 @@
   "name": "sugarspell",
   "version": "1.0.0",
   "description": "This is a website for buying and selling of bakery goods.",
-
   "scripts": {
     "start": "node start.js",
     "build": "tailwind build src/style.css -o public/stylesheets/main.css"
   },
-
   "keywords": [
     "bakery",
     "cake",
@@ -35,6 +33,7 @@
     "express-validator": "^5.3.1",
     "expresss": "0.0.0",
     "helmet": "^4.4.1",
+    "heroku-ssl-redirect": "^0.1.1",
     "html-to-text": "^6.0.0",
     "jimp": "^0.16.1",
     "joi": "^17.3.0",
