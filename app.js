@@ -17,7 +17,6 @@ const errorHandlers = require('./handlers/errorHandlers');
 const mongoSanitize = require('express-mongo-sanitize');
 require('./handlers/passport');
 const helmet = require("helmet");
-// import sslRedirect from 'heroku-ssl-redirect';
 
 
 // Create Express app
@@ -108,10 +107,6 @@ app.use(errorHandlers.productionErrors);
 
 //Helmet helps you secure your Express apps by setting various HTTP headers
 app.use(helmet());
-
-
-// enable ssl redirect
-// app.use(sslRedirect());
 
 
 // done! we export it so we can start the site in start.js
