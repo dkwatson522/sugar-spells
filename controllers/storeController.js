@@ -28,7 +28,7 @@ exports.addFlavor = (req, res) => {
   res.render('addFlavors', { title: 'Add New Flavor'})
 };
 exports.createFlavor = async (req, res) => {
-  // saves new flavor object and sends a flash message indicating the the flavot was created before redirecting to flavors page
+  // saves new flavor object and sends a flash message indicating the the flavor was created before redirecting to flavors page
   const flavor = await (new Flavor(req.body)).save();
   req.flash('success', `Successfully created new flavor!`)
   res.redirect('/flavors');
